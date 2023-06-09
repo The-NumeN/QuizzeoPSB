@@ -6,6 +6,7 @@
     <title>Quizzeo</title>
 </head>
 <body>
+    <h1> Bienvenue sur Notre Quizz<h1>
     
 </body>
 </html>
