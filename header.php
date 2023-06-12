@@ -11,14 +11,14 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../exo1/index.php">Exercice 1</a>
+      <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="70" height="70" class="d-inline-block align-top" alt="Erreur"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="../exo2/index.php">Exercice 2</a>
+            <a class="nav-link" href="inscription.php">Insciption</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../exo3/index.php">Exercice 3</a>
