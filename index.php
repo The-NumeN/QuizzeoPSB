@@ -17,6 +17,12 @@ include 'header.php';
         <p>Sur ce site, vous pouvez tester vos connaissances en jouant à des quizz ou bien en les créant (après avoir réussi plusieurs quizz).</p> <br><br>
     
     <p>Choisis une catégorie</p>
+    <!-- BOUTONS THEMES -->
+    <li>
+       <button id="th1"name="th1"><a href=""></a></button>
+       <button id="th2"name="th2"><a href=""></a></button> 
+        <button id="th3"name="th3"><a href=""></a></button>
+    </li>
     </div>
  
 </body>
