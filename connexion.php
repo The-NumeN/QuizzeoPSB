@@ -42,18 +42,18 @@ if(isset($_POST["button"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Connexion.css">
+    <link rel="stylesheet" href="connexion.css">
     <title>Connexion</title>
 </head>
 <body>
-    <div>
+    <div class="formu">
     <form action="" method="post">
         <h1>Connexion</h1><hr>
         <label>Pseudo</label><br>
         <input type="text" name="username" required  ><br><br>
         <label>Mot de passe</label><br>
         <input type="password" name="password" required ><br><br>
-        <button type="submit" name="button">Se connecter</button>
+        <button type="submit" name="button">Se connecter</div>
     </form>
     </div>
 </body>
