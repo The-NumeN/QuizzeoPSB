@@ -8,7 +8,7 @@
     if(isset($_POST['submit']))// On fais la condition du <<si il appuie sur le button d'envoi >>
     {
         $email= $_POST['txt'];
-        $mdp= $_POST['pwd'];
+        $mdp= sha1($_POST['pwd']);
         $pseudo= $_POST['ps'];
         //On fais une réquête d'insersion des valeurs recupérés dans la base de donnée
         $req= "insert into users (email,password,pseudo)
