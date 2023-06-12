@@ -53,7 +53,9 @@ if(isset($_POST["button"])){
         <input type="text" name="username" required  ><br><br>
         <label>Mot de passe</label><br>
         <input type="password" name="password" required ><br><br>
-        <button type="submit" name="button">Se connecter</button>
+        <button type="submit" name="button">Se connecter</button><br><br>
+        <p>Si tu ne t'es jamais connecté, inscris toi maintenant !</p>
+        <button><a href="inscription.php">S'inscrire</a></button>
     </form>
     </div>
 </body>

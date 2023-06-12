@@ -21,13 +21,13 @@ include 'header.php';
    <div class="categories container" >
         <ol>
             <li>
-                <button id="th1"name="th1">Musique<a href=""></a></button><br><br>
+                <button id=""name="th1">Musique<a href=""></a></button><br><br>
             </li>
             <li>
-                <button id="th2"name="th2">Cinema<a href=""></a></button><br><br>
+                <button id=""name="th2">Cinema<a href=""></a></button><br><br>
             </li>
             <li>
-                <button id="th3"name="th3">Foot<a href=""></a></button><br><br>
+                <button id=""name="th3">Foot<a href=""></a></button><br><br>
             </li>
         </ol>
     </div>
