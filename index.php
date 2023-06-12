@@ -19,9 +19,9 @@ include 'header.php';
     <p>Choisis une catégorie</p>
     <!-- BOUTONS THEMES -->
     <li>
-       <button id="th1"name="th1"><a href=""></a></button>
-       <button id="th2"name="th2"><a href=""></a></button> 
-        <button id="th3"name="th3"><a href=""></a></button>
+       <button id="th1"name="th1">Musique<a href=""></a></button>
+       <button id="th2"name="th2">Cinema<a href=""></a></button> 
+        <button id="th3"name="th3">Foot<a href=""></a></button>
     </li>
     </div>
  
