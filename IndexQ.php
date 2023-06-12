@@ -1,16 +1,14 @@
 <?php
     session_start();
-    $connect_bdd= mysqli_connect("127.0.0.1","root","","services");
+    $connect_bdd= mysqli_connect("127.0.0.1","root","","Quizzeo");
     //On recupère les valeurs entrées dans notre formulaire et on les remplaces par des varibales
     if(isset($_POST['submit']))// On fais la condition du <<si il appuie sur le button d'envoi >>
     {
-        $nom= $_POST['nom'];
-        $prenom= $_POST['prenom'];
-        $email= $_POST['email'];
-        $mdp= $_POST['mdp'];
-        $pseudo= $_POST['pseudo'];
+        $email= $_POST['txt'];
+        $mdp= $_POST['pwd'];
+        $pseudo= $_POST['ps'];
         //On fais une réquête d'insersion des valeurs recupérés dans la base de donnée
-        $req= "insert into travailleurs values (null, '$nom','$prenom', '$email', '$mdp', '$pseudo' )";
+        $req= "insert into travailleurs values (null, '$email', '$mdp', '$pseudo' )";
         mysqli_query($connect_bdd,$req);
         // On fais une réquête d'affichage uniquement des pseudo et mot de passe existant dans la base de donnée
         $req= "select * from travailleurs where pseudo = '$pseudo' and mdp= '$mdp'";
