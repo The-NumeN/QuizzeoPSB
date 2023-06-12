@@ -18,11 +18,18 @@ include 'header.php';
     
     <p>Choisis un quizz</p>
     <!-- BOUTONS QUIZZ -->
-    <li>
-       <button id="th1"name="th1">Musique<a href=""></a></button><br><br>
-       <button id="th2"name="th2">Cinema<a href=""></a></button><br><br>
-        <button id="th3"name="th3">Foot<a href=""></a></button><br><br>
-    </li>
+   <div class="categories">
+        <ul>
+            <li>
+                <button id="th1"name="th1">Musique<a href=""></a></button><br><br>
+            </li>
+            <li>
+                <button id="th2"name="th2">Cinema<a href=""></a></button><br><br>
+            </li>
+            <li>
+                <button id="th3"name="th3">Foot<a href=""></a></button><br><br>
+            </li>
+        </ul>
     </div>
  
 </body>
