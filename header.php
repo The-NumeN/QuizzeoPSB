@@ -24,7 +24,7 @@
             <a class="nav-link" href="connexion.php">Connexion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Nous Connaitre</a>
+            <a class="nav-link" href="coco.php">Nous Connaitre</a>
           </li>
         </ul>
       </div>
