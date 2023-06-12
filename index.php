@@ -16,7 +16,7 @@ include 'header.php';
     <div class="para">
         <p>Sur ce site, vous pouvez tester vos connaissances en jouant à des quizz ou bien en les créant (après avoir réussi plusieurs quizz).</p> <br><br>
     
-    <p>Choisis une catégorie</p>
+    <p>Choisis un quizz</p>
     <!-- BOUTONS THEMES -->
     <li>
        <button id="th1"name="th1">Musique<a href=""></a></button>
