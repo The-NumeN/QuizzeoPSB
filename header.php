@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
-    <title>TP</title>
+    <title>Headquizz</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -18,13 +18,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="inscription.php">Insciption</a>
+            <a class="nav-link" href="inscription.php">Inscription</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../exo3/index.php">Exercice 3</a>
+            <a class="nav-link" href="">Tout nos quizz</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../exo4/index.php">Exercice 4</a>
+            <a class="nav-link" href="">Nous Connaitre</a>
           </li>
         </ul>
       </div>
