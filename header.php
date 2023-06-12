@@ -21,7 +21,7 @@
             <a class="nav-link" href="inscription.php">Inscription</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Tout nos quizz</a>
+            <a class="nav-link" href="">Tous nos quizz</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="">Nous Connaitre</a>
