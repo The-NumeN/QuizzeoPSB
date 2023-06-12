@@ -53,7 +53,6 @@ if(isset($_POST["button"])){
         <label>Mot de passe</label><br>
         <input type="password" name="password" required ><br>
         <button type="submit" name="button">Se connecter</button>
-        <a href="inscription.php">Créer un compte</a>
     </form>
     </div>
 </body>
