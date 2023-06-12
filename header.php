@@ -21,7 +21,7 @@
             <a class="nav-link" href="inscription.php">Insciption</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../exo3/index.php">Exercice 3</a>
+            <a class="nav-link" href="connexion.php">Connexion</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../exo4/index.php">Exercice 4</a>
