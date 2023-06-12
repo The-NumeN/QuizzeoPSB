@@ -13,9 +13,7 @@
         // // On fais une réquête d'affichage uniquement des pseudo et mot de passe existant dans la base de donnée
         // $req= "select * from 'users' where pseudo = '$pseudo' mail= '$email' mdp= '$mdp' role= '$role'";
         // $res= mysqli_query($connect_bdd,$req );
-    
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
