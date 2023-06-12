@@ -18,8 +18,8 @@ include 'header.php';
     
     <p>Choisis un quizz</p>
     <!-- BOUTONS QUIZZ -->
-   <div class="categories">
-        <ul>
+   <div class="categories container" >
+        <ol>
             <li>
                 <button id="th1"name="th1">Musique<a href=""></a></button><br><br>
             </li>
@@ -29,7 +29,7 @@ include 'header.php';
             <li>
                 <button id="th3"name="th3">Foot<a href=""></a></button><br><br>
             </li>
-        </ul>
+        </ol>
     </div>
  
 </body>
