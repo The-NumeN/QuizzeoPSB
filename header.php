@@ -27,11 +27,6 @@
             <a class="nav-link" href="coco.php">Nous Connaitre</a>
           </li>
         </ul>
-          <ul class="navbar-nav "> 
-            <li class="nav-item">
-              <a class="nav-link" href="">Nous Connaitre</a>
-            </li>
-          </ul>
       </div>
     </div>
   </nav>
