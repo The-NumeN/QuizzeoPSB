@@ -48,12 +48,12 @@ if(isset($_POST["button"])){
     <div>
     <form action="" method="post">
         <h1>Connexion</h1><hr>
-        <label>Identifiant</label><br>
+        <label>Pseudo</label><br>
         <input type="text" name="username" required  ><br>
         <label>Mot de passe</label><br>
         <input type="password" name="password" required ><br>
         <button type="submit" name="button">Se connecter</button>
-        <a href="Form_connect.php">Créer un compte</a>
+        <a href="inscription.php">Créer un compte</a>
     </form>
     </div>
 </body>
