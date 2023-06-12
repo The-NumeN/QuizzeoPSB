@@ -50,9 +50,9 @@ if(isset($_POST["button"])){
     <form action="" method="post">
         <h1>Connexion</h1><hr>
         <label>Pseudo</label><br>
-        <input type="text" name="username" required  ><br>
+        <input type="text" name="username" required  ><br><br>
         <label>Mot de passe</label><br>
-        <input type="password" name="password" required ><br>
+        <input type="password" name="password" required ><br><br>
         <button type="submit" name="button">Se connecter</button>
     </form>
     </div>
