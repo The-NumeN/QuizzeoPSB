@@ -1,5 +1,7 @@
 <?php
     include "header.php";
+    ?>
+<?php
     session_start();
     $connect_bdd= mysqli_connect("127.0.0.1","root","","quizzeo");
     //On recupère les valeurs entrées dans notre formulaire et on les remplaces par des varibales
