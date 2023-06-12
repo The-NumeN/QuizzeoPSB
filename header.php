@@ -16,17 +16,19 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ml-auto ">
           <li class="nav-item">
             <a class="nav-link" href="inscription.php">Inscription</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="connexion.php">Connexion</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Nous Connaitre</a>
-          </li>
         </ul>
+          <ul class="navbar-nav "> 
+            <li class="nav-item">
+              <a class="nav-link" href="">Nous Connaitre</a>
+            </li>
+          </ul>
       </div>
     </div>
   </nav>
