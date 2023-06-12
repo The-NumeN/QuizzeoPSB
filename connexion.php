@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 session_start();
 // On récupère les valeurs saisies
 if(isset($_POST["button"])){
