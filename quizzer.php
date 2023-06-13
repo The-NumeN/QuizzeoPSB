@@ -37,7 +37,10 @@ include 'header.php';
         <p>Créer un quizz</p>
         <div class="creaquest">
             <form action="" method="post">
-                <input type="text" id="" name="" placeholder= "Note ta question ici"><br><br>
+              <input type="text" id="" name="" placeholder= "Note ta question ici"><br><br>
+              <?php
+              
+              ?>
             </form>
         </div>
     </div>
