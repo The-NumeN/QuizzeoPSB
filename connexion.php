@@ -1,5 +1,7 @@
 <?php
 include 'header.php';
+?>
+<?php
 session_start();
 // On récupère les valeurs saisies
 if(isset($_POST["button"])){
@@ -35,14 +37,13 @@ if(isset($_POST["button"])){
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="connexion.css">
+    <link rel="stylesheet" href="conect2.css">
     <title>Connexion</title>
 </head>
 <body>
@@ -50,12 +51,10 @@ if(isset($_POST["button"])){
     <form action="" method="post">
         <h1>Connexion</h1><hr>
         <label>Pseudo</label><br>
-        <input type="text" name="username" required  ><br><br>
+        <input type="text" name="username" required  ><br>
         <label>Mot de passe</label><br>
         <input type="password" name="password" required ><br><br>
-        <button type="submit" name="button">Se connecter</button><br><br>
-        <p>Si tu ne t'es jamais connecté, inscris toi maintenant !</p>
-        <button><a href="inscription.php">S'inscrire</a></button>
+        <button type="submit" name="button">Se Connecter</button><br><br>
     </form>
     </div>
 </body>
