@@ -34,5 +34,4 @@ public function __construct(){
     $this->date=$date;
 }
 }
-
 ?>
