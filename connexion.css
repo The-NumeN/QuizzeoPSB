@@ -33,7 +33,7 @@ button:hover{
     color: black;
 }
 .formu{
-    position: absolute;
+    position: relative;
     border: 3px solid;
     border-radius: 10%;
     background-color: rgb(196, 217, 255);
