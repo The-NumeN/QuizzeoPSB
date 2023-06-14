@@ -8,12 +8,13 @@ include 'header.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizzer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script></script>
-    <script></script>
+    <script src="creaquestion.js"></script>
     <script></script>
     <script></script>
 </head>
 <body>
+<script>
+</script>
     <div class="jouer">
         <h2>Jouer</h2>
         <p>Choisis un quizz</p>
@@ -33,15 +34,6 @@ include 'header.php';
         </div>
     </div>
     <div class="créer">
-        <h2>créer</h2>
-        <p>Créer un quizz</p>
-        <div class="creaquest">
-            <form action="" method="post">
-              <input type="text" id="" name="" placeholder= "Note ta question ici"><br><br>
-              <?php
-              
-              ?>
-            </form>
-        </div>
+    <button id="crea"onclick="addquestion()">Créer</button>
     </div>
 </body>

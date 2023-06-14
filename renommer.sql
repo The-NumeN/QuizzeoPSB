@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `quizzes` (
 -- Structure de la table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `userscela`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `pseudo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
