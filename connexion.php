@@ -6,7 +6,7 @@ session_start();
 // On récupère les valeurs saisies
 if(isset($_POST["button"])){
     $username = $_POST["username"];
-    $password = $_POST["password"];
+    $password = sha1($_POST["password"]);
     // On se connecte à la base de donnée 
     $connect_bdd = mysqli_connect("127.0.0.1","root","","quizzeo");
 
