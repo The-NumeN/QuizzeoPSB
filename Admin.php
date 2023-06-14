@@ -1,17 +1,81 @@
 <?php
 include 'header.php';
 ?>
+<?php
+session_start();
+// Fonction pour établir une connexion à la base de données
+function BDDconnect() {
+    $host = "127.0.0.1";
+    $username = "root";
+    $password = "";
+    $database = "quizzeo";
+
+    $conn = mysqli_connect($host, $username, $password, $database);
+    if (!$conn) {
+        die("Échec de la connexion à la base de données: " .mysqli_connect_error());
+    }
+    return $conn;
+}
+// Traitement des actions de suppression des utilisateurs
+if (isset($_GET['action']) && $_GET['action'] === 'deleteUser' && isset($_GET['id'])) {
+    $userId = $_GET['id'];
+    $conn = BDDconnect();
+    $query = "DELETE FROM Users WHERE id_test = $userId";
+    $result = mysqli_query($conn, $query);
+
+    if ($result) {
+        $message = "Utilisateur supprimé avec succès.";
+    } else {
+        $errorMessage = "Une erreur s'est produite lors de la suppression de l'utilisateur.";
+    }
+}
+// Récupérer la liste des utilisateurs
+$conn = BDDconnect();
+$query = "SELECT * FROM Users";
+$result = mysqli_query($conn, $query);
+$users = [];
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $users[] = $row;
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script></script>
-    <script></script>
-    <script></script>
-    <script></script>
+    <title>Administrateur</title>
 </head>
 <body>
+    <a href="Connexion.php">Deconnexion</a>
+    <h3>Liste des utilisateurs</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nom d'utilisateur</th>
+            <th>Rôle</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($users as $user) : ?>
+            <tr>
+                <td><?php echo $user['id_test']; ?></td>
+                <td><?php echo $user['pseudo']; ?></td>
+                <td><?php echo $user['role']; ?></td>
+                <td>
+                    <a href="edit_user.php?id=<?php echo $user['id_test']; ?>">Modifier</a>
+                    <a href="?action=deleteUser&id=<?php echo $user['id_test']; ?>">Supprimer</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <h3>Liste des quizz</h3>
+    <a href="quizz_list.php">Voir la liste des quizz</a>
+
+    <h3>Ajouter un quizz</h3>
+    <a href="ajout_quizz.php">Ajouter un quizz</a>
+
+    <h3>Quizz créés par le quizzeur</h3>
+    <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
 </body>
+<?php ?>
+</html>
