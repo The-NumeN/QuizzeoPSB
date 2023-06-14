@@ -4,8 +4,10 @@ function addquestion() {
     document.getElementById('crea').innerHTML = Contenu;
 }
 function modquestion() {
-
 }
 function delquestion() {
-
+}
+function selectquizz() {
+    // var Select = document.getElementById('play').innerHTML;
+    // Select=
 }
