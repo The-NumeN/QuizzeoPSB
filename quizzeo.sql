@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 13 juin 2023 à 14:30
+-- Généré le : mer. 14 juin 2023 à 12:44
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `quizzes` (
 -- Structure de la table `users`
 --
 
-DROP TABLE IF EXISTS `userscela`;
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id_test` int NOT NULL AUTO_INCREMENT,
   `pseudo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
@@ -99,7 +99,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `role` enum('utilisateur','quizzer','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id_test`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id_test`, `pseudo`, `email`, `password`, `role`) VALUES
+(22, 'gsm', 'stivegamy@outlook.fr', 'ffd95b7cdbe67e5e736f304f42ed96fc925b9f65', 'admin'),
+(23, 'stive', 'stivegamy@outlook.fr', 'f88edff032ba24c8d9559fd3207c6a48eeeaf633', 'utilisateur');
 
 -- --------------------------------------------------------
 
