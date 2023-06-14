@@ -1,6 +1,7 @@
 function addquestion() {
-    document.getElementById("crea").innerHTML='<input type="text"></input>';
-    }
+    document.getElementById("crea").innerHTML = '<input type="text"></input>';
+}
+
 function modquestion() {
 
 }
