@@ -36,7 +36,7 @@
         <label for="mail">Adresse mail:</label>
         <input type="email" name="txt" placeholder="Votre email" required><br><br>
         <label for="mot de passe">Mot de passe:</label>
-        <input type="password" name="pwd" placeholder="Votre mot de passe" required><br><br>
+        <input type="password" name="pwd" placeholder="Votre mot de passe" required><br><br> 
         <button type="submit" name="submit" >Inscription</button>
     </form>
 </body>
