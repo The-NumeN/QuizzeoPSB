@@ -73,7 +73,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <a href="quizz_list.php">Voir la liste des quizz</a>
     <h3>Créer un quizz</h3>
     <div class="créer">
-        <input type="button" onclick="addquestion()" value="Créer"/><br></br>
+        <input type="button" onclick="addquizz()" value="Créer"/><br></br>
         <form>  
             <div id="crea"></div><br>
             <button type="submit">valider la question</button>
