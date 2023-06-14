@@ -46,6 +46,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <title>Administrateur</title>
 </head>
 <body>
+    <script src="creaquestion.js"></script>
     <a href="Connexion.php">Deconnexion</a>
     <h3>Liste des utilisateurs</h3>
     <table>
@@ -70,10 +71,13 @@ while ($row = mysqli_fetch_assoc($result)) {
 
     <h3>Liste des quizz</h3>
     <a href="quizz_list.php">Voir la liste des quizz</a>
-
-    <h3>Ajouter un quizz</h3>
-    <a href="ajout_quizz.php">Ajouter un quizz</a>
-
+    <h3>Créer un quizz</h3>
+    <div class="créer">
+        <input type="button" onclick="addquestion()" value="Créer"/><br></br>
+        <form>  
+            <div id="crea"></div><br>
+            <button type="submit">valider la question</button>
+        </form> 
     <h3>Quizz créés par le quizzeur</h3>
     <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
 </body>

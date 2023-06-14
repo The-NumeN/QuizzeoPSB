@@ -21,7 +21,12 @@ include 'header.php';
       <div id="play"></div>
     </div>
     <div class="créer">
-    <input type="button" onclick="addquestion()" value="Créer"/><br></br>
+    <div class="créer">
+        <input type="button" onclick="addquestion()" value="Créer"/><br></br>
+        <form>  
+            <div id="crea"></div><br>
+            <button type="submit">valider la question</button>
+        </form> 
     <div id="crea"></div>
 </body>
 </html>
