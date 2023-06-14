@@ -23,6 +23,5 @@ include 'header.php';
     <div class="créer">
     <input type="button" onclick="addquestion()" value="Créer"/><br></br>
     <div id="crea"></div>
-    </div>
 </body>
 </html>
