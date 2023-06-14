@@ -17,22 +17,7 @@ include 'header.php';
 <script>
 </script>
     <div class="jouer">
-        <h2>Jouer</h2>
-        <p>Choisis un quizz</p>
-    <!-- BOUTONS QUIZZ -->
-        <div class="categories" >
-            <ol>
-                <li>
-                    <button id=""name="th1">Musique<a href=""></a></button><br><br>
-                </li>
-                <li>
-                    <button id=""name="th2">Cinema<a href=""></a></button><br><br>
-                </li>
-                <li>
-                    <button id=""name="th3">Foot<a href=""></a></button><br><br>
-                </li>
-            </ol>
-        </div>
+      <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
     </div>
     <div class="créer">
     <input type="button" onclick="addquestion()" value="Créer"/><br></br>
