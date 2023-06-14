@@ -21,37 +21,9 @@ include 'header.php';
       <div id="play"></div>
     </div>
     <div class="créer">
-    <div class="créer">
-        <input type="button" onclick="addquizz()" value="Créer"/><br></br>
-        <form>
-            <div id="crea">
-              <label for="Quizz">Nouveau quizz</label><br>
-              <label for="titre_quizz">Titre du quizz</label><br>
-              <input type="text"id="ttquizz"><br>
-              <label for="difficulte">Difficulté du quizz</label><br>
-              <select id="diff" name="diff"><br>
-                <option value="d0"> selectionnez une difficulté</option>
-                <option value="d1">1</option>
-                <option value="d2">2</option>
-                <option value="d3">3</option>
-              </select><br>
-              <div id="crea1">
-                <label for="Question">Nouvelle question</label><br>
-                <label for="titre_question">Titre de la question</label><br>
-                <input type="text"id="ttquestion"><br>
-                <label for="difficulte">Difficulté de la question</label><br>
-                <select id="diff1" name="diff1"><br>
-                <option value="d10"> selectionnez une difficulté</option>
-                <option value="d11">1</option>
-                <option value="d12">2</option>
-                <option value="d13">3</option>
-                <label for="nquest">La question</label>
-                <input type="text"id="thequest">
-              </select><br>
-              </div>
-            </div><br>
-            <button type="submit">créer le quizz</button>
-        </form> 
+        <input type="button" onclick="addquizz()" value="Créer un quizz"/><br></br>
     <div id="crea"></div>
+    <div id="crea1"></div> 
+
 </body>
 </html>

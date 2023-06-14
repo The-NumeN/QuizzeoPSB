@@ -1,12 +1,15 @@
 function addquizz() {
-    var Contenu = document.getElementById('crea').innerHTML;
-    Contenu = Contenu + '<input type=\"form\"/>';
-    document.getElementById('crea').innerHTML = Contenu;
-    var Contenu = document.getElementById('crea1').innerHTML;
-    Contenu = Contenu + '<input type=\"text\"/>';
-    document.getElementById('crea1').innerHTML = Contenu;
+
+
+    var addquest = document.getElementById('crea').innerHTML;
+    addquest = addquest + '<input type="button"  onclick= "modquestion()" value = "ajouter une question"/>';
+    document.getElementById('crea').innerHTML = addquest;
+
 }
 function modquestion() {
+    var question = document.getElementById('crea1').innerHTML;
+    question = question + '<br><br><input type=\"text\"/>';
+    document.getElementById('crea1').innerHTML = question;
 }
 function delquestion() {
 }
