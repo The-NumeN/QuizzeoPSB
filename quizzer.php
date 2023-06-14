@@ -8,7 +8,8 @@ include 'header.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizzer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="creaquestion.js"></script>
+    <script src="creaquestion.js" type="text/javaScript">
+    </script>
     <script></script>
     <script></script>
 </head>
@@ -34,6 +35,8 @@ include 'header.php';
         </div>
     </div>
     <div class="créer">
-    <button id="crea"onclick="addquestion()">Créer</button>
+    <input type="button" onclick="addquestion()" value="Créer"/><br></br>
+    <div id="crea"></div>
     </div>
 </body>
+</html>
