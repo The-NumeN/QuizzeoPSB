@@ -38,6 +38,7 @@ if(isset($_POST["button"])){
 ?>
 
 <!DOCTYPE html>
+<!-- Formulaire de connexion au quizz -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

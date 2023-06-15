@@ -2,6 +2,7 @@
 include 'header.php';
 ?>
 <!DOCTYPE html>
+<!-- Page de présentation de l'équipe 1 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

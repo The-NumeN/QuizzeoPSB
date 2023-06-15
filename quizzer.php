@@ -2,6 +2,7 @@
 include 'header.php';
 ?>
 <!DOCTYPE html>
+<!-- page quizzeur -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +15,7 @@ include 'header.php';
     <script></script>
 </head>
 <body>
+    <!-- bouton avec appel de fonction pour jouer aux quizz et en créer -->
     <div class="jouer">
       <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
       <div id="play"></div>

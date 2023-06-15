@@ -2,6 +2,7 @@
 include 'header.php';
 ?>
 <!DOCTYPE html>
+<!-- page d'accueil du site-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

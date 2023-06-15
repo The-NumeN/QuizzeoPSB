@@ -1,3 +1,4 @@
+/* Css de l'onglet de connexion */
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0px auto;
@@ -9,6 +10,7 @@ h1 {
     color: rgb(43, 128, 185);
     text-shadow: 3px 2px 2px black;
 }
+
 input {
     border-radius: 5px 5px;
     text-align: center;
@@ -17,7 +19,7 @@ input {
     border: 2px solid black;
 }
 
-button{
+button {
     text-align: center;
     margin: 5px;
     transition: 300ms;
@@ -25,12 +27,14 @@ button{
     color: white;
     border-radius: 80px;
 }
-button:hover{
+
+button:hover {
     background-color: red;
     color: black;
     transition: 300ms;
 }
-.formu{
+
+.formu {
     position: absolute;
     border: 3px solid;
     border-radius: 10%;
@@ -38,6 +42,6 @@ button:hover{
     top: 50%;
     left: 50%;
     width: 350px;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
-}    
+}

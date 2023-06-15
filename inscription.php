@@ -22,6 +22,7 @@
     }
 ?>
 <!DOCTYPE html>
+<!-- formulaire d'inscription -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

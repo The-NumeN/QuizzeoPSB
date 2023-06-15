@@ -64,6 +64,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 </head>
 <body>
+    <!-- + script de création/modification quizz & questions -->
 <script src="creaquestion.js" type="text/javaScript"></script>
 
     <form action="admin.php" method="post">
@@ -73,6 +74,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span> , Bienvenue !</h1><hr>
     
     <h3>Liste des utilisateurs</h3>
+    <!-- création d'un tableau avec les données utilisateurs -->
     <table>
         <tr>
             <th>ID</th>
@@ -92,7 +94,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             </tr>
         <?php endforeach; ?>
     </table>
-
+<!-- Liste des quizz & création  de quizz-->
     <h3>Liste des quizz</h3>
     <a href="quizz_list.php">Voir la liste des quizz</a><br><br>
     <div class="jouer">
