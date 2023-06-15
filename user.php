@@ -16,9 +16,9 @@ include 'header.php';
         <script></script>
     </head>
     <body>
-    <div class="jouer">
-        <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
-        <div id="play"></div>
+        <div class="jouer">
+            <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
+            <div id="play"></div>
         </div>
     </body>
 </html>    
