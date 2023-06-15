@@ -63,6 +63,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <title>Administrateur</title>
 </head>
 <body>
+<script src="creaquestion.js" type="text/javaScript">
     <form action="admin.php" method="post">
         <input type="hidden" name="logout" value="true">
         <button type="submit">Déconnexion</button>
