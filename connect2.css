@@ -58,8 +58,8 @@ button:hover {
     color: black;
 }
 
-.tableau {
+table {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-left: auto;
+    margin: auto;
     text-align: center;
 }

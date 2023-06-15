@@ -72,7 +72,7 @@
         </form>
         <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span> , Bienvenue !</h1><hr>
     
-        <h3>Liste des utilisateurs</h3>
+        <h3>Liste des utilisateurs</h3><br><br>
     <!-- création d'un tableau avec les données utilisateurs -->
         
         <div class ="tableau">
@@ -98,6 +98,7 @@
             </table>
         </div>
 <!-- Liste des quizz & création  de quizz-->
+        <br><br>
         <h3>Liste des quizz</h3>
         <a href="quizz_list.php">Voir la liste des quizz</a><br><br>
         <div class="jouer">
