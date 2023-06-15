@@ -13,7 +13,7 @@ include 'header.php';
     
     <body>
         <div class="titre">
-            <h1> Bienvenue sur Notre Quizz<h1> <br><br>
+            <h1> Bienvenue sur Notre Quizz<h1> <br>
         </div>
         <div class="para">
             <p>Sur ce site, vous pouvez tester vos connaissances en jouant à des quizz ou bien en les créant (après avoir réussi plusieurs quizz).</p><br><br>
