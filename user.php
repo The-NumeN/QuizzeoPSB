@@ -5,19 +5,20 @@ include 'header.php';
 <!DOCTYPE html>
 <!-- page joueur -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joueurs</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="creaquestion.js" type="text/javaScript"></script>
-    <script></script>
-    <script></script>
-    <script></script>
-</head>
-<body>
-<div class="jouer">
-      <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
-      <div id="play"></div>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joueurs</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <script src="creaquestion.js" type="text/javaScript"></script>
+        <script></script>
+        <script></script>
+        <script></script>
+    </head>
+    <body>
+    <div class="jouer">
+        <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
+        <div id="play"></div>
+        </div>
+    </body>
+</html>    
