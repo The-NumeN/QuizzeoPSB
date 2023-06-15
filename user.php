@@ -2,6 +2,7 @@
 <?php
 include 'header.php';
 ?>
+
 <!DOCTYPE html>
 <!-- page joueur -->
 <html lang="en">
@@ -16,6 +17,8 @@ include 'header.php';
         <script></script>
     </head>
     <body>
+    <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</h1><br>
+    <h2>Cliquez sur le bouton pour jouer</h2>
         <div class="jouer">
             <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
             <div id="play"></div>

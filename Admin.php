@@ -70,7 +70,7 @@
             <input type="hidden" name="logout" value="true">
             <button type="submit">Déconnexion</button>
         </form>
-        <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</h1><hr>
+        <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</h1><br>
     
         <h3>Liste des utilisateurs</h3><br><br>
     <!-- création d'un tableau avec les données utilisateurs -->
