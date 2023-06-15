@@ -61,7 +61,7 @@
 <html>
     <head>
         <title>Administrateur</title>
-        
+        <link rel="stylesheet" href="connect2.css">
     </head>
     <body>
     <!-- + script de création/modification quizz & questions -->
