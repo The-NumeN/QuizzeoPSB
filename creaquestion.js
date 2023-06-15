@@ -3,7 +3,7 @@ function addquizz() {
 
     var addquest = document.getElementById('crea').innerHTML;
     // au onclick on appelle une autre fonction qui ajoute des questions dans le quizz
-    addquest = addquest + '<br>br><input type="button"  onclick= "modquestion()" value = "ajouter une question"/>';
+    addquest = addquest + '<br><br><input type="button"  onclick= "modquestion()" value = "ajouter une question"/>';
     document.getElementById('crea').innerHTML = addquest;
 
 }

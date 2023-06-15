@@ -64,5 +64,23 @@ table {
     text-align: center;
     border: 1px solid black;
     width: 50%;
+}
 
+.jouer input {
+    text-align: center;
+    margin: 5px;
+    width: 5%;
+    transition: 300ms;
+    background-color: rgb(60, 154, 60);
+    color: white;
+    border-radius: 80px;
+}
+
+.créer input {
+    text-align: center;
+    margin: 5px;
+    transition: 300ms;
+    background-color: rgb(60, 154, 60);
+    color: white;
+    border-radius: 80px;
 }
