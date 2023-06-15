@@ -91,7 +91,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     </table>
 
     <h3>Liste des quizz</h3>
-    <a href="quizz_list.php">Voir la liste des quizz</a>
+    <a href="quizz_list.php">Voir la liste des quizz</a><br><br>
     <div class="jouer">
       <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
       <div id="play"></div>
