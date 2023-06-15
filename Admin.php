@@ -63,7 +63,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <title>Administrateur</title>
 </head>
 <body>
-<script src="creaquestion.js" type="text/javaScript">
+
     <form action="admin.php" method="post">
         <input type="hidden" name="logout" value="true">
         <button type="submit">Déconnexion</button>
@@ -92,6 +92,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     </table>
 
     <h3>Liste des quizz</h3>
+    <script src="creaquestion.js" type="text/javaScript">
     <a href="quizz_list.php">Voir la liste des quizz</a><br><br>
     <div class="jouer">
       <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
