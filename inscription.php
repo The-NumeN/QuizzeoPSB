@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="connect2.css">
 </head>
 <body>
-    <form action="" method="post"> 
+    <form id="formu" action="" method="post"> 
         <h1>Inscription</h1><br>
         <label for="Utilisateur">Pseudo</label><br>
         <input type="text" name="ps" placeholder="Entrer un Pseudo" required><br><br>

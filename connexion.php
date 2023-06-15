@@ -48,7 +48,7 @@ if(isset($_POST["button"])){
     <title>Connexion</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form id="formu"action="" method="post">
         <h1>Connexion</h1>
         <label>Identifiant</label><br>
         <input type="text" name="pseudo" required  ><br>
