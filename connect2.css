@@ -62,4 +62,7 @@ table {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: auto;
     text-align: center;
+    border: 1px solid black;
+    width: 50%;
+
 }
