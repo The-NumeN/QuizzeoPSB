@@ -92,17 +92,14 @@ while ($row = mysqli_fetch_assoc($result)) {
 
     <h3>Liste des quizz</h3>
     <a href="quizz_list.php">Voir la liste des quizz</a>
-    <h3>Créer un quizz</h3>
+    <div class="jouer">
+      <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
+      <div id="play"></div>
+    </div>
     <div class="créer">
-        <input type="button" onclick="addquizz()" value="Créer"/><br></br>
-        <form>  
-            <div id="crea"></div><br>
-            <button type="submit">valider la question</button>
-        </form> 
-    <h3>Ajouter un quizz</h3>
-    <a href="ajout_quizz.php">Ajouter un quizz</a>
-    <h3>Quizz créés par le quizzeur</h3>
-    <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
+        <input type="button" onclick="addquizz()" value="Créer un quizz"/><br></br>
+    <div id="crea"></div>
+    <div id="crea1"></div> 
 </body>
 <?php ?>
 </html>

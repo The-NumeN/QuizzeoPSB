@@ -14,8 +14,6 @@ include 'header.php';
     <script></script>
 </head>
 <body>
-<script>
-</script>
     <div class="jouer">
       <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
       <div id="play"></div>
@@ -24,6 +22,5 @@ include 'header.php';
         <input type="button" onclick="addquizz()" value="Créer un quizz"/><br></br>
     <div id="crea"></div>
     <div id="crea1"></div> 
-
 </body>
 </html>
