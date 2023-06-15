@@ -92,7 +92,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     </table>
 
     <h3>Liste des quizz</h3>
-    <script src="creaquestion.js" type="text/javaScript">
     <a href="quizz_list.php">Voir la liste des quizz</a><br><br>
     <div class="jouer">
       <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
@@ -102,6 +101,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <input type="button" onclick="addquizz()" value="Créer un quizz"/><br></br>
     <div id="crea"></div>
     <div id="crea1"></div> 
+    <script src="creaquestion.js" type="text/javaScript">
 </body>
 <?php ?>
 </html>
