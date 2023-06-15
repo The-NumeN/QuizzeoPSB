@@ -6,6 +6,7 @@ function addquizz() {
     document.getElementById('crea').innerHTML = addquest;
 
 }
+
 function modquestion() {
     var question = document.getElementById('crea1').innerHTML;
     question = question + '<br><br><input type=\"text\"/>';

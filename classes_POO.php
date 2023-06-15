@@ -26,6 +26,10 @@
             }
         
         }
+        public function set_question(){
+        
+        }
+
     }
 
     class Question{
