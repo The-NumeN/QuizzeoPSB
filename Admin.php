@@ -74,25 +74,29 @@
     
         <h3>Liste des utilisateurs</h3>
     <!-- création d'un tableau avec les données utilisateurs -->
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Nom d'utilisateur</th>
-                <th>Rôle</th>
-                <th>Actions</th>
-            </tr>
-            <?php foreach ($users as $user) : ?>
-            <tr>
-                <td><?php echo $user['id_test']; ?></td>
-                <td><?php echo $user['pseudo']; ?></td>
-                <td><?php echo $user['role']; ?></td>
-                <td>
-                    <a href="edit_user.php?id=<?php echo $user['id_test']; ?>">Modifier</a>
-                    <a href="?action=deleteUser&id=<?php echo $user['id_test']; ?>">Supprimer</a>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
+        
+        <div class ="tableau">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom d'utilisateur</th>
+                    <th>Rôle</th>
+                    <th>Actions</th>
+                </tr>
+                <?php foreach ($users as $user) : ?>
+                <tr>
+                    <td><?php echo $user['id_test']; ?></td>
+                    <td><?php echo $user['pseudo']; ?></td>
+                    <td><?php echo $user['role']; ?></td>
+                    <td>
+                        <a href="edit_user.php?id=<?php echo $user['id_test']; ?>">Modifier</a>
+                        <a href="?action=deleteUser&id=<?php echo $user['id_test']; ?>">Supprimer</a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            
+            </table>
+        </div>
 <!-- Liste des quizz & création  de quizz-->
         <h3>Liste des quizz</h3>
         <a href="quizz_list.php">Voir la liste des quizz</a><br><br>

@@ -57,3 +57,9 @@ button:hover {
     font-size: 20px;
     color: black;
 }
+
+.tableau {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: auto;
+    text-align: center;
+}
