@@ -61,8 +61,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 <html>
 <head>
     <title>Administrateur</title>
+
 </head>
 <body>
+<script src="creaquestion.js" type="text/javaScript"></script>
 
     <form action="admin.php" method="post">
         <input type="hidden" name="logout" value="true">
@@ -97,11 +99,14 @@ while ($row = mysqli_fetch_assoc($result)) {
       <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
       <div id="play"></div>
     </div>
+
     <div class="créer">
+    
         <input type="button" onclick="addquizz()" value="Créer un quizz"/><br></br>
     <div id="crea"></div>
     <div id="crea1"></div> 
-    <script src="creaquestion.js" type="text/javaScript">
+
+    
 </body>
 <?php ?>
 </html>
