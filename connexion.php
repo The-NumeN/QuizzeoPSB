@@ -44,13 +44,12 @@ if(isset($_POST["button"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="conect2.css">
+    <link rel="stylesheet" href="connect2.css">
     <title>Connexion</title>
 </head>
 <body>
-    <div>
     <form action="" method="post">
-        <h1>Connexion</h1><hr>
+        <h1>Connexion</h1>
         <label>Identifiant</label><br>
         <input type="text" name="pseudo" required  ><br>
         <label>Mot de passe</label><br>
@@ -58,7 +57,6 @@ if(isset($_POST["button"])){
         <button type="submit" name="button">Se connecter</button>
         <a href="inscription.php">Créer un compte</a>
     </form>
-    </div>
 </body>
 </html>
 
