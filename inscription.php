@@ -33,11 +33,8 @@
 <body>
     <form action="" method="post"> 
         <h1>Inscription</h1><br>
-        <label for="Utilisateur">Pseudo</label><br>
         <input type="text" name="ps" placeholder="Entrer un Pseudo" required><br><br>
-        <label for="mail">Adresse mail:</label><br>
         <input type="email" name="txt" placeholder="Votre email" required><br><br>
-        <label for="mot de passe">Mot de passe:</label><br>
         <input type="password" name="pwd" placeholder="Votre mot de passe" required><br><br>
         <button type="submit" name="submit" >Inscription</button>
     </form>
