@@ -16,6 +16,23 @@ function BDDconnect() {
     }
     return $conn;
 }
+
+// Vérifier si l'utilisateur est connecté en tant qu'admin, sinon rediriger vers la page de connexion
+if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "admin") {
+    header("location: Connexion.php");
+    exit();
+}
+
+if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
+    // Détruire la session
+    session_destroy();
+
+    // Rediriger vers la page de connexion
+    header("location: Connexion.php");
+    exit();
+}
+
+
 // Traitement des actions de suppression des utilisateurs
 if (isset($_GET['action']) && $_GET['action'] === 'deleteUser' && isset($_GET['id'])) {
     $userId = $_GET['id'];
@@ -46,8 +63,12 @@ while ($row = mysqli_fetch_assoc($result)) {
     <title>Administrateur</title>
 </head>
 <body>
-    <script src="creaquestion.js"></script>
-    <a href="Connexion.php">Deconnexion</a>
+    <form action="admin.php" method="post">
+        <input type="hidden" name="logout" value="true">
+        <button type="submit">Déconnexion</button>
+    </form>
+    <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span> , Bienvenue !</h1><hr>
+    
     <h3>Liste des utilisateurs</h3>
     <table>
         <tr>
@@ -71,13 +92,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 
     <h3>Liste des quizz</h3>
     <a href="quizz_list.php">Voir la liste des quizz</a>
-    <h3>Créer un quizz</h3>
-    <div class="créer">
-        <input type="button" onclick="addquestion()" value="Créer"/><br></br>
-        <form>  
-            <div id="crea"></div><br>
-            <button type="submit">valider la question</button>
-        </form> 
+
+    <h3>Ajouter un quizz</h3>
+    <a href="ajout_quizz.php">Ajouter un quizz</a>
+
     <h3>Quizz créés par le quizzeur</h3>
     <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
 </body>
