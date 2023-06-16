@@ -50,7 +50,7 @@
         <form id="formu"action="" method="post">
             <h1>Connexion</h1>
             <input type="text" name="pseudo" placeholder="entrez votre pseudo" required  ><br><br>
-            <input type="password" name="password" placeholder="entrez votre MDP" required ><br>
+            <input type="password" name="password" placeholder="entrez votre MDP" required ><br><br>
             <button type="submit" name="button">Se connecter</button>
             <a href="inscription.php">Créer un compte</a>
         </form>
