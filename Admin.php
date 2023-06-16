@@ -27,19 +27,6 @@ if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "admin") {
 // Établir la connexion à la base de données
 $conn = BDDconnect();
 
-// Traitement des actions de suppression des utilisateurs
-if (isset($_GET['action']) && $_GET['action'] === 'deleteUser' && isset($_GET['id'])) {
-    $userId = $_GET['id'];
-    $query = "DELETE FROM Users WHERE id_test = $userId";
-    $result = mysqli_query($conn, $query);
-
-    if ($result) {
-        $message = "Utilisateur supprimé avec succès.";
-    } else {
-        $errorMessage = "Une erreur s'est produite lors de la suppression de l'utilisateur.";
-    }
-}
-
 // Récupérer la liste des utilisateurs
 $query = "SELECT * FROM Users";
 $result = mysqli_query($conn, $query);
