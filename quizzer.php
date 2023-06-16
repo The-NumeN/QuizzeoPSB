@@ -1,29 +1,36 @@
 <?php
-include 'header.php';
+session_start();
+
+if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
+    // Détruire la session
+    session_destroy();
+
+    // Rediriger vers la page de connexion
+    header("location: Connexion.php");
+    exit();
+}
 ?>
+
 <!DOCTYPE html>
-<!-- page quizzeur -->
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Quizzer</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="connect2.css">
-        <script src="creaquestion.js" type="text/javaScript"></script>
-    </head>
-    <body>
-    <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</h1><br>
-    <!-- bouton avec appel de fonction pour jouer aux quizz et en créer -->
-        <div class="jouer">
-        <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
-        <div id="play"></div>
-        </div>
-        <div class="créer">
-        <input type="button" onclick="addquizz()" value="Créer un quizz"/><br></br>
-        </div>
-        <div id="crea"></div>
-        <div id="crea1"></div> 
-        
-    </body>
+<html>
+<head>
+    <title>Quizzer</title>
+</head>
+<body>
+    <form action="admin.php" method="post">
+        <input type="hidden" name="logout" value="true">
+        <button type="submit">Déconnexion</button>
+    </form>
+    <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span> , Bienvenue !</h1><hr>
+
+    <h3>Liste des quizz</h3>
+    <a href="quizz_list.php">Voir la liste des quizz</a>
+
+    <h3>Ajouter un quizz</h3>
+    <a href="ajout_quizz.php">Ajouter un quizz</a>
+
+    <h3>Quizz créés par le quizzeur</h3>
+    <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
+</body>
+<?php ?>
 </html>
