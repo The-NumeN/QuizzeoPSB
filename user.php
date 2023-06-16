@@ -1,8 +1,18 @@
-
 <?php
-include 'header.php';
+    include 'header.php';
 ?>
+<?php
+session_start();
 
+if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
+    // Détruire la session
+    session_destroy();
+
+    // Rediriger vers la page de connexion
+    header("location: Connexion.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <!-- page joueur -->
 <html lang="en">
