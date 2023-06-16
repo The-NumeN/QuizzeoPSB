@@ -41,6 +41,7 @@ if(isset($_POST["button"])){
 
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,3 +61,22 @@ if(isset($_POST["button"])){
     </div>
 </body>
 </html>
+=======
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="connect2.css">
+        <title>Connexion</title>
+    </head>
+    <body>
+        <form id="formu"action="" method="post">
+            <h1>Connexion</h1>
+            <input type="text" name="pseudo" placeholder="entrez votre pseudo" required  ><br><br>
+            <input type="password" name="password" placeholder="entrez votre MDP" required ><br><br>
+            <button type="submit" name="button">Se connecter</button>
+            <a href="inscription.php">Créer un compte</a>
+        </form>
+    </body>
+</html>
+
+>>>>>>> e2d243566fba142a4383ddf8835d79048d6b2617
