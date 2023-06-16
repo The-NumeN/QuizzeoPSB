@@ -10,7 +10,6 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +26,7 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     <a href="quizz_list.php">Voir la liste des quizz</a>
 
     <h3>Ajouter un quizz</h3>
-    <a href="ajout_quizz.php">Ajouter un quizz</a>
+    <a href="ajout_quiz.php">Ajouter un quizz</a>
 
     <h3>Quizz créés par le quizzeur</h3>
     <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
