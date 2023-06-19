@@ -76,10 +76,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <option value="2">Moyen</option>
             <option value="3">Difficile</option>
         </select><br><br>
-        <input type="button" value="Ajouter une question" onclick="addquizz()">
+        <input type="button" value="Ajouter une question" onclick="addquest()">
         <div id=crea></div>
+        <input type="button" value="Supprimer une question" onclick="suppquest()">
+        <div id=crea1></div>
         <input type="submit" value="Valider">
     </form>
-    <script src="Merde.js"></script>
+    <script src="merde.js"></script>
 </body>
 </html>
