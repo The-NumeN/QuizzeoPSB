@@ -17,7 +17,6 @@ function BDDconnect() {
     }
     return $conn;
 }
-
 // Vérifier si l'utilisateur est connecté en tant qu'admin, sinon rediriger vers la page de connexion
 if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "admin") {
     header("location: Connexion.php");
@@ -35,15 +34,6 @@ $users = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $users[] = $row;
 }
-
-if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
-    // Détruire la session
-    session_destroy();
-
-    // Rediriger vers la page de connexion
-    header("location: Connexion.php");
-    exit();
-}
 ?>
 
 <!DOCTYPE html>
@@ -53,10 +43,6 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     <link rel="stylesheet" href="connect2.css">
 </head>
 <body>
-    <form action="admin.php" method="post">
-        <input type="hidden" name="logout" value="true">
-        <button type="submit">Déconnexion</button>
-    </form>
         <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</h1><br>
     
         <h3>Liste des utilisateurs</h3><br><br>

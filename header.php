@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <!-- Barre de navigation du site -->
+
+<?php 
+  if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
+    // Détruire la session
+    session_destroy();
+
+    // Rediriger vers la page de connexion
+    header("location: Connexion.php");
+    exit();
+}
+?>
 <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -24,6 +35,14 @@
             <li class="nav-item">
               <a class="nav-link" href="connexion.php">Connexion</a>
             </li>
+            <div class="deco">
+              <li class="nav-item">
+                <form action="" method="post">
+                  <input type="hidden" name="logout" value="true">
+                  <button type="submit">Déconnexion</button>
+                </form>
+              </li>
+            </div>
           </ul>
         </div>
       </div>
