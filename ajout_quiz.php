@@ -82,6 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div id=crea1></div>
         <input type="submit" value="Valider">
     </form>
-    <script src="merde.js"></script>
+    <script src="Scripts.js"></script>
 </body>
 </html>
