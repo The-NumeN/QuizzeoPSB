@@ -31,17 +31,17 @@
           <!-- ajout des liens de redirection -->
           <div class="inscri">
             <li class="nav-item">
-              <a class="nav-link" href="inscription.php">Inscription</a>
+              <a id="inscri"class="nav-link" href="inscription.php">Inscription</a>
             </li>
           </div>
           <div class="conn">
             <li class="nav-item">
-              <a class="nav-link" href="connexion.php">Connexion</a>
+              <a id="conn" class="nav-link" href="connexion.php">Connexion</a>
             </li>
           </div>
             <div class="deco">
               <li class="nav-item">
-                <form action="" method="post">
+                <form  id="deco"action="" method="post">
                   <input type="hidden" name="logout" value="true">
                   <button type="submit">Déconnexion</button>
                 </form>
