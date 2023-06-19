@@ -7,16 +7,3 @@ function addquizz() {
         document.getElementById('crea').innerHTML = addquest;
     }
 }
-
-// function modquestion() {
-//     // ajout des questions
-//     var question = document.getElementById('crea1').innerHTML;
-//     question = question + '<br><br><input type=\"text\"/>';
-//     document.getElementById('crea1').innerHTML = question;
-// }
-// function delquestion() {
-// }
-// function selectquizz() {
-//     // var Select = document.getElementById('play').innerHTML;
-//     // Select=
-// }
