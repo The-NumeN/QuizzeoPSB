@@ -1,22 +1,18 @@
-<<<<<<< HEAD
+var ident=1; 
 function addquest() {
-    // Cette fonction permet de créer un bouton qui ouvre un formulaire de création de quizz    
+    // Cette fonction permet de créer un bouton qui ouvre un formulaire de création de quizz
+    const ajou=document.querySelectorAll('.gta');   
+    for(var ide=1;ide<=ajou.lenght;ide++){
+        ident=ide;
+    }
+    ident++
     var addquest = document.getElementById('crea').innerHTML;
     // au onclick on appelle une autre fonction qui ajoute des questions dans le quizz
-    addquest = addquest   +'<br></br><form><input type="text" id="id_question" placeholder="Intitulé"><br><input type="text" id="bonne_reponse" placeholder="Bonne réponse"><br><input type="text" id="reponse" placeholder="Mauvaise réponse"><br><input type="text" id="reponse" placeholder="Mauvaise réponse"><br></form> ';
+    addquest = addquest   +'<br></br><div=gta><form><input type="text" id="id_question'+ident+'" placeholder="Intitulé"><br><input type="text" id="bonne_reponse'+ident+'" placeholder="Bonne réponse"><br><input type="text" id="reponse1-'+ident+'" placeholder="Mauvaise réponse "><br><input type="text" id="reponse2-'+ident+'" placeholder="Mauvaise réponse"><br></form></div> ';
     document.getElementById('crea').innerHTML = addquest;
 }
 function suppquest(){
-    var suppquest=document.getElementById('crea1').innerHTML;
-    suppquest=delete addquest;
-=======
-function addquizz() {
-    // Cette fonction permet de créer un bouton qui ouvre un formulaire de création de quizz
-    for (i = 1; i <= 3; i++) {
-        var addquest = document.getElementById('crea').innerHTML;
-        // au onclick on appelle une autre fonction qui ajoute des questions dans le quizz
-        addquest = addquest + "Question" + i + '<br><form><input type="text" id="id_question" placeholder="Intitulé"><br><input type="text" id="bonne_reponse" placeholder="Bonne réponse"><br><input type="text" id="reponse" placeholder="Mauvaise réponse"><br><input type="text" id="reponse" placeholder="Mauvaise réponse"><br><br></form>';
-        document.getElementById('crea').innerHTML = addquest;
-    }
->>>>>>> 7ef863719c8fdaad330863479500441a875848e9
+    var suppquest= document.getElementById('crea1').innerHTML;
+    var supp=document.getElementsByTagName('form');
+    suppquest= delete(supp);
 }
