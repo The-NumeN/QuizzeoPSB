@@ -19,6 +19,8 @@ function suppquest() {
         }
     }
 }
+
+// Fonctions pour cacher les boutons de la barnav
 function hide_deco() {
     var cache = document.getElementById("deco");
     cache.classList.add("deco");
