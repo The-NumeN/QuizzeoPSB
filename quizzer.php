@@ -17,6 +17,7 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
 <html>
 <head>
     <title>Quizzer</title>
+    <link rel="stylesheet" href="connect2.css">
 </head>
 <body>
     <form action="admin.php" method="post">
