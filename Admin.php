@@ -82,13 +82,13 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
                 </tr>
                 <?php endforeach; ?>
             </table>
-        </div>
+        </div><br><br>
 <!-- Liste des quizz & création  de quizz-->
 <h3>Liste des quizz</h3>
-    <a href="list_quiz.php">Voir la liste des quizz</a>
+    <a href="list_quiz.php">Voir la liste des quizz</a><br><br>
 
     <h3>Ajouter un quizz</h3>
-    <a href="ajout_quiz.php">Ajouter un quizz</a>
+    <a href="ajout_quiz.php">Ajouter un quizz</a><br> <br>
 
     <h3>Quizz créés par le quizzeur</h3>
     <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
