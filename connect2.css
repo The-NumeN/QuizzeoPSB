@@ -84,3 +84,15 @@ table {
     color: white;
     border-radius: 80px;
 }
+
+.inscri button {
+    display: none;
+}
+
+.deco button{
+    display: none;
+}
+
+.conn button{
+    display: none;
+}

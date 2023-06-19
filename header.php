@@ -31,12 +31,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto ">
           <!-- ajout des liens de redirection -->
+          <div class="inscri">
             <li class="nav-item">
               <a class="nav-link" href="inscription.php">Inscription</a>
             </li>
+          </div>
+          <div class="conn">
             <li class="nav-item">
               <a class="nav-link" href="connexion.php">Connexion</a>
             </li>
+          </div>
             <div class="deco">
               <li class="nav-item">
                 <form action="" method="post">
