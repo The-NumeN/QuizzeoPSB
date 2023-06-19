@@ -68,8 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
     <form method="post" action="">
-        <label for="titre">Titre du quiz:</label>
-        <input type="text" name="titre" id="titre" required><br><br>
+        <input type="text" name="titre" id="titre" placeholder="Titre du quizz" required><br><br>
 
         <label for="difficulte">Difficulté:</label>
         <select name="difficulte" id="difficulte" required>
