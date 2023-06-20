@@ -31,12 +31,21 @@
         <link rel="stylesheet" href="connect2.css">
     </head>
     <body>
-        <form action="" method="post"> 
-            <h1>Inscription</h1><br>
-            <input type="text" name="ps" placeholder="Entrer un Pseudo" required><br><br>
-            <input type="email" name="txt" placeholder="Votre email" required><br><br>
-            <input type="password" name="pwd" placeholder="Votre mot de passe" required><br><br>
-            <button type="submit" name="submit" >Inscription</button>
-        </form>
+        <div class ="container">
+            <div class="card bg-light">
+                <form action="" method="post">
+                    <div class="card-header">
+                        <h1>Inscription</h1>
+                    </div> 
+                    <br>
+                    <div class="card-body">
+                        <input type="text" name="ps" placeholder="Entrer un Pseudo" required><br><br>
+                        <input type="email" name="txt" placeholder="Votre email" required><br><br>
+                        <input type="password" name="pwd" placeholder="Votre mot de passe" required><br><br>
+                        <button type="submit" name="submit" >Inscription</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
