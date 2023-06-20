@@ -63,13 +63,16 @@ if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "utilisateur") {
         </div>
         <div class="card-body">
           <div class="card bg-light">
-          </div>
-          <!-- METTRE LES QUIZZ ICI -->
-          <p>Afficher les Quizz ici</p>
-          <div class="jouer">
+            <div class="card-body">
+            <h3>Afficher les Quizz ici</h3>
+              <!-- METTRE LES QUIZZ ICI -->
+              <div class="jouer">
             <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
             <div id="play"></div>
           </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
