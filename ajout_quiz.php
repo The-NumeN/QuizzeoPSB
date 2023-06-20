@@ -109,10 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <form method="post" action="">
                     <div class="card-header">
                         <h3>Crées ton Quizz</h3><br>
-                        
                     </div>
                     <div class="card-body">
-                    <input type="text" name="titre" id="titre" placeholder="Titre du quizz" required><br><br>
+                        <input type="text" name="titre" id="titre" placeholder="Titre du quizz" required><br><br>
                         <label for="difficulte">Difficulté:</label>
                         <select name="difficulte" id="difficulte" required>
                             <option value="1">Facile</option>
