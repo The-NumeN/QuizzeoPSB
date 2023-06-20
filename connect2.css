@@ -35,7 +35,7 @@ button {
 }
 
 button:hover {
-    background-color: red;
+    background-color: whitesmoke;
     color: black;
     transition: 300ms;
 }
@@ -84,6 +84,7 @@ table {
     color: white;
     border-radius: 80px;
 }
-.bonjour{
-    color: aliceblue;
+
+.bonjour {
+    color: white;
 }
