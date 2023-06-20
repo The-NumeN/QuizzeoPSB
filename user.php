@@ -12,6 +12,11 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     header("location: Connexion.php");
     exit();
 }
+// Vérifier si l'utilisateur est connecté en tant que user, sinon rediriger vers la page de connexion
+if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "utilisateur") {
+    header("location: Connexion.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <!-- page joueur -->
@@ -25,6 +30,10 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
         <script src="creaquestion.js" type="text/javaScript"></script>
     </head>
     <body>
+        <form action="" method="post">
+            <input type="hidden" name="logout" value="true">
+            <button type="submit">Déconnexion</button>
+        </form>
     <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</h1><br>
     <h2>Cliquez sur le bouton pour jouer</h2>
         <div class="jouer">

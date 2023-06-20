@@ -15,17 +15,3 @@ function suppquest(){
     const element= document.getElementById("gta");
     element.remove();
 }
-
-// // Fonctions pour cacher les boutons de la barnav
-// function hide_deco() {
-//     var cache = document.getElementById("deco");
-//     cache.classList.add("deco");
-// }
-// function hide_conn() {
-//     var cache1 = document.getElementById("conn");
-//     cache1.classList.add("conn");
-// }
-// function hide_inscr() {
-//     var cache2 = document.getElementById("inscri");
-//     cache2.classList.add("inscri");
-// }
