@@ -8,13 +8,12 @@ function addquest() {
     ident++
     var addquest = document.getElementById('crea').innerHTML;
     // au onclick on appelle une autre fonction qui ajoute des questions dans le quizz
-    addquest = addquest   +'<br></br><div=gta><form><input type="text" id="id_question'+ident+'" placeholder="Intitulé"><br><input type="text" id="bonne_reponse'+ident+'" placeholder="Bonne réponse"><br><input type="text" id="reponse1-'+ident+'" placeholder="Mauvaise réponse "><br><input type="text" id="reponse2-'+ident+'" placeholder="Mauvaise réponse"><br></form></div> ';
+    addquest = addquest   +'<br></br><div id="gta"><form><input type="text" id="id_question'+ident+'"placeholder="Intitulé"><br><input type="text" id="bonne_reponse'+ident+'" placeholder="Bonne réponse"><br><input type="text" id="reponse1-'+ident+'" placeholder="Mauvaise réponse "><br><input type="text" id="reponse2-'+ident+'" placeholder="Mauvaise réponse"><br></form></div> ';
     document.getElementById('crea').innerHTML = addquest;
 }
 function suppquest(){
-    var suppquest= document.getElementById('crea1').innerHTML;
-    var supp=document.getElementsByTagName('form');
-    suppquest= delete(supp);
+    const element= document.getElementById("gta");
+    element.remove();
 }
 
 // Fonctions pour cacher les boutons de la barnav
