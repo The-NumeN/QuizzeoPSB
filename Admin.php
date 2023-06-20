@@ -89,39 +89,57 @@ while ($row = mysqli_fetch_assoc($result)) {
         <div class="container">
             <div class="card bg-light">
                 <div class="card-header">
-                    <h1>Liste des utilisateurs</h1>
+                    <h3>Liste des utilisateurs</h3>
                 </div>
         <!-- création d'un tableau avec les données utilisateurs -->
                 <div class="card-body">
                     <br>
-                        <div class ="tableau">
-                            <table>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nom d'utilisateur</th>
-                                    <th>Rôle</th>
-                                    <th>Actions</th>
-                                </tr>
-                                <?php foreach ($users as $user) : ?>
-                                <tr>
-                                    <td><?php echo $user['id_test']; ?></td>
-                                    <td><?php echo $user['pseudo']; ?></td>
-                                    <td><?php echo $user['role']; ?></td>
-                                    <td>
-                                        <a href="">Modifier</a>
-                                        <a href="">Supprimer</a>
-                                    </td>
+                    <div class ="tableau">
+                        <table>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom d'utilisateur</th>
+                                <th>Rôle</th>
+                                <th>Actions</th>
+                            </tr>
+                            <?php foreach ($users as $user) : ?>
+                            <tr>
+                                <td><?php echo $user['id_test']; ?></td>
+                                <td><?php echo $user['pseudo']; ?></td>
+                                <td><?php echo $user['role']; ?></td>
+                                <td>
+                                    <a href="">Modifier</a>
+                                    <a href="">Supprimer</a>
+                                </td>
                                 </tr>
                                 <?php endforeach; ?>
                             </table>
-                        </div><br><br>
+                        </div>
+                    </div>
     <!-- Liste des quizz & création  de quizz-->
-                        <h3>Liste des quizz</h3>
-                        <a href="list_quiz.php">Voir la liste des quizz</a><br><br>
-                        <h3>Ajouter un quizz</h3>   
-                        <a href="ajout_quiz.php">Ajouter un quizz</a><br> <br>
-                        <h3>Quizz créés par le quizzeur</h3>
-                        <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
+                    <div class="card bg-light">
+                        <div class="card-header">
+                            <h3>Liste des quizz</h3>
+                        </div>
+                        <div class="card-body">
+                            <a href="list_quiz.php">Voir la liste des quizz</a>
+                        </div>
+                    </div><br><br>
+                    <div class="card bg-light">
+                        <div class="card-header">
+                            <h3>Ajouter un quizz</h3>
+                        </div>   
+                        <div class="card-body">
+                            <a href="ajout_quiz.php">Ajouter un quizz</a>
+                        </div>              
+                    </div>
+                    <div class="card bg-light">
+                        <div class="card-header">
+                            <h3>Quizz créés par le quizzeur</h3>
+                        </div>
+                        <div class="card-body">
+                            <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
+                        </div>
                     </div>
                 </div>
             </div>
