@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ajout Quiz</title>
@@ -75,51 +75,59 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <link rel="stylesheet" href="connect2.css">
     </head>
     <body>
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <div class="container-fluid">
-      <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
-        <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
-        
-        <div class="navbar" id="navbarNav">
-          <ul class="navbar-nav  ">
-          <!-- ajout des liens de redirection -->
-          <div class="inscri">
-            <li class="nav-item">
-            <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
-            </li>
-          </div>
-          <div class="conn">
-            <li class="nav-item">
-            <form action="" method="post">
-            <input type="hidden" name="logout" value="true">
-            <button type="submit">Déconnexion</button>
-        </form>
-            </li>
-          </div>
-            <div class="deco">
-              <li class="nav-item">
-              </li>
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <div class="container-fluid">
+                <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
+                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
+                <div class="navbar" id="navbarNav">
+                    <ul class="navbar-nav  ">
+                    <!-- ajout des liens de redirection -->
+                        <div class="inscri">
+                            <li class="nav-item">
+                                <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
+                            </li>
+                        </div>
+                        <div class="conn">
+                            <li class="nav-item">
+                                <form action="" method="post">
+                                    <input type="hidden" name="logout" value="true">
+                                    <button type="submit">Déconnexion</button>
+                                </form>
+                            </li>
+                        </div>
+                        <div class="deco">
+                            <li class="nav-item">
+                            </li>
+                        </div>
+                    </ul>
+                </div>
             </div>
-          </ul>
+        </nav>
+    
+        <div class="container">
+            <div class="card bg-light">
+                <form method="post" action="">
+                    <div class="card-header">
+                        <h3>Crées ton Quizz</h3><br>
+                        
+                    </div>
+                    <div class="card-body">
+                    <input type="text" name="titre" id="titre" placeholder="Titre du quizz" required><br><br>
+                        <label for="difficulte">Difficulté:</label>
+                        <select name="difficulte" id="difficulte" required>
+                            <option value="1">Facile</option>
+                            <option value="2">Moyen</option>
+                            <option value="3">Difficile</option>
+                        </select><br><br>
+                        <input type="button" value="Ajouter une question" onclick="addquest()">
+                        <div id=crea></div><br><br>
+                        <input type="button" value="Supprimer une question" onclick="suppquest()">
+                        <div id=crea1></div><br><br>
+                        <input type="submit" value="Valider">
+                    </div>
+                </form>
+            </div>
+            <script src="Scripts.js"></script>
         </div>
-      </div>
-    </nav>
-        </div>
-    <form method="post" action="">
-        <input type="text" name="titre" id="titre" placeholder="Titre du quizz" required><br><br>
-
-        <label for="difficulte">Difficulté:</label>
-        <select name="difficulte" id="difficulte" required>
-            <option value="1">Facile</option>
-            <option value="2">Moyen</option>
-            <option value="3">Difficile</option>
-        </select><br><br>
-        <input type="button" value="Ajouter une question" onclick="addquest()">
-        <div id=crea></div>
-        <input type="button" value="Supprimer une question" onclick="suppquest()">
-        <div id=crea1></div>
-        <input type="submit" value="Valider">
-    </form>
-    <script src="Scripts.js"></script>
 </body>
 </html>
