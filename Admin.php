@@ -83,7 +83,8 @@ while ($row = mysqli_fetch_assoc($result)) {
         </div>
       </div>
     </nav>
-        <h3>Liste des utilisateurs</h3><br><br>
+    <br>
+        <h1>Liste des utilisateurs</h1><br><br>
     <!-- création d'un tableau avec les données utilisateurs -->
         
         <div class ="tableau">
