@@ -93,7 +93,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
         <!-- création d'un tableau avec les données utilisateurs -->
                 <div class="card-body">
-                    <br>
                     <div class ="tableau">
                         <table>
                             <tr>
@@ -113,9 +112,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 </td>
                                 </tr>
                                 <?php endforeach; ?>
-                            </table>
-                        </div>
-                    </div>
+                        </table>
+                    </div>                 
+                </div>
+            </div><br><br>
+                
     <!-- Liste des quizz & création  de quizz-->
                     <div class="card bg-light">
                         <div class="card-header">
@@ -124,7 +125,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <div class="card-body">
                             <a href="list_quiz.php">Voir la liste des quizz</a>
                         </div>
-                    </div><br><br>
+                    </div>
+                    <br><br>
                     <div class="card bg-light">
                         <div class="card-header">
                             <h3>Ajouter un quizz</h3>
@@ -133,6 +135,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <a href="ajout_quiz.php">Ajouter un quizz</a>
                         </div>              
                     </div>
+                    <br><br>
                     <div class="card bg-light">
                         <div class="card-header">
                             <h3>Quizz créés par le quizzeur</h3>
