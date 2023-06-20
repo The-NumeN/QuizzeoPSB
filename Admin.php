@@ -1,7 +1,4 @@
 <?php
-    include 'header.php';
-?>
-<?php
 session_start();
 
 // Fonction pour établir une connexion à la base de données
@@ -48,17 +45,44 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 <!DOCTYPE html>
 <html>
-<head>
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrateur</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="connect2.css">
 </head>
 <body>
-    <form action="" method="post">
-        <input type="hidden" name="logout" value="true">
-        <button type="submit">Déconnexion</button>
-    </form>
-        <h1>Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</h1><br>
-
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+      <div class="container-fluid">
+      <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
+        <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
+        
+        <div class="navbar" id="navbarNav">
+          <ul class="navbar-nav  ">
+          <!-- ajout des liens de redirection -->
+          <div class="inscri">
+            <li class="nav-item">
+            <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
+            </li>
+          </div>
+          <div class="conn">
+            <li class="nav-item">
+            <form action="" method="post">
+            <input type="hidden" name="logout" value="true">
+            <button type="submit">Déconnexion</button>
+        </form>
+            </li>
+          </div>
+            <div class="deco">
+              <li class="nav-item">
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
         <h3>Liste des utilisateurs</h3><br><br>
     <!-- création d'un tableau avec les données utilisateurs -->
         
