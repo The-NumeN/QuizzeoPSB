@@ -51,14 +51,20 @@ if(isset($_POST["button"])){
     <link rel="stylesheet" href="connect2.css">
 </head>
 <body>
-    <div>
-    <form action="" method="post">
-        <h1>Connexion</h1><hr>
-        <input type="text" name="pseudo" placeholder="Entrer votre Pseudo" required  ><br><br>
-        <input type="password" name="password" placeholder="Entrer votre Mot De Passe"required ><br><br>
-        <button type="submit" name="button">Se connecter</button>
-        <a href="inscription.php">Créer un compte</a>
-    </form>
+    <div class="container">
+        <div class="card bg-light">  
+            <form action="" method="post">
+                <div class="card-header">
+                    <h1>Connexion</h1>
+                </div>
+                <div class="card-body">
+                    <input type="text" name="pseudo" placeholder="Entrer votre Pseudo" required  ><br><br>
+                    <input type="password" name="password" placeholder="Entrer votre Mot De Passe"required ><br><br>
+                    <button type="submit" name="button">Se connecter</button>
+                    <a href="inscription.php">Créer un compte</a>
+                </div>
+        </form>
+        </div>
     </div>
 </body>
 </html>

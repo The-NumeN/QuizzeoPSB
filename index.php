@@ -13,13 +13,21 @@ include 'header.php';
         <link rel="stylesheet" href="connect2.css">
     
     <body>
-        <div class="titre">
-            <h1> Bienvenue sur Notre Quizz<h1> <br>
-        </div>
-        <div class="para">
-            <p>Sur ce site, vous pouvez tester vos connaissances en jouant à des quizz ou bien en les créant (après avoir réussi plusieurs quizz).</p><br><br>
-            <h2>Nous Connaitre</h2>
-            <p> Nous sommes une équipe de trois développeurs ayant crée ce site en "INSERER DUREE" pour "INSERER NOM CLIENT". <br> Dans l'équipe il y a Stive[DECRIS TOI]. <br><br> Il y a aussi Babacar[DECRIS TOI]. <br><br> Et Finalement, Paul, 25ans développeur web depuis 6mois.</p>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <div class="titre">
+                        <h1> Bienvenue sur Notre Quizz<h1>
+                    </div>
+                    <p>Sur ce site, vous pouvez tester vos connaissances en jouant à des quizz ou bien en les créant (après avoir réussi plusieurs quizz).</p>
+                </div>
+                <div class="card-body bg-light">
+                    <div class="para">                  
+                        <h2>Nous Connaitre</h2>
+                        <p> Nous sommes une équipe de trois développeurs ayant crée ce site en "INSERER DUREE" pour "INSERER NOM CLIENT". <br> Dans l'équipe il y a Stive[DECRIS TOI]. <br><br> Il y a aussi Babacar[DECRIS TOI]. <br><br> Et Finalement, Paul, 25ans développeur web depuis 6mois.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>

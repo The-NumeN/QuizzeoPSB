@@ -13,7 +13,13 @@ h1 {
 
 h2 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 50px;
+    font-size: 45px;
+    color: rgb(43, 128, 185);
+}
+
+h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
     color: rgb(43, 128, 185);
 }
 
@@ -35,7 +41,7 @@ button {
 }
 
 button:hover {
-    background-color: red;
+    background-color: whitesmoke;
     color: black;
     transition: 300ms;
 }
@@ -84,6 +90,13 @@ table {
     color: white;
     border-radius: 80px;
 }
-.bonjour{
-    color: aliceblue;
+
+.bonjour {
+    color: white;
+}
+
+.card-header p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    color: black;
 }
