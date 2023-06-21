@@ -56,7 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Vérifier si l'utilisateur est connecté
     if (isset($_SESSION["id_test"])) {
         $id_test = $_SESSION["id_test"];
-        $id_quizz = $_SESSION["id_quizz"];
         $titre = $_POST["titre"];
         $difficulte = $_POST["difficulte"];
         $date_creation = date("Y-m-d");
@@ -131,7 +130,7 @@ echo "<script src='Scripts.js'></script>";
                             <option value="2">Moyen</option>
                             <option value="3">Difficile</option>
                         </select><br><br>
-                        <div>
+                        <!-- <div>
     <form method="post">
     <label for="quest">Intitulé</label>
     <input type="text" name ="intitule">
@@ -140,11 +139,11 @@ echo "<script src='Scripts.js'></script>";
     <input type="text" id="" placeholder="Mauvaise réponse">
     <input type="text" id="" placeholder="Mauvaise réponse">
 </form>
-</div> 
-                        <!-- <input type="button" value="Ajouter une question" onclick="addquest()">
+</div>  -->
+                        <input type="button" value="Ajouter une question" onclick="addquest()">
                         <div id=crea></div><br><br>
                         <input type="button" value="Supprimer une question" onclick="suppquest()">
-                        <div id=crea1></div><br><br> -->
+                        <div id=crea1></div><br><br> 
                         <input type="submit" value="Valider">
                     </div>
                 </form>
