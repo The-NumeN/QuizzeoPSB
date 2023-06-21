@@ -39,6 +39,15 @@ class Quiz {
     
         return mysqli_query($this->connect, $insert) ? mysqli_insert_id($this->connect) : false;
     }
+    public function insert_quest($id_quizz,$intitule,$date_creation) {
+        $id_quizz = (int) $id_quizz;
+        $intitule = mysqli_real_escape_string($this->connect, $intitule);
+        $date_creation = mysqli_real_escape_string($this->connect, $date_creation);        
+    
+        $insert = "INSERT INTO questions (id_quizz, intitule, date_creation) VALUES ($id_quizz,'$intitule','$date_creation')";
+    
+        return mysqli_query($this->connect, $insert) ? mysqli_insert_id($this->connect) : false;
+    }
     
 }
 
@@ -47,12 +56,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Vérifier si l'utilisateur est connecté
     if (isset($_SESSION["id_test"])) {
         $id_test = $_SESSION["id_test"];
+        $id_quizz = $_SESSION["id_quizz"];
         $titre = $_POST["titre"];
         $difficulte = $_POST["difficulte"];
         $date_creation = date("Y-m-d");
-
+        // Rajout des questions
+        $intitule=$_POST["intitule"];
         $quiz = new Quiz();
         $quizId = $quiz->insert_quizz($id_test, $titre, $difficulte, $date_creation);
+        $questId=$quiz->insert_quest($id_quizz,$intitule,$date_creation);
 
         if ($quizId) {
             echo "Quiz inséré avec succès.";
@@ -63,6 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Utilisateur non connecté.";
     }
 }
+echo "<script src='Scripts.js'></script>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,15 +131,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <option value="2">Moyen</option>
                             <option value="3">Difficile</option>
                         </select><br><br>
-                        <input type="button" value="Ajouter une question" onclick="addquest()">
+                        <div>
+    <form method="post">
+    <label for="quest">Intitulé</label>
+    <input type="text" name ="intitule">
+    <label for="rep">Réponses</label>
+    <input type="text" name="bonne_reponse" placeholder="Bonne réponse">
+    <input type="text" id="" placeholder="Mauvaise réponse">
+    <input type="text" id="" placeholder="Mauvaise réponse">
+</form>
+</div> 
+                        <!-- <input type="button" value="Ajouter une question" onclick="addquest()">
                         <div id=crea></div><br><br>
                         <input type="button" value="Supprimer une question" onclick="suppquest()">
-                        <div id=crea1></div><br><br>
+                        <div id=crea1></div><br><br> -->
                         <input type="submit" value="Valider">
                     </div>
                 </form>
             </div>
-            <script src="Scripts.js"></script>
+            <!-- <script src="Scripts.js"></script> -->
         </div>
 </body>
 </html>
