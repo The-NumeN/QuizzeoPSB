@@ -134,9 +134,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <input type="button" value="Supprimer une question" onclick="suppquest()">
                         <div id=crea1></div><br>
                     </div>
+                    <button type="submit" name="submit" id="submit">Valider</button>
                 </form>      
             </div>
-</div>
-<script src="Scripts.js"></script>
-</body>
+        </div>
+        <script src="Scripts.js"></script>
+    </body>
 </html>
