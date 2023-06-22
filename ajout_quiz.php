@@ -74,7 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Utilisateur non connecté.";
     }
 }
-echo "<script src='Scripts.js'></script>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,7 +117,7 @@ echo "<script src='Scripts.js'></script>";
     
         <div class="container">
             <div class="card bg-light">
-                <form method="post" action="">
+                <form method="post" action="" name="monform">
                     <div class="card-header">
                         <h3>Crées ton Quizz</h3><br>
                     </div>
@@ -129,26 +128,15 @@ echo "<script src='Scripts.js'></script>";
                             <option value="1">Facile</option>
                             <option value="2">Moyen</option>
                             <option value="3">Difficile</option>
-                        </select><br><br>
-                        <!-- <div>
-    <form method="post">
-    <label for="quest">Intitulé</label>
-    <input type="text" name ="intitule">
-    <label for="rep">Réponses</label>
-    <input type="text" name="bonne_reponse" placeholder="Bonne réponse">
-    <input type="text" id="" placeholder="Mauvaise réponse">
-    <input type="text" id="" placeholder="Mauvaise réponse">
-</form>
-</div>  -->
-                        <input type="button" value="Ajouter une question" onclick="addquest()">
+                        </select><br><br> 
+                    <input type="button" value="Ajouter une question" onclick="addquest()">
                         <div id=crea></div><br><br>
                         <input type="button" value="Supprimer une question" onclick="suppquest()">
-                        <div id=crea1></div><br><br> 
-                        <input type="submit" value="Valider">
+                        <div id=crea1></div><br>
                     </div>
-                </form>
+                </form>      
             </div>
-            <!-- <script src="Scripts.js"></script> -->
-        </div>
+</div>
+<script src="Scripts.js"></script>
 </body>
 </html>

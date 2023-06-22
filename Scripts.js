@@ -8,7 +8,7 @@ function addquest() {
     ident++
     var addquest = document.getElementById('crea').innerHTML;
     // au onclick on appelle une autre fonction qui ajoute des questions dans le quizz
-    addquest = addquest   +'<div><br><form method="post"><input type="text" name="intitule'+ident+'" placeholder="Intitulé"><br><input type="text" name="bonne_reponse'+ident+'" placeholder="Bonne réponse"><br><input type="text" id="reponse1-'+ident+'" placeholder="Mauvaise réponse "><br><input type="text" id="reponse2-'+ident+'" placeholder="Mauvaise réponse"><br></form></div> ';
+    addquest = addquest   +'<div id="gta" ><br><form method="post"><input type="text" id="intitule'+ident+'" name="intitule" placeholder="Intitulé"><br><input type="text" name="bonne_reponse'+ident+'" placeholder="Bonne réponse"><br><input type="text" id="reponse1-'+ident+'" placeholder="Mauvaise réponse "><br><input type="text" id="reponse2-'+ident+'" placeholder="Mauvaise réponse"><br></form></div> ';
     document.getElementById('crea').innerHTML = addquest;
 }
 function suppquest() {
