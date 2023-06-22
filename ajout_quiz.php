@@ -62,11 +62,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $date_creation = date("Y-m-d");
         // Rajout des questions
         $intitule=$_POST["intitule"];
-        $quiz = new Quiz();
-        $quizId = $quiz->insert_quizz($id_test, $titre, $difficulte, $date_creation);
-        $questId=$quiz->insert_quest($id_quizz,$intitule,$date_creation);
+        $quizz = new Quiz();
+        $quizz_id = $quizz->insert_quizz($id_test, $titre, $difficulte, $date_creation);
+        $question_id=$quizz->insert_quest($id_quizz,$intitule,$date_creation);
 
-        if ($quizId) {
+        if ($quizz_id) {
             echo "Quiz inséré avec succès.";
         } else {
             echo "Erreur lors de l'insertion du quiz.";
