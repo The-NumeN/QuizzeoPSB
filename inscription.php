@@ -24,9 +24,9 @@ if (isset($_POST['submit'])) {
         $_SESSION["pseudo"] = $pseudo;
 
         if ($role == 'quizzer') {
-            header("location: quizzer.php");
+            header("location: connexion.php");
         } else {
-            header("location: user.php");
+            header("location: connexion.php");
         }
     }
 }
