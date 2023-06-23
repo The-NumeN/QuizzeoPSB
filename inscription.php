@@ -52,6 +52,7 @@ if (isset($_POST['submit'])) {
                         <input type="text" name="ps" placeholder="Entrer un Pseudo" required><br><br>
                         <input type="email" name="txt" placeholder="Votre email" required><br><br>
                         <input type="password" name="pwd" placeholder="Votre mot de passe" required><br><br>
+                        <input type="radio" name="user_type" value="quizzer" required> Quizzer<br>
                         <input type="radio" name="user_type" value="utilisateur" required> Utilisateur<br><br>
                         <button type="submit" name="submit">Inscription</button>
                     </div>
