@@ -71,17 +71,7 @@ if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "quizzer") {
                 <div class="card-body">
                     <a href="ajout_quiz.php">Ajouter un quizz</a>
                 </div>
-            </div>
-            <br><br>
-            <div class="card bg-light">
-                <div class="card-header">
-                    <h3>Quizz créés par le quizzeur</h3>
-                </div>
-                <div class="card-body">
-                    <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
-                </div>
-            </div>
-            
+            </div>            
         </div>
     </body>
 
