@@ -49,6 +49,17 @@ class Quiz {
     
         return mysqli_query($this->connect, $insert) ? mysqli_insert_id($this->connect) : false;
     }
+    public function insert_choice($id_question,$bonne_reponse,$reponse,$reponce,$reponze) {
+        $id_question = (int) $id_question;
+        $bonne_reponse = mysqli_real_escape_string($this->connect, $bonne_reponse);
+        $reponse = mysqli_real_escape_string($this->connect, $reponse); 
+        $reponce = mysqli_real_escape_string($this->connect, $reponce);  
+        $reponze = mysqli_real_escape_string($this->connect, $reponze);         
+    
+        $insert = "INSERT INTO choices (id_question,bonne_reponse,reponse,reponce,reponze) VALUES ($id_question,'$bonne_reponse','$reponse','$reponce','$reponze')";
+    
+        return mysqli_query($this->connect, $insert) ? mysqli_insert_id($this->connect) : false;
+    }
     
 }
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -77,6 +88,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         echo "Utilisateur non connecté.";
     }
+    if ($question_id) {
+        $ident = $_POST["ident"];
+        for ($i = 1; $i <= $ident; $i++) {
+            $bonne_reponse = $_POST["bonne_reponse$i"];
+            $reponse = $_POST["reponse1-$i"];
+            $reponce = $_POST["reponse2-$i"];
+            $reponze = $_POST["reponse3-$i"];
+            $choice_id = $quizz->insert_choice($question_id,$bonne_reponse,$reponse,$reponce,$reponze);
+            if (!$question_id) {
+                echo "Erreur lors de l'insertion de la question $i.";
+            }}}
 }
 ?>
 <!DOCTYPE html>
