@@ -47,10 +47,6 @@ if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "utilisateur") {
                   </form>
                 </li>
               </div>
-              <div class="deco">
-                <li class="nav-item">
-                </li>
-              </div>
             </ul>
           </div>
         </div>
