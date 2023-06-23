@@ -49,14 +49,9 @@ if (isset($_POST['submit'])) {
                         <h1>Inscription</h1>
                     </div> <br>
                     <div class="card-body">
-                        <label for="Utilisateur">Pseudo</label>
                         <input type="text" name="ps" placeholder="Entrer un Pseudo" required><br><br>
-                        <label for="mail">Adresse mail:</label>
                         <input type="email" name="txt" placeholder="Votre email" required><br><br>
-                        <label for="mot de passe">Mot de passe:</label>
                         <input type="password" name="pwd" placeholder="Votre mot de passe" required><br><br>
-                        <label for="user_type">Choisissez votre rôle:</label><br>
-                        <input type="radio" name="user_type" value="quizzer" required> Quizzer<br>
                         <input type="radio" name="user_type" value="utilisateur" required> Utilisateur<br><br>
                         <button type="submit" name="submit">Inscription</button>
                     </div>
