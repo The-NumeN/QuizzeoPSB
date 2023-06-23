@@ -22,6 +22,7 @@ if (isset($_POST['submit'])) {
         mysqli_query($connect_bdd, $insert_query);
 
         $_SESSION["pseudo"] = $pseudo;
+        $_SESSION["id_test"] = $id_test;
 
         if ($role == 'quizzer') {
             header("location: quizzer.php");
