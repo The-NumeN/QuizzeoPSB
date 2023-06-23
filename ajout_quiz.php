@@ -14,6 +14,7 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     header("location: Connexion.php");
     exit();
 }
+
 class Quiz {
     private $host = "127.0.0.1";
     private $username = "root";
@@ -50,22 +51,25 @@ class Quiz {
     }
     
 }
-
-// Vérifier si le formulaire est soumis
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Vérifier si l'utilisateur est connecté
     if (isset($_SESSION["id_test"])) {
         $id_test = $_SESSION["id_test"];
         $titre = $_POST["titre"];
         $difficulte = $_POST["difficulte"];
         $date_creation = date("Y-m-d");
-        // Rajout des questions
-        $intitule=$_POST["intitule"];
+        
         $quizz = new Quiz();
         $quizz_id = $quizz->insert_quizz($id_test, $titre, $difficulte, $date_creation);
-        $question_id=$quizz->insert_quest($id_quizz,$intitule,$date_creation);
 
         if ($quizz_id) {
+            $ident = $_POST["ident"];
+            for ($i = 1; $i <= $ident; $i++) {
+                $intitule = $_POST["intitule$i"];
+                $question_id = $quizz->insert_quest($quizz_id, $intitule, $date_creation);
+                if (!$question_id) {
+                    echo "Erreur lors de l'insertion de la question $i.";
+                }
+            }
             echo "Quiz inséré avec succès.";
         } else {
             echo "Erreur lors de l'insertion du quiz.";
