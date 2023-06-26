@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 20 juin 2023 à 13:06
+-- Généré le : lun. 26 juin 2023 à 12:42
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -30,27 +30,23 @@ use quizzeo;
 
 DROP TABLE IF EXISTS `choices`;
 CREATE TABLE IF NOT EXISTS `choices` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id_choice` int NOT NULL AUTO_INCREMENT,
   `id_question` int NOT NULL,
+  `bonne_reponse` varchar(100) NOT NULL,
   `reponse` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `bonne_reponse` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`),
+  `reponce` varchar(100) NOT NULL,
+  `reponze` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_choice`),
   KEY `id_question` (`id_question`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Structure de la table `linkquestquizz`
+-- Déchargement des données de la table `choices`
 --
 
-DROP TABLE IF EXISTS `linkquestquizz`;
-CREATE TABLE IF NOT EXISTS `linkquestquizz` (
-  `id_question` int NOT NULL,
-  `id_quizz` int NOT NULL,
-  KEY `id_question` (`id_question`),
-  KEY `id_quizz` (`id_quizz`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO `choices` (`id_choice`, `id_question`, `bonne_reponse`, `reponse`, `reponce`, `reponze`) VALUES
+(1, 9, 'B', 'C', 'D', 'E'),
+(2, 10, 'marche', 're', 'ess', 'aye');
 
 -- --------------------------------------------------------
 
@@ -61,12 +57,22 @@ CREATE TABLE IF NOT EXISTS `linkquestquizz` (
 DROP TABLE IF EXISTS `questions`;
 CREATE TABLE IF NOT EXISTS `questions` (
   `id_question` int NOT NULL AUTO_INCREMENT,
-  `id_quizz` int DEFAULT NULL,
+  `id_quizz` int NOT NULL,
   `intitule` varchar(255) DEFAULT NULL,
   `date_creation` date DEFAULT NULL,
   PRIMARY KEY (`id_question`),
   KEY `id_quizz` (`id_quizz`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `questions`
+--
+
+INSERT INTO `questions` (`id_question`, `id_quizz`, `intitule`, `date_creation`) VALUES
+(7, 17, 'STP', '2023-06-23'),
+(8, 18, 'A', '2023-06-23'),
+(9, 19, 'A', '2023-06-23'),
+(10, 20, 'sa', '2023-06-26');
 
 -- --------------------------------------------------------
 
@@ -83,19 +89,17 @@ CREATE TABLE IF NOT EXISTS `quizzes` (
   `date_creation` date NOT NULL,
   PRIMARY KEY (`id_quizz`),
   KEY `id_quizzer` (`id_test`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `quizzes`
 --
 
 INSERT INTO `quizzes` (`id_quizz`, `id_test`, `titre`, `difficulte`, `date_creation`) VALUES
-(1, 16, 'Développeur web', 2, '2023-06-16'),
-(3, 16, 'Développeur web', 2, '2023-06-19'),
-(4, 16, 'Développeur web', 2, '2023-06-19'),
-(5, 16, 'Développeur web', 2, '2023-06-19'),
-(9, 16, 'Développeur web', 2, '2023-06-19'),
-(10, 16, 'Développeur web', 2, '2023-06-19');
+(17, 20, 'tessttt', 2, '2023-06-23'),
+(18, 20, 'zxx', 1, '2023-06-23'),
+(19, 20, 'Développeur web', 1, '2023-06-23'),
+(20, 16, 'Stive ', 3, '2023-06-26');
 
 -- --------------------------------------------------------
 
@@ -109,9 +113,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `pseudo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `role` enum('user','quizzer','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `role` enum('utilisateur','quizzer','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id_test`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `users`
@@ -120,7 +124,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id_test`, `pseudo`, `email`, `password`, `role`) VALUES
 (14, 'paul', 'polo@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'admin'),
 (16, 'stive', 'sad@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'quizzer'),
-(18, 'polo', 'zc@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', 'user');
+(20, 'BMG', 'CC@GMAIL.COM', 'd5f12e53a182c062b6bf30c1445153faff12269a', 'quizzer'),
+(21, 'ABC', 'ABC@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', 'quizzer'),
+(22, 'aqz', 'csc@gmail.com', '4c1b52409cf6be3896cf163fa17b32e4da293f2e', 'quizzer'),
+(23, 'xsxx', 'xzx@gmail.com', 'c7d6801df723bd569e53aa0edb1a5917ae4078c8', 'quizzer'),
+(24, 'JEEE', 'JEEE@GMAIL.COM', '5f6955d227a320c7f1f6c7da2a6d96a851a8118f', 'utilisateur');
 
 -- --------------------------------------------------------
 
@@ -148,11 +156,10 @@ ALTER TABLE `choices`
   ADD CONSTRAINT `choices_ibfk_1` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id_question`);
 
 --
--- Contraintes pour la table `linkquestquizz`
+-- Contraintes pour la table `questions`
 --
-ALTER TABLE `linkquestquizz`
-  ADD CONSTRAINT `linkquestquizz_ibfk_1` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id_question`),
-  ADD CONSTRAINT `linkquestquizz_ibfk_2` FOREIGN KEY (`id_quizz`) REFERENCES `quizzes` (`id_quizz`);
+ALTER TABLE `questions`
+  ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`id_quizz`) REFERENCES `quizzes` (`id_quizz`);
 
 --
 -- Contraintes pour la table `quizzes`
