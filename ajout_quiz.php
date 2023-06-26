@@ -55,9 +55,7 @@ class Quiz {
         $reponse = mysqli_real_escape_string($this->connect, $reponse); 
         $reponce = mysqli_real_escape_string($this->connect, $reponce);  
         $reponze = mysqli_real_escape_string($this->connect, $reponze);         
-    
         $insert = "INSERT INTO choices (id_question,bonne_reponse,reponse,reponce,reponze) VALUES ($id_question,'$bonne_reponse','$reponse','$reponce','$reponze')";
-    
         return mysqli_query($this->connect, $insert) ? mysqli_insert_id($this->connect) : false;
     }
     

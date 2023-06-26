@@ -10,8 +10,10 @@ function addquest() {
  
   document.getElementById('crea').innerHTML = addquestHTML;
 }
-
 function suppquest() {
   var element = document.querySelector('.id_question:last-of-type');
   element.remove();
+}
+function selectquizz(){
+  
 }
