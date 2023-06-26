@@ -9,6 +9,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $question[] = $row;
   }
 ?>
+
 <h2>Liste des questions</h2>
     <table>
         <?php foreach ($question as $quest) : ?>
