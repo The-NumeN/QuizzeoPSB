@@ -6,12 +6,15 @@ if (!isset($_SESSION["id_test"]) && !isset($_SESSION["pseudo"])) {
     exit();
     
 }
+if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "admin") {
+    header("location: Connexion.php");
+    exit();
+}
 if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     session_destroy();
     header("location: Connexion.php");
     exit();
 }
-
 
 function BDDconnect() {
     $connect_bdd = mysqli_connect("127.0.0.1", "root", "", "quizzeo");

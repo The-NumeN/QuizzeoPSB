@@ -2,10 +2,7 @@
 session_start();
 
 if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
-    // Détruire la session
     session_destroy();
-
-    // Rediriger vers la page de connexion
     header("location: Connexion.php");
     exit();
 }
@@ -14,14 +11,29 @@ if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "utilisateur") {
     header("location: Connexion.php");
     exit();
 }
+function BDDconnect() {
+  $connect_bdd = mysqli_connect("127.0.0.1", "root", "", "quizzeo");
+  if (!$connect_bdd) {
+      die("Échec de la connexion à la base de données: " .mysqli_error($connect_bdd));
+  }
+  return $connect_bdd;
+}
+$connect = BDDconnect();
+
+$query = "SELECT * FROM Quizzes";
+$result = mysqli_query($connect, $query);
+$quizzes = [];
+
+while ($row = mysqli_fetch_assoc($result)) {
+  $quizzes[] = $row;
+}
 ?>
 <!DOCTYPE html>
-<!-- page joueur -->
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<html>
+<head>
+<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Joueurs</title>
+        <title>Modification des Quizzes</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="connect2.css">
@@ -47,6 +59,10 @@ if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "utilisateur") {
                   </form>
                 </li>
               </div>
+              <div class="deco">
+                <li class="nav-item">
+                </li>
+              </div>
             </ul>
           </div>
         </div>
@@ -63,7 +79,7 @@ if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "utilisateur") {
             <h3>Afficher les Quizz ici</h3>
               <!-- METTRE LES QUIZZ ICI -->
               <div class="jouer">
-            <input type="button" onclick="selectquizz()"value="Jouer"/><br><br>
+            <input type="button"onclick="selectquizz()"value="Jouer"/><br><br>
             <div id="play"></div>
           </div>
             </div>
