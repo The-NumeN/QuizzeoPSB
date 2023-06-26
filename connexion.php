@@ -38,7 +38,6 @@ if(isset($_POST["button"])){
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
