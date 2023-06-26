@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Vérifier si l'utilisateur est connecté en tant qu'admin, sinon rediriger vers la page de connexion
-if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "admin") {
+if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "admin") {
     header("location: Connexion.php");
     exit();
 }
@@ -117,7 +117,7 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
                             <h3>Liste des quizz</h3>
                         </div>
                         <div class="card-body">
-                            <a href="list_quiz.php">Voir la liste des quizz</a>
+                            <a href="admin_edit_quizz.php">Voir la liste des quizz</a>
                         </div>
                     </div>
                     <br><br>
@@ -132,12 +132,7 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
                     <br><br>
                     <div class="card bg-light">
                         <div class="card-header">
-                            <h3>Quizz créés par le quizzeur</h3>
-                        </div>
-                        <div class="card-body">
-                            <a href="user_quizzes.php">Voir les quizz créés par le quizzeur</a>
-                        </div>
-                    </div>
+                        <h3>Quizz créés par le quizzeur</h3>
                 </div>
             </div>
         </div>
