@@ -43,7 +43,7 @@ $resulte = mysqli_query($connect_bdd, $sql);
             if ($resulte->num_rows > 0) {
       // output data of each row
               while($row = $resulte->fetch_assoc()) { 
-                echo  $row["bonne_reponse"]."<br>". $row["reponse"]."<br>". $row["reponce"]."<br>".$row["reponze"];
+                echo  $row["bonne_reponse"]."<br>". $row["reponse"]."<br>". $row["reponce"]."<br>".$row["reponze"]."<br>";
               }
             } else {
                 echo "0 results";
