@@ -157,6 +157,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </form>      
             </div>
         </div>
-        <script src="add_quiz.js"></script>
+        <script src="Script.js"></script>
     </body>
 </html>
