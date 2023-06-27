@@ -69,7 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         $quizz = new Quiz();
         $quizz_id = $quizz->insert_quizz($id_test, $titre, $difficulte, $date_creation);
-
         if ($quizz_id) {
             $ident = $_POST["ident"];
             for ($i = 1; $i <= $ident; $i++) {
@@ -77,26 +76,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $question_id = $quizz->insert_quest($quizz_id, $intitule, $date_creation);
                 if (!$question_id) {
                     echo "Erreur lors de l'insertion de la question $i.";
+                } else {
+                    $bonne_reponse = $_POST["bonne_reponse$i"];
+                    $reponse = $_POST["reponse1-$i"];
+                    $reponce = $_POST["reponse2-$i"];
+                    $reponze = $_POST["reponse3-$i"];
+                    $choice_id = $quizz->insert_choice($question_id, $bonne_reponse, $reponse, $reponce, $reponze);
+                    if (!$choice_id) {
+                        echo "Erreur lors de l'insertion des choix pour la question $i.";
+                    }
                 }
             }
             echo "Quiz inséré avec succès.";
         } else {
             echo "Erreur lors de l'insertion du quiz.";
         }
-    } else {
-        echo "Utilisateur non connecté.";
-    }
-    if ($question_id) {
-        $ident = $_POST["ident"];
-        for ($i = 1; $i <= $ident; $i++) {
-            $bonne_reponse = $_POST["bonne_reponse$i"];
-            $reponse = $_POST["reponse1-$i"];
-            $reponce = $_POST["reponse2-$i"];
-            $reponze = $_POST["reponse3-$i"];
-            $choice_id = $quizz->insert_choice($question_id,$bonne_reponse,$reponse,$reponce,$reponze);
-            if (!$question_id) {
-                echo "Erreur lors de l'insertion de la question $i.";
-            }}}
+    }        
 }
 ?>
 <!DOCTYPE html>
@@ -162,6 +157,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </form>      
             </div>
         </div>
-        <script src="Script.js"></script>
+        <script src="add_quiz.js"></script>
     </body>
 </html>
