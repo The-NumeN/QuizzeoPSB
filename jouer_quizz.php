@@ -55,12 +55,11 @@ $result = mysqli_query($connect_bdd, $test);
             </div>
         </nav>
         <br><br>   
-        <div class="cuicuiz">
-        <div class="liquest">
-            <h2>Liste des questions</h2>
-        </div>
         <div class="container">
             <div class="border border-secondary rounded">
+                <h2>Liste des questions</h2>
+            </div>
+            <br><br>
                 <?php   
                     if ($result->num_rows > 0) {
                     // Parcourir les questions
@@ -72,33 +71,32 @@ $result = mysqli_query($connect_bdd, $test);
                             $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
                             $resulte = mysqli_query($connect_bdd, $sql);
                 ?>
+            <div class="border border-secondary rounded">
                 <div class="card bg-light">
                     <div class="cache">
                         <div class="card-header">
                             <?php echo "<h2>$questionText</h2>"; ?>
                         </div>
-                            <div class="card-body">
-                                <?php
-                                    if ($resulte->num_rows > 0) {
-                                    // Parcourir les réponses de la question actuelle
-                                        while ($row = $resulte->fetch_assoc()) {
-                                            echo $row["bonne_reponse"] . "<br>" . $row["reponse"] . "<br>" . $row["reponce"] . "<br>" . $row["reponze"];
-                                        }
-                                    } else {
-                                        echo "Aucune réponse trouvée.";
-                                    }
-                                ?>
-                                </div>
-                            </div>
-                        </div>
-                <?php
-                    }
-                    } else {
-                        echo "Aucune question trouvée.";
-                    }
-                ?>
+                        <div class="card-body">
+                    <?php
+                        if ($resulte->num_rows > 0) {
+                                // Parcourir les réponses de la question actuelle
+                            while ($row = $resulte->fetch_assoc()) {
+                                echo $row["bonne_reponse"] . "<br>" . $row["reponse"] . "<br>" . $row["reponce"] . "<br>" . $row["reponze"];                                        }
+                                } else {
+                                    echo "Aucune réponse trouvée.";}
+                    ?>
+                        </div>   
+                    </div>
                 </div>
             </div>
+                    <br><br>
+                    <?php
+                        }
+                        } else {
+                                echo "Aucune question trouvée.";
+                        }
+                    ?>             
         </div>
     </body>
 </html>
