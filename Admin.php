@@ -14,8 +14,6 @@ function BDDconnect() {
     return $connect_bdd;
 }
 $connect = BDDconnect();
-
-
 // Récupérer la liste des utilisateurs
 $query = "SELECT * FROM Users";
 $result = mysqli_query($connect, $query);
@@ -33,6 +31,34 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     header("location: Connexion.php");
     exit();
 }
+// supp quizz
+if (isset($_GET["id_quizz"])) {
+    $id = $_GET["id_quizz"];
+    
+    $conn = mysqli_connect("127.0.0.1", "root", "", "quizzeo");
+
+    $updateQuery = $sql = "DELETE choices FROM choices
+    JOIN questions ON choices.id_question = questions.id_question
+    WHERE questions.id_quizz = '$id'";
+    mysqli_query($conn, $updateQuery);
+
+    $deleteQuery = "DELETE FROM questions WHERE id_quizz = '$id'";
+    mysqli_query($conn, $deleteQuery);
+
+    $deleteQuery = "DELETE FROM quizzes WHERE id_quizz = '$id'";
+    mysqli_query($conn, $deleteQuery);
+
+    header("location: quizz_list.php");
+    exit();
+}
+//  connect list quizz
+$query = "SELECT * FROM Quizzes";
+$result = mysqli_query($connect, $query);
+$quizzes = [];
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $quizzes[] = $row;
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,14 +72,11 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
         <link rel="stylesheet" href="connect2.css">
     </head>
     <body>
-        <!-- HEADER -->
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
-            <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
                 <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
                 <div class="navbar" id="navbarNav">
                     <ul class="navbar-nav  ">
-            <!-- ajout des liens de redirection -->
                         <div class="inscri">
                             <li class="nav-item">
                                 <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
@@ -75,15 +98,12 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
                 </div>
             </div>
         </nav>
-
         <br>
-        <!-- Contenu de la PAGE -->
         <div class="container">
             <div class="card bg-light">
                 <div class="card-header">
                     <h3>Liste des utilisateurs</h3>
                 </div>
-        <!-- création d'un tableau avec les données utilisateurs -->
                 <div class="card-body">
                     <div class ="tableau">
                         <table>
@@ -110,30 +130,37 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
                     </div>                 
                 </div>
             </div><br><br>
-                
-    <!-- Liste des quizz & création  de quizz-->
-                    <div class="card bg-light">
-                        <div class="card-header">
-                            <h3>Liste des quizz</h3>
-                        </div>
-                        <div class="card-body">
-                            <a href="admin_edit_quizz.php">Voir la liste des quizz</a>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div class="card bg-light">
-                        <div class="card-header">
-                            <h3>Ajouter un quizz</h3>
-                        </div>   
-                        <div class="card-body">
-                            <a href="ajout_quiz.php">Ajouter un quizz</a>
-                        </div>              
-                    </div>
-                    <br><br>
-                    <div class="card bg-light">
-                        <div class="card-header">
-                        <h3>Quizz créés par le quizzeur</h3>
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h3>Liste des quizz</h3>
                 </div>
+                <div class="card-body">
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Difficulte</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($quizzes as $quiz) : ?>
+            <tr>
+                <td><?php echo $quiz['titre']; ?></td>
+                <td><?php echo $quiz['difficulte']; ?></td>
+                <td>
+                    <a href="modif_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
+                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+                </div>
+            </div><br><br>
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h3>Ajouter un quizz</h3>
+                </div>   
+                <div class="card-body">
+                    <a href="ajout_quiz.php">Ajouter un quizz</a>
+                </div>              
             </div>
         </div>
     </body>
