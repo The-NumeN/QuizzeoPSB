@@ -36,23 +36,22 @@ if (isset($_GET["id_test"])) {
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Modifier Pseudo</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="connect2.css">
-</head>
-<body>
-
-<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <head>
+        <meta charset="UTF-8">
+        <title>Modifier Pseudo</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+            <link rel="stylesheet" href="connect2.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
-            <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
+                <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
                 <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
                 <div class="navbar" id="navbarNav">
                     <ul class="navbar-nav  ">
-            <!-- ajout des liens de redirection -->
+                <!-- ajout des liens de redirection -->
                         <div class="inscri">
                             <li class="nav-item">
                                 <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
@@ -65,17 +64,27 @@ if (isset($_GET["id_test"])) {
                                     <button type="submit">Déconnexion</button>
                                 </form>
                             </li>
-                            </li>
                         </div>
                     </ul>
                 </div>
             </div>
-        </nav><br>
-    <h1>Modifier Pseudo</h1>
-    <form action="" method="post">
-        <label for="nouveau_pseudo">Nouveau Pseudo:</label>
-        <input type="text" name="nouveau_pseudo" required>
-        <button type="submit">Modifier</button>
-    </form>
-</body>
+        </nav>
+        <br><br>
+        <div class="container">
+            <div class="border border-secondary">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>Modifier Pseudo</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            <label for="nouveau_pseudo">Nouveau Pseudo:</label>
+                            <input type="text" name="nouveau_pseudo" required>
+                            <button type="submit">Modifier</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
