@@ -13,6 +13,22 @@ if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "quizzer") {
     header("location: Connexion.php");
     exit();
 }
+function BDDconnect() {
+    $connect_bdd = mysqli_connect("127.0.0.1", "root", "", "quizzeo");
+    if (!$connect_bdd) {
+        die("Échec de la connexion à la base de données: " .mysqli_error($connect_bdd));
+    }
+    return $connect_bdd;
+  }
+  $connect = BDDconnect();
+  
+  $query = "SELECT * FROM Quizzes";
+  $result = mysqli_query($connect, $query);
+  $quizzes = [];
+  
+  while ($row = mysqli_fetch_assoc($result)) {
+    $quizzes[] = $row;
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,7 +76,22 @@ if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "quizzer") {
                     <h3>Liste des quizz</h3>
                 </div>
                 <div class="card-body">
-                    <a href="quizz_list.php">Voir la liste des quizz</a>
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Difficulte</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($quizzes as $quiz) : ?>
+            <tr>
+                <td><?php echo $quiz['titre']; ?></td>
+                <td><?php echo $quiz['difficulte']; ?></td>
+                <td>
+                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
                 </div>
             </div>
             <br><br>
