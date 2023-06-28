@@ -1,56 +1,71 @@
 <?php
-include "header.php";
 session_start();
-$connect_bdd = mysqli_connect("127.0.0.1", "root", "", "quizzeo");
-$stp=$_GET['id_quizz'];
-$test="SELECT * FROM questions where id_quizz='$stp'";
-$sql = "SELECT bonne_reponse, reponse,reponce ,reponze FROM choices";
-$result = mysqli_query($connect_bdd, $test);
-$resulte = mysqli_query($connect_bdd, $sql);
-?>
-<html>
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Connexion</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="connect2.css">
-  </head>
-  
-  <div class="cuicuiz">
-  <div class="liquest"><h2>Liste des questions</h2></div>
-    <div class="container">
-      <div class="card bg-light">
-        <div class="card-header">
+if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "utilisateur") {
+    header("location: Connexion.php");
+    exit();
+}
 
-        <!-- c'est le titre de la question -->
-          <?php 
-            if ($result->num_rows > 0) {
-    // output data of each row
-              while($row = $result->fetch_assoc()) {
-                echo  $row['intitule']."<br>";
-              }
-            } else {
-                echo "0 results";
-              }
-          ?>
-        </div>
-        <!-- C'est les réponses aux questions -->
-        <div class="card-body">
-          <?php
-            if ($resulte->num_rows > 0) {
-      // output data of each row
-              while($row = $resulte->fetch_assoc()) { 
-                echo  $row["bonne_reponse"]."<br>". $row["reponse"]."<br>". $row["reponce"]."<br>".$row["reponze"]."<br>";
-              }
-            } else {
-                echo "0 results";
-              }
-          ?>
-        </div>
-      </div>
-    </div>
-  </div>
+if (isset($_GET['id_quizz'])) {
+    // Récupérer l'identifiant du quiz sélectionné depuis l'URL
+    $id_quizz = $_GET['id_quizz'];
+
+    function BDDconnect() {
+        $connect_bdd = mysqli_connect("127.0.0.1", "root", "", "quizzeo");
+        if (!$connect_bdd) {
+            die("Échec de la connexion à la base de données: " .mysqli_error($connect_bdd));
+        }
+        return $connect_bdd;
+    }
+
+    $connect = BDDconnect();
+
+    $query = "SELECT * FROM Questions WHERE id_quizz = $id_quizz";
+    $result = mysqli_query($connect, $query);
+    $questions = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $questions[] = $row;
+    }
+
+    foreach ($questions as &$question) {
+        $id_question = $question['id_question'];
+        $query_reponses = "SELECT * FROM choices WHERE id_question = $id_question";
+        $result_reponses = mysqli_query($connect, $query_reponses);
+        $reponses = [];
+
+        while ($row = mysqli_fetch_assoc($result_reponses)) {
+            $reponses[] = $row;
+        }
+        $question['reponses'] = $reponses;
+    }
+} else {
+
+    echo "Aucun quiz n'est sélectionné.";
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions du Quiz</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <h2>Questions du Quiz</h2>
+
+    <?php foreach ($questions as $question) : ?>
+        <h3><?php echo $question['intitule']; ?></h3>
+        <ul>
+            <?php foreach ($question['reponses'] as $reponse) : ?>
+                <button><?php echo $reponse['bonne_reponse']; ?></button><br><br>
+                <button><?php echo $reponse['reponse']; ?></button><br><br>
+                <button><?php echo $reponse['reponce']; ?></button><br><br>
+                <button><?php echo $reponse['reponze']; ?></button>
+            <?php endforeach; ?>
+        </ul>
+    <?php endforeach; ?>
+</body>
 </html>
