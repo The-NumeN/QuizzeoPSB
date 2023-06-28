@@ -49,7 +49,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
             <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
-                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
+                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
                 <div class="navbar" id="navbarNav">
                     <ul class="navbar-nav  ">
             <!-- ajout des liens de redirection -->
@@ -57,7 +57,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <li class="nav-item">
                                 <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
                             </li>
-                        </div>
+                        </div class="deco">
                             <li class="nav-item">
                             <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">

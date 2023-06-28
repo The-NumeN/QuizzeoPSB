@@ -106,3 +106,13 @@ table {
     color: rgb(43, 128, 185);
     text-align: center;
 }
+
+.deco button {
+    text-align: center;
+    margin: 5px;
+    transition: 300ms;
+    background-color: rgb(60, 154, 60);
+    color: white;
+    border-radius: 80px;
+
+}

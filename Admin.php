@@ -74,7 +74,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <body>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
-                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
+                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
                 <div class="navbar" id="navbarNav">
                     <ul class="navbar-nav  ">
                         <div class="inscri">
@@ -142,7 +142,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <td><?php echo $quiz['titre']; ?></td>
                 <td><?php echo $quiz['difficulte']; ?></td>
                 <td>
-                    <a href="modif_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
+                    <a href="admin_edit_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
                     <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
                 </td>
             </tr>
