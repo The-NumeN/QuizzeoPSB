@@ -19,7 +19,7 @@ $result = mysqli_query($connect_bdd, $test);
         <link rel="stylesheet" href="connect2.css">
     </head>
     <body>
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
             <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
                 <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
@@ -49,7 +49,7 @@ $result = mysqli_query($connect_bdd, $test);
             </div>
         </nav>
         <br><br>   
-    <div class="cuicuiz">
+        <div class="cuicuiz">
         <div class="liquest">
             <h2>Liste des questions</h2>
         </div>
@@ -67,7 +67,7 @@ $result = mysqli_query($connect_bdd, $test);
                     ?>
                     <div class="card bg-light">
                         <div class="card-header">
-                            <?php echo $questionText; ?>
+                            <?php echo "<h2>$questionText</h2>"; ?>
                         </div>
                         <div class="card-body">
                             <?php
@@ -80,10 +80,10 @@ $result = mysqli_query($connect_bdd, $test);
                                     echo "Aucune réponse trouvée.";
                                 }
                             ?>
-                            </div>
                         </div>
-                        <?php
-                    }
+                    </div>
+                    <?php
+                }
                 } else {
                     echo "Aucune question trouvée.";
                 }
