@@ -2,6 +2,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0px auto;
     text-align: center;
+    background-color: rgba(245, 245, 245, 0.846);
 }
 
 h1 {
