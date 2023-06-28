@@ -53,16 +53,12 @@ function BDDconnect() {
                                 <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
                             </li>
                         </div>
-                        <div class="conn">
+                        <div class="deco">
                             <li class="nav-item">
-                                <form action="" method="post">
+                            <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
                                     <button type="submit">Déconnexion</button>
                                 </form>
-                            </li>
-                        </div>
-                        <div class="deco">
-                            <li class="nav-item">
                             </li>
                         </div>
                     </ul>
