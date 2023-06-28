@@ -1,5 +1,15 @@
 <?php
 session_start();
+if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
+    session_destroy();
+    header("location: Connexion.php");
+    exit();
+}
+// Vérifier si l'utilisateur est connecté en tant que user, sinon rediriger vers la page de connexion
+if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "utilisateur"."quizzer") {
+    header("location: Connexion.php");
+    exit();
+}
 $connect_bdd = mysqli_connect("127.0.0.1", "root", "", "quizzeo");
 $stp = $_GET['id_quizz'];
 
