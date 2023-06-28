@@ -76,20 +76,22 @@ $result = mysqli_query($connect_bdd, $test);
                     $resulte = mysqli_query($connect_bdd, $sql);
                     ?>
                     <div class="card bg-light">
-                        <div class="card-header">
-                            <?php echo "<h2>$questionText</h2>"; ?>
-                        </div>
-                        <div class="card-body">
-                            <?php
-                                if ($resulte->num_rows > 0) {
+                        <div class="cache">
+                            <div class="card-header">
+                                <?php echo "<h2>$questionText</h2>"; ?>
+                            </div>
+                            <div class="card-body">
+                                <?php
+                                    if ($resulte->num_rows > 0) {
                                     // Parcourir les réponses de la question actuelle
-                                    while ($row = $resulte->fetch_assoc()) {
-                                        echo $row["bonne_reponse"] . "<br>" . $row["reponse"] . "<br>" . $row["reponce"] . "<br>" . $row["reponze"];
+                                        while ($row = $resulte->fetch_assoc()) {
+                                            echo $row["bonne_reponse"] . "<br>" . $row["reponse"] . "<br>" . $row["reponce"] . "<br>" . $row["reponze"];
+                                        }
+                                    } else {
+                                        echo "Aucune réponse trouvée.";
                                     }
-                                } else {
-                                    echo "Aucune réponse trouvée.";
-                                }
-                            ?>
+                                ?>
+                            </div>
                         </div>
                     </div>
                     <?php

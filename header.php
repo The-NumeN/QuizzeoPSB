@@ -7,7 +7,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
-  </head>
   <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div class="container-fluid">

@@ -14,4 +14,3 @@ function suppquest() {
   var element = document.querySelector('.id_question:last-of-type');
   element.remove();
 }
-
