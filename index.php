@@ -25,7 +25,7 @@ include 'header.php';
                     <div class="card-body">
                         <div class="para">                  
                             <h2>Nous Connaitre</h2>
-                            <p> Nous sommes une équipe de trois développeurs ayant crée ce site en "INSERER DUREE" pour "INSERER NOM CLIENT". <br> Dans l'équipe il y a Stive[DECRIS TOI]. <br><br> Il y a aussi Babacar[DECRIS TOI]. <br><br> Et Finalement, Paul, 25ans développeur web depuis 6mois.</p>
+                            <p> Nous sommes une équipe de trois développeurs ayant crée ce site en un mois pour M.Peon <br><br> Dans l'équipe il y a Stive, 23 ans, le crack de la BDD et du PHP. <br><br> Il y a aussi Babacar, 19 ans, il s'occupe très bien du JS (on le complimente pas trop sinon il prends le melon ^^). <br><br> Et Finalement, Paul, 25ans qui s'occupe pas trop mal du css et de bootstrap.</p>
                         </div>
                     </div>
                 </div>
