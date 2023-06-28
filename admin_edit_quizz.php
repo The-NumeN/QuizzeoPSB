@@ -57,7 +57,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <li class="nav-item">
                                 <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
                             </li>
-                        </div class="deco">
+                        </div class="form-inline">
                             <li class="nav-item">
                             <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">

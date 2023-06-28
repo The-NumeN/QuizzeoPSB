@@ -76,15 +76,15 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="container-fluid">
                 <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
                 <div class="navbar" id="navbarNav">
-                    <ul class="navbar-nav  ">
+                    <ul class="navbar-nav">
                         <div class="inscri">
                             <li class="nav-item">
                                 <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
                             </li>
                         </div>
-                        <div class="deco">
+                        <div class="form-inline">
                             <li class="nav-item">
-                            <form action="" method="post">
+                                <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
                                     <button type="submit">Déconnexion</button>
                                 </form>
