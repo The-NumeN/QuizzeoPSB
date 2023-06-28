@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <li class="nav-item">
                             <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
-                                    <button type="submit">Déconnexion</button>
+                                    <a href="connexion.php"><img src="img\portal.png"width="70" height="70" class="d-inline-block align-center" alt=""></a>
                                 </form>
                             </li>
                         </div>
