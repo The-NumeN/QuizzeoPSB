@@ -44,7 +44,7 @@ $result = mysqli_query($connect_bdd, $test);
                         </div>
                         <div class="form-inline">
                             <li class="nav-item">
-                            <form action="" method="post">
+                                <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
                                     <button type="submit">Déconnexion</button>
                                 </form>
