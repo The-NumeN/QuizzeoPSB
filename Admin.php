@@ -96,7 +96,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         </nav>
         <br>
         <div class="container">
-            <div class="border border-secondary">
+            <div class="border border-secondary rounded">
                 <div class="card bg-light">
                     <div class="card-header">
                         <h3>Liste des utilisateurs</h3>
@@ -129,7 +129,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
             </div>
             <br><br>
-            <div class="border border-secondary">
+            <div class="border border-secondary  rounded">
                 <div class="card bg-light">
                     <div class="card-header">
                         <h3>Liste des quizz</h3>
@@ -156,7 +156,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
             </div>
             <br><br>
-            <div class="border border-secondary">
+            <div class="border border-secondary  rounded">
                 <div class="card bg-light">
                     <div class="card-header">
                         <h3>Ajouter un quizz</h3>

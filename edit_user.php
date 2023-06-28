@@ -71,7 +71,7 @@ if (isset($_GET["id_test"])) {
         </nav>
         <br><br>
         <div class="container">
-            <div class="border border-secondary">
+            <div class="border border-secondary rounded">
                 <div class="card">
                     <div class="card-header">
                         <h1>Modifier Pseudo</h1>

@@ -14,7 +14,7 @@ include 'header.php';
     
     <body>
         <div class="container">
-            <div class="border border-secondary">
+            <div class="border border-secondary rounded">
                 <div class="card">
                     <div class="card-header">
                         <div class="titre">

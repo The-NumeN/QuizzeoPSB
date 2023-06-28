@@ -60,7 +60,7 @@ $result = mysqli_query($connect_bdd, $test);
             <h2>Liste des questions</h2>
         </div>
         <div class="container">
-            <div class="border border-secondary">
+            <div class="border border-secondary rounded">
                 <?php   
                     if ($result->num_rows > 0) {
                     // Parcourir les questions

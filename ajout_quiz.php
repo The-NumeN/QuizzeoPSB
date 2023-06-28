@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </nav>
     
         <div class="container">
-            <div class="border border-secondary">
+            <div class="border border-secondary rounded">
                 <div class="card bg-light">
                     <form method="post" action="" name="monform">
                         <div class="card-header">

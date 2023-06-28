@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
     </head>
     <body>
         <div class ="container">
-            <div class="border border-secondary">
+            <div class="border border-secondary rounded">
                 <div class="card bg-light">
                     <form action="" method="post">
                         <div class="card-header">

@@ -36,8 +36,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Modification des Quizzes</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -68,24 +68,34 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </ul>
                 </div>
             </div>
-        </nav>
-    <h2>Liste des quizz</h2>
-    <table>
-        <tr>
-            <th>Titre</th>
-            <th>Difficulte</th>
-            <th>Actions</th>
-        </tr>
-        <?php foreach ($quizzes as $quiz) : ?>
-            <tr>
-                <td><?php echo $quiz['titre']; ?></td>
-                <td><?php echo $quiz['difficulte']; ?></td>
-                <td>
-                    <a href="modif_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
-                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
-</body>
+        </nav><br><br>
+        <div class="container">
+            <div class="border border-secondary rounded">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Liste des quizz</h2>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <th>Titre</th>
+                                <th>Difficulte</th>
+                                <th>Actions</th>
+                            </tr>
+                            <?php foreach ($quizzes as $quiz) : ?>
+                            <tr>
+                                <td><?php echo $quiz['titre']; ?></td>
+                                <td><?php echo $quiz['difficulte']; ?></td>
+                                <td>
+                                    <a href="modif_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
+                                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

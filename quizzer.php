@@ -67,7 +67,7 @@ function BDDconnect() {
         </nav>
         <br><br>
         <div class="container">
-            <div class="border border-secondary">
+            <div class="border border-secondary rounded">
                 <div class="card bg-light">
                     <div class="card-header">
                         <h3>Liste des quizz</h3>
@@ -94,7 +94,7 @@ function BDDconnect() {
             </div>
 
             <br><br>
-            <div class="border border-secondary">
+            <div class="border border-secondary rounded">
                 <div class="card bg-light">
                     <div class="card-header">
                         <h3>Ajouter un quizz</h3>
