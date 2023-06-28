@@ -7,7 +7,7 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     exit();
 }
 // Vérifier si l'utilisateur est connecté en tant qu'admin, sinon rediriger vers la page de connexion
-if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "admin") {
+if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "admin") {
     header("location: Connexion.php");
     exit();
 }
@@ -79,7 +79,7 @@ if (isset($_GET["id_test"])) {
                     <div class="card-body">
                         <form action="" method="post">
                             <label for="nouveau_pseudo">Nouveau Pseudo:</label>
-                            <input type="text" name="nouveau_pseudo" required>
+                            <input type="text" name="nouveau_pseudo" value="<?php echo $pseudo; ?>" required>
                             <button type="submit">Modifier</button>
                         </form>
                     </div>
