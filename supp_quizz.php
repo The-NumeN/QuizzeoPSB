@@ -23,7 +23,7 @@ if (isset($_GET["id_quizz"])) {
     $deleteQuery = "DELETE FROM quizzes WHERE id_quizz = '$id'";
     mysqli_query($conn, $deleteQuery);
 
-    header("location: quizz_list.php");
+    header("location: admin_edit_quizz.php");
     exit();
 }
 

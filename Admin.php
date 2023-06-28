@@ -14,8 +14,6 @@ function BDDconnect() {
     return $connect_bdd;
 }
 $connect = BDDconnect();
-
-
 // Récupérer la liste des utilisateurs
 $query = "SELECT * FROM Users";
 $result = mysqli_query($connect, $query);
@@ -32,6 +30,34 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     // Rediriger vers la page de connexion
     header("location: Connexion.php");
     exit();
+}
+// supp quizz
+if (isset($_GET["id_quizz"])) {
+    $id = $_GET["id_quizz"];
+    
+    $conn = mysqli_connect("127.0.0.1", "root", "", "quizzeo");
+
+    $updateQuery = $sql = "DELETE choices FROM choices
+    JOIN questions ON choices.id_question = questions.id_question
+    WHERE questions.id_quizz = '$id'";
+    mysqli_query($conn, $updateQuery);
+
+    $deleteQuery = "DELETE FROM questions WHERE id_quizz = '$id'";
+    mysqli_query($conn, $deleteQuery);
+
+    $deleteQuery = "DELETE FROM quizzes WHERE id_quizz = '$id'";
+    mysqli_query($conn, $deleteQuery);
+
+    header("location: quizz_list.php");
+    exit();
+}
+//  connect list quizz
+$query = "SELECT * FROM Quizzes";
+$result = mysqli_query($connect, $query);
+$quizzes = [];
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $quizzes[] = $row;
 }
 ?>
 
@@ -109,7 +135,23 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
                     <h3>Liste des quizz</h3>
                 </div>
                 <div class="card-body">
-                    <a href="admin_edit_quizz.php">Voir la liste des quizz</a>
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Difficulte</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($quizzes as $quiz) : ?>
+            <tr>
+                <td><?php echo $quiz['titre']; ?></td>
+                <td><?php echo $quiz['difficulte']; ?></td>
+                <td>
+                    <a href="modif_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
+                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
                 </div>
             </div><br><br>
             <div class="card bg-light">
