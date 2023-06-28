@@ -60,22 +60,23 @@ $result = mysqli_query($connect_bdd, $test);
             <h2>Liste des questions</h2>
         </div>
         <div class="container">
-            <?php
-            if ($result->num_rows > 0) {
-                // Parcourir les questions
-                while ($row = $result->fetch_assoc()) {
-                    $questionId = $row['id_question'];
-                    $questionText = $row['intitule'];
+            <div class="border border-secondary">
+                <?php   
+                    if ($result->num_rows > 0) {
+                    // Parcourir les questions
+                        while ($row = $result->fetch_assoc()) {
+                            $questionId = $row['id_question'];
+                            $questionText = $row['intitule'];
 
                     // Sélection des réponses pour la question actuelle
-                    $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
-                    $resulte = mysqli_query($connect_bdd, $sql);
-                    ?>
-                    <div class="card bg-light">
-                        <div class="cache">
-                            <div class="card-header">
-                                <?php echo "<h2>$questionText</h2>"; ?>
-                            </div>
+                            $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
+                            $resulte = mysqli_query($connect_bdd, $sql);
+                ?>
+                <div class="card bg-light">
+                    <div class="cache">
+                        <div class="card-header">
+                            <?php echo "<h2>$questionText</h2>"; ?>
+                        </div>
                             <div class="card-body">
                                 <?php
                                     if ($resulte->num_rows > 0) {
@@ -87,15 +88,16 @@ $result = mysqli_query($connect_bdd, $test);
                                         echo "Aucune réponse trouvée.";
                                     }
                                 ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <?php
-                }
-                } else {
-                    echo "Aucune question trouvée.";
-                }
+                <?php
+                    }
+                    } else {
+                        echo "Aucune question trouvée.";
+                    }
                 ?>
+                </div>
             </div>
         </div>
     </body>

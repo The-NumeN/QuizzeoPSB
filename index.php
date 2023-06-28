@@ -14,17 +14,19 @@ include 'header.php';
     
     <body>
         <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    <div class="titre">
-                        <h1> Bienvenue sur Notre Quizz<h1>
+            <div class="border border-secondary">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="titre">
+                            <h1> Bienvenue sur Notre Quizz<h1>
+                        </div>
+                        <p>Sur ce site, vous pouvez tester vos connaissances en jouant à des quizz ou bien en les créant (après avoir réussi plusieurs quizz).</p>
                     </div>
-                    <p>Sur ce site, vous pouvez tester vos connaissances en jouant à des quizz ou bien en les créant (après avoir réussi plusieurs quizz).</p>
-                </div>
-                <div class="card-body bg-light">
-                    <div class="para">                  
-                        <h2>Nous Connaitre</h2>
-                        <p> Nous sommes une équipe de trois développeurs ayant crée ce site en "INSERER DUREE" pour "INSERER NOM CLIENT". <br> Dans l'équipe il y a Stive[DECRIS TOI]. <br><br> Il y a aussi Babacar[DECRIS TOI]. <br><br> Et Finalement, Paul, 25ans développeur web depuis 6mois.</p>
+                    <div class="card-body">
+                        <div class="para">                  
+                            <h2>Nous Connaitre</h2>
+                            <p> Nous sommes une équipe de trois développeurs ayant crée ce site en "INSERER DUREE" pour "INSERER NOM CLIENT". <br> Dans l'équipe il y a Stive[DECRIS TOI]. <br><br> Il y a aussi Babacar[DECRIS TOI]. <br><br> Et Finalement, Paul, 25ans développeur web depuis 6mois.</p>
+                        </div>
                     </div>
                 </div>
             </div>

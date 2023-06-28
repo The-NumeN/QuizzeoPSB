@@ -66,24 +66,34 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </ul>
                 </div>
             </div>
-        </nav>
-    <h2>Liste des quizz</h2>
-    <table>
-        <tr>
-            <th>Titre</th>
-            <th>Difficulte</th>
-            <th>Actions</th>
-        </tr>
-        <?php foreach ($quizzes as $quiz) : ?>
-            <tr>
-                <td><?php echo $quiz['titre']; ?></td>
-                <td><?php echo $quiz['difficulte']; ?></td>
-                <td>
-                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
+        </nav><br><br>
+        <div class="container">
+            <div class="border border-secondary">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Liste des quizz</h2>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <th>Titre</th>
+                                <th>Difficulte</th>
+                                <th>Actions</th>
+                            </tr>
+                                <?php foreach ($quizzes as $quiz) : ?>
+                            <tr>
+                                <td><?php echo $quiz['titre']; ?></td>
+                                <td><?php echo $quiz['difficulte']; ?></td>
+                                <td>
+                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a>
+                                </td>
+                            </tr>
+                                <?php endforeach; ?>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
   </body>
 </html>    
 

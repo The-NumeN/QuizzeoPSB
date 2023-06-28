@@ -67,39 +67,43 @@ function BDDconnect() {
         </nav>
         <br><br>
         <div class="container">
-            <div class="card bg-light">
-                <div class="card-header">
-                    <h3>Liste des quizz</h3>
-                </div>
-                <div class="card-body">
-    <table>
-        <tr>
-            <th>Titre</th>
-            <th>Difficulte</th>
-            <th>Actions</th>
-        </tr>
-        <?php foreach ($quizzes as $quiz) : ?>
-            <tr>
-                <td><?php echo $quiz['titre']; ?></td>
-                <td><?php echo $quiz['difficulte']; ?></td>
-                <td>
-                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
+            <div class="border border-secondary">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h3>Liste des quizz</h3>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <th>Titre</th>
+                                <th>Difficulte</th>
+                                <th>Actions</th>
+                            </tr>
+                                <?php foreach ($quizzes as $quiz) : ?>
+                            <tr>
+                                <td><?php echo $quiz['titre']; ?></td>
+                                <td><?php echo $quiz['difficulte']; ?></td>
+                                <td>
+                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
                 </div>
             </div>
+
             <br><br>
-            <div class="card bg-light">
-                <div class="card-header">
-                    <h3>Ajouter un quizz</h3>
-                </div>
-                <div class="card-body">
-                    <a href="ajout_quiz.php">Ajouter un quizz</a>
-                </div>
-            </div>            
+            <div class="border border-secondary">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h3>Ajouter un quizz</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="ajout_quiz.php">Ajouter un quizz</a>
+                    </div>
+                </div>            
+            </div>
         </div>
     </body>
-
 </html>

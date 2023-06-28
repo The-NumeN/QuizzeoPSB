@@ -96,67 +96,75 @@ while ($row = mysqli_fetch_assoc($result)) {
         </nav>
         <br>
         <div class="container">
-            <div class="card bg-light">
-                <div class="card-header">
-                    <h3>Liste des utilisateurs</h3>
+            <div class="border border-secondary">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h3>Liste des utilisateurs</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class ="tableau">
+                            <table>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom d'utilisateur</th>
+                                    <th>Rôle</th>
+                                    <th>Actions</th>
+                                </tr>
+                                <?php foreach ($users as $user) : ?>
+                                <tr>
+                                    <td><?php echo $user['id_test']; ?></td>
+                                    <td><?php echo $user['pseudo']; ?></td>
+                                    <td><?php echo $user['role']; ?></td>
+                                    <td>
+                                    <a href="edit_user.php?id_test=<?php echo $user['id_test']; ?>">Modifier</a>
+                                    <?php if ($_SESSION["role"] === "admin" && $user['id_test'] !== $_SESSION["id_test"]) : ?>
+                                        <a href="supp_user.php?id_test=<?php echo $user['id_test']; ?>">Supprimer</a>
+                                    <?php endif; ?>
+                                    </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                            </table>
+                        </div>                 
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class ="tableau">
-                        <table>
+            </div>
+            <br><br>
+            <div class="border border-secondary">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h3>Liste des quizz</h3>
+                    </div>
+                    <div class="card-body">
+                        <table> 
                             <tr>
-                                <th>ID</th>
-                                <th>Nom d'utilisateur</th>
-                                <th>Rôle</th>
+                                <th>Titre</th>
+                                <th>Difficulte</th>
                                 <th>Actions</th>
                             </tr>
-                            <?php foreach ($users as $user) : ?>
+                            <?php foreach ($quizzes as $quiz) : ?>
                             <tr>
-                                <td><?php echo $user['id_test']; ?></td>
-                                <td><?php echo $user['pseudo']; ?></td>
-                                <td><?php echo $user['role']; ?></td>
+                                <td><?php echo $quiz['titre']; ?></td>
+                                <td><?php echo $quiz['difficulte']; ?></td>
                                 <td>
-                                <a href="edit_user.php?id_test=<?php echo $user['id_test']; ?>">Modifier</a>
-                                <?php if ($_SESSION["role"] === "admin" && $user['id_test'] !== $_SESSION["id_test"]) : ?>
-                                    <a href="supp_user.php?id_test=<?php echo $user['id_test']; ?>">Supprimer</a>
-                                <?php endif; ?>
+                                    <a href="admin_edit_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
+                                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
                                 </td>
-                                </tr>
-                                <?php endforeach; ?>
+                            </tr>
+                            <?php endforeach; ?>
                         </table>
-                    </div>                 
+                    </div>
                 </div>
-            </div><br><br>
-            <div class="card bg-light">
-                <div class="card-header">
-                    <h3>Liste des quizz</h3>
+            </div>
+            <br><br>
+            <div class="border border-secondary">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h3>Ajouter un quizz</h3>
+                    </div>   
+                    <div class="card-body">
+                        <a href="ajout_quiz.php">Ajouter un quizz</a>
+                    </div>              
                 </div>
-                <div class="card-body">
-    <table>
-        <tr>
-            <th>Titre</th>
-            <th>Difficulte</th>
-            <th>Actions</th>
-        </tr>
-        <?php foreach ($quizzes as $quiz) : ?>
-            <tr>
-                <td><?php echo $quiz['titre']; ?></td>
-                <td><?php echo $quiz['difficulte']; ?></td>
-                <td>
-                    <a href="admin_edit_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
-                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
-                </div>
-            </div><br><br>
-            <div class="card bg-light">
-                <div class="card-header">
-                    <h3>Ajouter un quizz</h3>
-                </div>   
-                <div class="card-body">
-                    <a href="ajout_quiz.php">Ajouter un quizz</a>
-                </div>              
             </div>
         </div>
     </body>

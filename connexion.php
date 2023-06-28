@@ -51,18 +51,20 @@ if(isset($_POST["button"])){
 </head>
 <body>
     <div class="container">
-        <div class="card bg-light">  
-            <form action="" method="post">
-                <div class="card-header">
-                    <h1>Connexion</h1>
-                </div>
-                <div class="card-body">
-                    <input type="text" name="pseudo" placeholder="Entrer votre Pseudo" required  ><br><br>
-                    <input type="password" name="password" placeholder="Entrer votre Mot De Passe"required ><br><br>
-                    <button type="submit" name="button">Se connecter</button>
-                    <a href="inscription.php">Créer un compte</a>
-                </div>
-        </form>
+        <div class="border border-secondary">
+            <div class="card bg-light">  
+                <form action="" method="post">
+                    <div class="card-header">
+                        <h1>Connexion</h1>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" name="pseudo" placeholder="Entrer votre Pseudo" required  ><br><br>
+                        <input type="password" name="password" placeholder="Entrer votre Mot De Passe"required ><br><br>
+                        <button type="submit" name="button">Se connecter</button>
+                        <a href="inscription.php">Créer un compte</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>
