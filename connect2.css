@@ -107,3 +107,9 @@ table {
     color: rgb(43, 128, 185);
     text-align: center;
 }
+
+.card-header {
+    background-color: lightgrey;
+    opacity: 60%;
+
+}
