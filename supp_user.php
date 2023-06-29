@@ -25,6 +25,6 @@ if (isset($_GET["id_test"])) {
     header("location: admin.php");
     exit();
 }
-fiuhfd
+
 
 ?>
