@@ -66,7 +66,6 @@ $result = mysqli_query($connect_bdd, $test);
                         while ($row = $result->fetch_assoc()) {
                             $questionId = $row['id_question'];
                             $questionText = $row['intitule'];
-
                     // Sélection des réponses pour la question actuelle
                             $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
                             $resulte = mysqli_query($connect_bdd, $sql);
