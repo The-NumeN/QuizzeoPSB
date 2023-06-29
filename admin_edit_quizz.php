@@ -61,7 +61,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <li class="nav-item">
                             <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
-                                    <a href="connexion.php"><img src="img\portal.png"width="70" height="70" class="d-inline-block align-center" alt=""></a>
+                                    <a href="connexion.php"><button class="deco"><img src="img\portal.png"width="60" height="60" class="d-inline-block align-center" alt=""></button></a>
                                 </form>
                             </li>
                         </div>
