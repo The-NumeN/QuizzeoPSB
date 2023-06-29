@@ -21,7 +21,7 @@ include 'header.php';
                             <h1> Bienvenue sur Notre Quizz<h1>
                         </div>
                         <br>
-                        <p>Sur ce site, vous pouvez tester vos connaissances en jouant à des quizz ou bien en les créant (après avoir réussi plusieurs quizz).</p>
+                        <p>Sur ce site, vous pouvez tester vos connaissances en jouant à des quizz ou bien en les créant (en devenant quizzeur à l'inscription).</p>
                     </div>
                     <div class="card-body">
                         <div class="para">                  
