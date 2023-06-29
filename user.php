@@ -94,6 +94,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
             </div>
         </div>
+        <script src="Script.js"></script>
   </body>
 </html>    
 

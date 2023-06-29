@@ -26,7 +26,7 @@ $result = mysqli_query($connect_bdd, $test);
         <title>Connexion</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="connect2.css">
+        <link rel="stylesheet" href="connect.css">
     </head>
     <body>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -77,25 +77,34 @@ $result = mysqli_query($connect_bdd, $test);
                             <?php echo "<h2>$questionText</h2>"; ?>
                         </div>
                         <div class="card-body">
-                    <?php
-                        if ($resulte->num_rows > 0) {
+                            <?php
+                            if ($resulte->num_rows > 0) {
                                 // Parcourir les réponses de la question actuelle
                             while ($row = $resulte->fetch_assoc()) {
-                                echo $row["bonne_reponse"] . "<br>" . $row["reponse"] . "<br>" . $row["reponce"] . "<br>" . $row["reponze"];                                        }
+                                echo $row["bonne_reponse"] . "<br>" . $row["reponse"] . "<br>" . $row["reponce"] . "<br>" . $row["reponze"]; 
+                            }
                                 } else {
-                                    echo "Aucune réponse trouvée.";}
-                    ?>
-                        </div>   
+                                echo "Aucune réponse trouvée.";}
+                            ?>
+                            
+                        </div> 
+                        <button id='pre' onclick='plusSlide(-1)'>Précédent</button>
+                        <button id='sui' onclick='plusSlide(1)'>Suivant</button>
                     </div>
+                     
                 </div>
             </div>
+            
                     <br><br>
                     <?php
                         }
+                        echo "<button id='pre' onclick='plusSlide(-1)'>Précédent</button>
+                        <button id='sui' onclick='plusSlide(1)'>Suivant</button>";
                         } else {
-                                echo "Aucune question trouvée.";
+                        echo "Aucune question trouvée.";
                         }
                     ?>             
         </div>
+        <script src="Script.js"></script>
     </body>
 </html>
