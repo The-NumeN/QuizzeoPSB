@@ -57,7 +57,7 @@ function BDDconnect() {
                             <li class="nav-item">
                             <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
-                                    <a href="connexion.php"><button class="deco"><img src="img\portal.png"width="60" height="60" class="d-inline-block align-center" alt=""></button></a>
+                                    <div class="tamere"><button class="deco"><img src="img\portal.png"width="60px" height="60px" class="d-inline-block align-center" alt=""></button></div>
                                 </form>
                             </li>
                         </div>
