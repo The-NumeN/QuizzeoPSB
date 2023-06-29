@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
             </div>
         </nav>
-    
+    <br><br>
         <div class="container">
             <div class="border border-secondary rounded">
                 <div class="card bg-light">
