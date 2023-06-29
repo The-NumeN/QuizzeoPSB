@@ -46,8 +46,7 @@ $result = mysqli_query($connect_bdd, $test);
                             <li class="nav-item">
                                 <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
-                                    <a href="connexion.php"><button class="deco"><img src="img\portal.png"width="60" height="60" class="d-inline-block align-center" alt=""></button></a>
-
+                                    <button type="submit">Déconnexion</button>
                                 </form>
                             </li>
                         </div>
@@ -105,17 +104,15 @@ $result = mysqli_query($connect_bdd, $test);
                             ?>
                         </div>
                     </div>
-                    <br><br>
                     <?php
                     $questionIndex++; // Augmenter l'indice de la question actuelle
                 }
                 ?>
-                <button onclick="afficherProchaineQuestion()">valider</button>
+                <input type="button" value="Valider" onclick="afficherProchaineQuestion()">
             <?php
             } else {
                 echo "Aucune question trouvée.";
             }
             ?>
         </form>
-    </body>
 </html>
