@@ -2,6 +2,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0px auto;
     text-align: center;
+    background-color: rgba(245, 245, 245, 0.846);
 }
 
 h1 {
@@ -100,9 +101,6 @@ table {
     color: black;
 }
 
-.liquest {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 45px;
-    color: rgb(43, 128, 185);
-    text-align: center;
+.card-header {
+    background-color: lightgrey;
 }

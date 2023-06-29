@@ -43,7 +43,7 @@ function BDDconnect() {
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
             <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
-                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
+                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
         
                 <div class="navbar" id="navbarNav">
                     <ul class="navbar-nav  ">
@@ -53,16 +53,12 @@ function BDDconnect() {
                                 <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
                             </li>
                         </div>
-                        <div class="conn">
+                        <div class="form-inline">
                             <li class="nav-item">
-                                <form action="" method="post">
+                            <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
-                                    <button type="submit">Déconnexion</button>
+                                    <a href="connexion.php"><img src="img\portal.png"width="70" height="70" class="d-inline-block align-center" alt=""></a>
                                 </form>
-                            </li>
-                        </div>
-                        <div class="deco">
-                            <li class="nav-item">
                             </li>
                         </div>
                     </ul>
@@ -71,39 +67,43 @@ function BDDconnect() {
         </nav>
         <br><br>
         <div class="container">
-            <div class="card bg-light">
-                <div class="card-header">
-                    <h3>Liste des quizz</h3>
-                </div>
-                <div class="card-body">
-    <table>
-        <tr>
-            <th>Titre</th>
-            <th>Difficulte</th>
-            <th>Actions</th>
-        </tr>
-        <?php foreach ($quizzes as $quiz) : ?>
-            <tr>
-                <td><?php echo $quiz['titre']; ?></td>
-                <td><?php echo $quiz['difficulte']; ?></td>
-                <td>
-                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
+            <div class="border border-secondary rounded">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h3>Liste des quizz</h3>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <th>Titre</th>
+                                <th>Difficulte</th>
+                                <th>Actions</th>
+                            </tr>
+                                <?php foreach ($quizzes as $quiz) : ?>
+                            <tr>
+                                <td><?php echo $quiz['titre']; ?></td>
+                                <td><?php echo $quiz['difficulte']; ?></td>
+                                <td>
+                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
                 </div>
             </div>
+
             <br><br>
-            <div class="card bg-light">
-                <div class="card-header">
-                    <h3>Ajouter un quizz</h3>
-                </div>
-                <div class="card-body">
-                    <a href="ajout_quiz.php">Ajouter un quizz</a>
-                </div>
-            </div>            
+            <div class="border border-secondary rounded">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        <h3>Ajouter un quizz</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="ajout_quiz.php">Ajouter un quizz</a>
+                    </div>
+                </div>            
+            </div>
         </div>
     </body>
-
 </html>

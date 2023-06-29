@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div class="container-fluid">
       <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
-        <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
+        <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
         <div class="navbar" id="navbarNav">
           <ul class="navbar-nav  ">
           <!-- ajout des liens de redirection -->
@@ -25,10 +25,6 @@
               <a id="conn" class="nav-link" href="connexion.php">Connexion</a>
             </li>
           </div>
-            <div class="deco">
-              <li class="nav-item">
-              </li>
-            </div>
           </ul>
         </div>
       </div>

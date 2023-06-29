@@ -32,17 +32,17 @@ $result = mysqli_query($connect_bdd, $test);
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
             <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
-                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
+                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
         
                 <div class="navbar" id="navbarNav">
-                    <ul class="navbar-nav  ">
+                    <ul class="navbar-nav">
           <!-- ajout des liens de redirection -->
                         <div class="inscri">
                             <li class="nav-item">
                                 <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
                             </li>
                         </div>
-                        <div class="conn">
+                        <div class="form-inline">
                             <li class="nav-item">
                                 <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
@@ -50,57 +50,53 @@ $result = mysqli_query($connect_bdd, $test);
                                 </form>
                             </li>
                         </div>
-                        <div class="deco">
-                            <li class="nav-item">
-                            </li>
-                        </div>
                     </ul>
                 </div>
             </div>
         </nav>
         <br><br>   
-        <div class="cuicuiz">
-        <div class="liquest">
-            <h2>Liste des questions</h2>
-        </div>
         <div class="container">
-            <?php
-            if ($result->num_rows > 0) {
-                // Parcourir les questions
-                while ($row = $result->fetch_assoc()) {
-                    $questionId = $row['id_question'];
-                    $questionText = $row['intitule'];
+            <div class="border border-secondary rounded">
+                <h2>Liste des questions</h2>
+            </div>
+            <br><br>
+                <?php   
+                    if ($result->num_rows > 0) {
+                    // Parcourir les questions
+                        while ($row = $result->fetch_assoc()) {
+                            $questionId = $row['id_question'];
+                            $questionText = $row['intitule'];
 
                     // Sélection des réponses pour la question actuelle
-                    $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
-                    $resulte = mysqli_query($connect_bdd, $sql);
-                    ?>
-                    <div class="card bg-light">
-                        <div class="cache">
-                            <div class="card-header">
-                                <?php echo "<h2>$questionText</h2>"; ?>
-                            </div>
-                            <div class="card-body">
-                                <?php
-                                    if ($resulte->num_rows > 0) {
-                                    // Parcourir les réponses de la question actuelle
-                                        while ($row = $resulte->fetch_assoc()) {
-                                            echo $row["bonne_reponse"] . "<br>" . $row["reponse"] . "<br>" . $row["reponce"] . "<br>" . $row["reponze"];
-                                        }
-                                    } else {
-                                        echo "Aucune réponse trouvée.";
-                                    }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-                }
-                } else {
-                    echo "Aucune question trouvée.";
-                }
+                            $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
+                            $resulte = mysqli_query($connect_bdd, $sql);
                 ?>
+            <div class="border border-secondary rounded">
+                <div class="card bg-light">
+                    <div class="cache">
+                        <div class="card-header">
+                            <?php echo "<h2>$questionText</h2>"; ?>
+                        </div>
+                        <div class="card-body">
+                    <?php
+                        if ($resulte->num_rows > 0) {
+                                // Parcourir les réponses de la question actuelle
+                            while ($row = $resulte->fetch_assoc()) {
+                                echo $row["bonne_reponse"] . "<br>" . $row["reponse"] . "<br>" . $row["reponce"] . "<br>" . $row["reponze"];                                        }
+                                } else {
+                                    echo "Aucune réponse trouvée.";}
+                    ?>
+                        </div>   
+                    </div>
+                </div>
             </div>
+                    <br><br>
+                    <?php
+                        }
+                        } else {
+                                echo "Aucune question trouvée.";
+                        }
+                    ?>             
         </div>
     </body>
 </html>

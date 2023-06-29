@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
                 <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
-                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-top" alt="Erreur"></a>
+                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
                 <div class="navbar" id="navbarNav">
                     <ul class="navbar-nav  ">
                     <!-- ajout des liens de redirection -->
@@ -117,44 +117,42 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
                             </li>
                         </div>
-                        <div class="conn">
+                        <div class="form-inline">
                             <li class="nav-item">
-                                <form action="" method="post">
+                            <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
-                                    <button type="submit">Déconnexion</button>
+                                    <a href="connexion.php"><img src="img\portal.png"width="70" height="70" class="d-inline-block align-center" alt=""></a>
                                 </form>
-                            </li>
-                        </div>
-                        <div class="deco">
-                            <li class="nav-item">
                             </li>
                         </div>
                     </ul>
                 </div>
             </div>
         </nav>
-    
+    <br><br>
         <div class="container">
-            <div class="card bg-light">
-                <form method="post" action="" name="monform">
-                    <div class="card-header">
-                        <h3>Crées ton Quizz</h3><br>
-                    </div>
-                    <div class="card-body">
-                        <input type="text" name="titre" id="titre" placeholder="Titre du quizz" required><br><br>
-                        <label for="difficulte">Difficulté:</label>
-                        <select name="difficulte" id="difficulte" required>
-                            <option value="1">Facile</option>
-                            <option value="2">Moyen</option>
-                            <option value="3">Difficile</option>
-                        </select><br><br> 
-                    <input type="button" value="Ajouter une question" onclick="addquest()">
-                        <div id=crea></div><br><br>
-                        <input type="button" value="Supprimer une question" onclick="suppquest()">
-                        <div id=crea1></div><br>
-                    </div>
-                    <button type="submit" name="submit" id="submit">Valider</button>
-                </form>      
+            <div class="border border-secondary rounded">
+                <div class="card bg-light">
+                    <form method="post" action="" name="monform">
+                        <div class="card-header">
+                            <h3>Crées ton Quizz</h3><br>
+                        </div>
+                        <div class="card-body">
+                            <input type="text" name="titre" id="titre" placeholder="Titre du quizz" required><br><br>
+                            <label for="difficulte">Difficulté:</label>
+                            <select name="difficulte" id="difficulte" required>
+                                <option value="1">Facile</option>
+                                <option value="2">Moyen</option>
+                                <option value="3">Difficile</option>
+                            </select><br><br> 
+                        <input type="button" value="Ajouter une question" onclick="addquest()">
+                            <div id=crea></div><br><br>
+                            <input type="button" value="Supprimer une question" onclick="suppquest()">
+                            <div id=crea1></div><br>
+                        </div>
+                        <button type="submit" name="submit" id="submit">Valider</button>
+                    </form>      
+                </div>
             </div>
         </div>
         <script src="Script.js"></script>
