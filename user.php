@@ -84,7 +84,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 <td><?php echo $quiz['titre']; ?></td>
                                 <td><?php echo $quiz['difficulte']; ?></td>
                                 <td>
-                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a>
+                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a>
                                 </td>
                             </tr>
                                 <?php endforeach; ?>
@@ -93,6 +93,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
             </div>
         </div>
+        <script src="Script.js"></script>
   </body>
 </html>    
 
