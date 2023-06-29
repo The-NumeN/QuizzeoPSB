@@ -46,7 +46,7 @@ $result = mysqli_query($connect_bdd, $test);
                             <li class="nav-item">
                                 <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
-                                    <button type="submit">Déconnexion</button>
+                                    <a href="connexion.php"><button class="deco"><img src="img\portal.png"width="60" height="60" class="d-inline-block align-center" alt=""></button></a>
                                 </form>
                             </li>
                         </div>
