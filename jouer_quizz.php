@@ -68,11 +68,11 @@ $result = mysqli_query($connect_bdd, $test);
                     $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
                     $resulte = mysqli_query($connect_bdd, $sql);
                     ?>
-                    <div class="card bg-light <?php echo ($questionIndex > 0) ? 'hidden' : ''; ?>">
+                    <div class="card bg-light  <?php echo ($questionIndex > 0) ? 'hidden' : ''; ?> cache">
                         <div class="card-header">
                             <?php echo $questionText; ?>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body ">
                             <?php
                             if ($resulte->num_rows > 0) {
                                 // Parcourir les réponses de la question actuelle
@@ -83,16 +83,16 @@ $result = mysqli_query($connect_bdd, $test);
                                     $responseText2 = $row["reponce"];
                                     $responseText3 = $row["reponze"];
                                     ?>
-                                    <input type="radio" name="bonne_reponse<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
+                                    <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
                                     <label><?php echo $responseText; ?></label>
                                     <br>
                                     <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
                                     <label><?php echo $responseText1; ?></label>
                                     <br>
-                                    <input type="radio" name="reponce<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
+                                    <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
                                     <label><?php echo $responseText2; ?></label>
                                     <br>
-                                    <input type="radio" name="reponze<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
+                                    <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
                                     <label><?php echo $responseText3; ?></label>
                                     <br>
                                     <?php
@@ -102,20 +102,23 @@ $result = mysqli_query($connect_bdd, $test);
                             }
                             ?>
                         </div>
-                        <button id='pre' onclick='plusSlide(-1)'>Précédent</button>
-                        <button id='sui' onclick='plusSlide(1)'>Suivant</button>
                     </div>
                     <?php
                     $questionIndex++; // Augmenter l'indice de la question actuelle
                 }
                 ?>
-                <input type="button" value="Valider" onclick="afficherProchaineQuestion()">
+                <input type="button" id='pre' onclick='plusSlide(-1)' value="Précédent">
+            <input type="button" id='sui' onclick='plusSlide(1)' value="Suivant"><br>
+                <input type="submit" value="Valider">
             <?php
             } else {
                 echo "Aucune question trouvée.";
             }
+            
             ?>
+            
         </form>
+        
         <script src="Script.js"></script>
     </body>
 </html>
