@@ -42,7 +42,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <title>Modification des Quizzes</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="connect2.css">
+        <link rel="stylesheet" href="connect.css">
     </head>
     <body>
         <!-- HEADER -->
@@ -61,7 +61,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <li class="nav-item">
                             <form action="" method="post">
                                     <input type="hidden" name="logout" value="true">
-                                    <a href="connexion.php"><img src="img\portal.png"width="70" height="70" class="d-inline-block align-center" alt=""></a>
+                                    <div class="tamere"><button class="deco"><img src="img\portal.png"width="60px" height="60px" class="d-inline-block align-center" alt=""></button></div>
                                 </form>
                             </li>
                         </div>

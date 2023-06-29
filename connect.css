@@ -40,6 +40,15 @@ button {
     border-radius: 80px;
 }
 
+.tamere button {
+    text-align: center;
+    margin: 5px;
+    transition: 300ms;
+    background-color: rgb(135, 135, 135);
+    color: white;
+    border-radius: 80px;
+}
+
 button:hover {
     background-color: whitesmoke;
     color: black;
