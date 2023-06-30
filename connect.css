@@ -104,12 +104,6 @@ table {
     color: white;
 }
 
-.card-header p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
-    color: black;
-}
-
 .card-header {
     background-color: lightgrey;
 }
