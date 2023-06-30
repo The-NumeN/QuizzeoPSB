@@ -119,6 +119,6 @@ $result = mysqli_query($connect_bdd, $test);
             
         </form>
         
-        <script src="Script.js"></script>
+        <script src="Scripts.js"></script>
     </body>
 </html>
