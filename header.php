@@ -8,7 +8,8 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
   <body>
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="hed">
+    <nav class="navbar navbar navbar-dark bg-dark">
       <div class="container-fluid">
       <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
         <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
@@ -29,6 +30,7 @@
         </div>
       </div>
     </nav>
+    </div>
     <br>
   </body>
 </html>

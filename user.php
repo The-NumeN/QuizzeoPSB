@@ -42,6 +42,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
     <body>
         <!-- HEADER -->
+        <div class="hed">
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
             <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
@@ -65,7 +66,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </ul>
                 </div>
             </div>
-        </nav><br><br>
+        </nav>
+        </div><br><br>
         <div class="container">
              <h2>Liste des quizz</h2><br>
                 <?php foreach ($quizzes as $quiz) : ?>
@@ -85,10 +87,10 @@ while ($row = mysqli_fetch_assoc($result)) {
         </div>
         <script src="Scripts.js"></script>
   </body><br>
-  <footer>
-                <div class="row">
-                    <div class="col-md-12 bg-dark"><hr><p class="text-center text-white">&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens  </p></div>
-                </div>
-    </footer>
+  <footer class="fixed_footer">
+  <div class="content">
+    <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
+  </div>
+</footer>
 </html>    
 
