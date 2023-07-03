@@ -145,6 +145,13 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </div>              
                 </div>
             </div>
-        </div>
-    </body>
+        </div><BR>
+        
+    </body><br>
+    <footer>
+                <div class="row">
+                    <div class="col-md-12 bg-dark"><hr><p class="text-center text-white">&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens  </p></div>
+                </div>
+    </footer>
+    
 </html>

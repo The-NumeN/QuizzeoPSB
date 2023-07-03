@@ -95,5 +95,10 @@ function BDDconnect() {
             </div>
         </div>
 
-    </body>
+    </body><br>
+    <footer>
+                <div class="row">
+                    <div class="col-md-12 bg-dark"><hr><p class="text-center text-white">&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens  </p></div>
+                </div>
+    </footer>
 </html>
