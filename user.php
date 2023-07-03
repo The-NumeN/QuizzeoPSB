@@ -93,7 +93,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
             </div>
         </div>
-        <script src="Script.js"></script>
+        <script src="Scripts.js"></script>
   </body>
 </html>    
 

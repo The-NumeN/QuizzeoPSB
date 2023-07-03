@@ -84,18 +84,18 @@ $result = mysqli_query($connect_bdd, $test);
                                             $responseText2 = $row["reponce"];
                                             $responseText3 = $row["reponze"];
                                 ?>
-                                        <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
-                                        <label><?php echo $responseText; ?></label>
-                                        <br>
-                                        <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
-                                        <label><?php echo $responseText1; ?></label>
-                                        <br>
-                                        <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
-                                        <label><?php echo $responseText2; ?></label>
-                                        <br>
-                                        <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseId; ?>">
-                                        <label><?php echo $responseText3; ?></label>
-                                        <br>
+                                    <input type="radio" name="select<?php echo $questionIndex; ?>" value="bonne_reponse">
+                                    <label><?php echo $responseText; ?></label>
+                                    <br>
+                                    <input type="radio" name="select<?php echo $questionIndex; ?>" value="reponse">
+                                    <label><?php echo $responseText1; ?></label>
+                                    <br>
+                                    <input type="radio" name="select<?php echo $questionIndex; ?>" value="reponce">
+                                    <label><?php echo $responseText2; ?></label>
+                                    <br>
+                                    <input type="radio"name="select<?php echo $questionIndex; ?>" value="reponze">
+                                    <label><?php echo $responseText3; ?></label>
+                                    <br>
                                 <?php
                                         }
                                     } else {
@@ -105,12 +105,13 @@ $result = mysqli_query($connect_bdd, $test);
                             </div>
                         </div>
                     <?php
-                        $questionIndex++; // Augmenter l'indice de la question actuelle
+                        $questionIndex++;
+                         // Augmenter l'indice de la question actuelle
                     }
                     ?>
                     <input type="button" id='pre' onclick='plusSlide(-1)' value="Précédent">
                     <input type="button" id='sui' onclick='plusSlide(1)' value="Suivant"><br>
-                    <input type="submit" value="Valider">
+                    <input type="submit" id="submit" value="Valider">
                     <?php
                         } else {
                             echo "Aucune question trouvée.";
@@ -120,6 +121,6 @@ $result = mysqli_query($connect_bdd, $test);
                 </form>
             </div>
         </div>
-        <script src="Script.js"></script>
+        <script src="Scripts.js"></script>
     </body>
 </html>

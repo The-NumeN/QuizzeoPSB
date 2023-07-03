@@ -14,9 +14,6 @@ function suppquest() {
   var element = document.querySelector('.id_question:last-of-type');
   element.remove();
 }
-
-
-
 var slideIndex = 1;
 showSlides(slideIndex);
 function plusSlide(n) {
@@ -36,3 +33,9 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
 }
+document.querySelector('form').addEventListener('change', function () {
+var elts = document.querySelectorAll('input');
+		for (var i = 0; i < elts.length; i++) {
+			if ( elts[i].checked === true ) break;
+		}
+	console.log('value => '+elts[i].value);})
