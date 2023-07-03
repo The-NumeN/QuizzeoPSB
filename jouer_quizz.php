@@ -159,9 +159,9 @@ $result = mysqli_query($connect_bdd, $test);
     </div>
     </div>
 </body><br>
-<footer>
-                <div class="row">
-                    <div class="col-md-12 bg-dark"><hr><p class="text-center text-white">&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens  </p></div>
-                </div>
-    </footer>
+<footer class="fixed_footer">
+  <div class="content">
+    <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
+  </div>
+</footer>
 </html>
