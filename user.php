@@ -67,33 +67,23 @@ while ($row = mysqli_fetch_assoc($result)) {
             </div>
         </nav><br><br>
         <div class="container">
-            <div class="border border-secondary rounded">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Liste des quizz</h2>
+             <h2>Liste des quizz</h2><br>
+                <?php foreach ($quizzes as $quiz) : ?>
+                    <div class="border border-secondary rounded bloped">
+                        <div class="card blopee">
+                            <div class="card-header">
+                                <span><?php echo $quiz['titre']; ?></span><br>
+                                <span><?php echo $quiz['difficulte']; ?></span>                                          
+                            </div>
+                            <div class="card-body">                
+                                <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <table>
-                            <tr>
-                                <th>Titre</th>
-                                <th>Difficulte</th>
-                                <th>Actions</th>
-                            </tr>
-                                <?php foreach ($quizzes as $quiz) : ?>
-                            <tr>
-                                <td><?php echo $quiz['titre']; ?></td>
-                                <td><?php echo $quiz['difficulte']; ?></td>
-                                <td>
-                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a>
-                                </td>
-                            </tr>
-                                <?php endforeach; ?>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                    <br>
+                <?php endforeach; ?>
         </div>
         <script src="Script.js"></script>
-  </body>
+    </body>
 </html>    
 

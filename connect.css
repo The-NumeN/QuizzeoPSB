@@ -107,3 +107,8 @@ table {
 .card-header {
     background-color: lightgrey;
 }
+
+.bloped {
+    width: 50%;
+    margin: auto;
+}
