@@ -73,5 +73,4 @@ if(isset($_POST["button"])){
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
   </div>
 </footer>
-
 </html>
