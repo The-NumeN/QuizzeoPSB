@@ -31,26 +31,6 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     header("location: Connexion.php");
     exit();
 }
-// supp quizz
-if (isset($_GET["id_quizz"])) {
-    $id = $_GET["id_quizz"];
-    
-    $conn = mysqli_connect("127.0.0.1", "root", "", "quizzeo");
-
-    $updateQuery = $sql = "DELETE choices FROM choices
-    JOIN questions ON choices.id_question = questions.id_question
-    WHERE questions.id_quizz = '$id'";
-    mysqli_query($conn, $updateQuery);
-
-    $deleteQuery = "DELETE FROM questions WHERE id_quizz = '$id'";
-    mysqli_query($conn, $deleteQuery);
-
-    $deleteQuery = "DELETE FROM quizzes WHERE id_quizz = '$id'";
-    mysqli_query($conn, $deleteQuery);
-
-    header("location: quizz_list.php");
-    exit();
-}
 //  connect list quizz
 $query = "SELECT * FROM Quizzes";
 $result = mysqli_query($connect, $query);
