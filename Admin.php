@@ -105,14 +105,12 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <div class ="tableau">
                             <table>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Nom d'utilisateur</th>
                                     <th>Rôle</th>
                                     <th>Actions</th>
                                 </tr>
                                 <?php foreach ($users as $user) : ?>
                                 <tr>
-                                    <td><?php echo $user['id_test']; ?></td>
                                     <td><?php echo $user['pseudo']; ?></td>
                                     <td><?php echo $user['role']; ?></td>
                                     <td>

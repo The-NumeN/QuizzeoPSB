@@ -17,6 +17,10 @@ if (isset($_GET["id_test"])) {
     $updateQuery = "UPDATE Quizzes SET id_test = (SELECT id_test FROM Users WHERE role = 'admin') WHERE id_test = '$id'";
     mysqli_query($conn, $updateQuery);
 
+    // Supprimer l'utilisateur de la table User_quizz
+    $deleteQuery = "DELETE FROM User_quizz WHERE id_test = '$id'";
+    mysqli_query($conn, $deleteQuery);
+
     // Supprimer l'utilisateur de la table Users
     $deleteQuery = "DELETE FROM Users WHERE id_test = '$id'";
     mysqli_query($conn, $deleteQuery);
