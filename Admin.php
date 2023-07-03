@@ -148,6 +148,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 <td>
                                     <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
                                     <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
+                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a><br>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
