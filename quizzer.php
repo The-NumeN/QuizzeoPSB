@@ -1,15 +1,15 @@
 <?php 
     session_start();
-  if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
+// Vérifier si l'utilisateur est connecté en tant que quizzer, sinon rediriger vers la page de connexion
+if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "quizzer") {
+    header("location: Connexion.php");
+    exit();
+}
+if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     // Détruire la session
     session_destroy();
 
     // Rediriger vers la page de connexion
-    header("location: Connexion.php");
-    exit();
-}
-// Vérifier si l'utilisateur est connecté en tant que quizzer, sinon rediriger vers la page de connexion
-if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "quizzer") {
     header("location: Connexion.php");
     exit();
 }

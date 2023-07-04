@@ -1,6 +1,11 @@
 <?php
-
 session_start();
+// Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
+if (!isset($_SESSION["id_test"]) || !isset($_SESSION["pseudo"])) {
+    header("location: Connexion.php");
+    exit();
+    
+}
 if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     // Détruire la session
     session_destroy();
@@ -8,12 +13,6 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     // Rediriger vers la page de connexion
     header("location: Connexion.php");
     exit();
-}
-// Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
-if (!isset($_SESSION["id_test"]) || !isset($_SESSION["pseudo"])) {
-    header("location: Connexion.php");
-    exit();
-    
 }
 $connect_bdd = mysqli_connect("127.0.0.1", "root", "", "quizzeo");
 $id_test = $_SESSION['id_test'];

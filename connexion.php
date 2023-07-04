@@ -30,7 +30,8 @@ if(isset($_POST["button"])){
             header("location: quizzer.php");
         }
         // Redirection vers la page utilisateur par défaut
-        else {
+        elseif ($row["role"] == "utilisateur"){
+            $_SESSION["role"] = "utilisateur";
             header("location: user.php");
         }
     } else {
