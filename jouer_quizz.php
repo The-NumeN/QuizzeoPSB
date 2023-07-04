@@ -165,8 +165,8 @@ $result = mysqli_query($connect_bdd, $test);
                     mysqli_query($connect_bdd, $insertQuery);
                 }
                 // Redirection vers la page des résultats avec le score et les bonnes réponses
-                header("Location: resultats.php?score=$score&id_test=$id_test&id_quizz=$id_quizz");
-                exit();
+                // header("Location: Resultats.php?score=$score&id_test=$id_test&id_quizz=$id_quizz");
+                // exit();
             }
             ?>
         </form>
