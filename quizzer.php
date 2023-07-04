@@ -82,7 +82,7 @@ function BDDconnect() {
                     </div>
                     <br>
                 <?php endforeach; ?>
-            <br><br>
+            
             <div class="border border-secondary rounded bloped">
                 <div class="card bg-light">
                     <div class="card-header">
@@ -93,12 +93,13 @@ function BDDconnect() {
                     </div>
                 </div>            
             </div>
-        </div>
-
-    </body><br>
-    <footer class="fixed_footer">
+        </div><br><br><br>
+        <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
   </div>
 </footer>
+
+    </body>
+    
 </html>

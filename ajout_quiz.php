@@ -154,12 +154,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </form>      
                 </div>
             </div>
-        </div>
-        <script src="ScriptS.js"></script>
-    </body><br>
-    <footer class="fixed_footer">
+        </div><br><br><br>
+        <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
   </div>
 </footer>
+        <script src="ScriptS.js"></script>
+    </body>
 </html>

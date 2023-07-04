@@ -82,13 +82,14 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </div>
                     <br>
                 <?php endforeach; ?>
-        </div>
-        <script src="Scripts.js"></script>
-  </body><br>
-  <footer class="fixed_footer">
+        </div><br><br><br><br>
+        <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
   </div>
 </footer>
+        <script src="Scripts.js"></script>
+  </body>
+  
 </html>    
 

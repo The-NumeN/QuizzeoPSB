@@ -145,12 +145,12 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </div>              
                 </div>
             </div>
-        </div><BR>
-        
-    </body>
-    <footer class="fixed_footer">
+        </div><br><br><br>
+        <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
   </div>
 </footer>
+    </body>
+   
 </html>
