@@ -73,7 +73,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <div class="card blopee">
                             <div class="card-header">
                                 <span><?php echo $quiz['titre']; ?></span><br>
-                                <span><?php echo $quiz['titre']; ?></span><br>
                                 <span><?php $difficulte = $quiz['difficulte'];
                                             $difficulteText = "";
                                             if ($difficulte == 1) {
