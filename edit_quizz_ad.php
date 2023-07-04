@@ -6,6 +6,14 @@ if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "admin") {
     header("location: Connexion.php");
     exit();
 }
+if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
+    // Détruire la session
+    session_destroy();
+
+    // Rediriger vers la page de connexion
+    header("location: Connexion.php");
+    exit();
+}
 
 if (isset($_GET["id_quizz"])) {
     $idQuizz = $_GET["id_quizz"];
