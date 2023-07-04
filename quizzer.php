@@ -9,7 +9,7 @@
     exit();
 }
 // Vérifier si l'utilisateur est connecté en tant que quizzer, sinon rediriger vers la page de connexion
-if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "quizzer") {
+if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "quizzer") {
     header("location: Connexion.php");
     exit();
 }

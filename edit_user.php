@@ -7,7 +7,7 @@ if (isset($_POST['logout']) && $_POST['logout'] === 'true') {
     exit();
 }
 // Vérifier si l'utilisateur est connecté en tant qu'admin, sinon rediriger vers la page de connexion
-if (!isset($_SESSION["pseudo"]) && $_SESSION["role"] !== "admin") {
+if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "admin") {
     header("location: Connexion.php");
     exit();
 }
