@@ -69,6 +69,28 @@ if (isset($_GET["id_quizz"])) {
     <link rel="stylesheet" href="connectE.css">
 </head>
 <body>
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
+                <div class="navbar" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <div class="inscri">
+                            <li class="nav-item">
+                                <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
+                            </li>
+                        </div>
+                        <div class="form-inline">
+                            <li class="nav-item">
+                                <form action="" method="post">
+                                    <input type="hidden" name="logout" value="true">
+                                   <div class="tamere"><button class="deco"><img src="img\portal.png"width="60px" height="60px" class="d-inline-block align-center" alt=""></button></div>
+                                </form>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     <h1>Modifier Quizz</h1>
     <form action="" method="post">
         <label for="titre">Titre:</label>
