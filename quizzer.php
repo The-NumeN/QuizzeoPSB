@@ -115,7 +115,7 @@ while ($row = mysqli_fetch_assoc($resulte)) {
                                 <th>Difficulte</th>
                                 <th>Actions</th>
                             </tr>
-                            <?php foreach ($quizzes as $quiz) : ?>
+                            <?php foreach ($quizze as $quiz) : ?>
                             <tr>
                                 <td><?php echo $quiz['titre']; ?></td>
                                 <td><?php
