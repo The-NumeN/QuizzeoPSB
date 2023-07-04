@@ -73,7 +73,19 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <div class="card blopee">
                             <div class="card-header">
                                 <span><?php echo $quiz['titre']; ?></span><br>
-                                <span><?php echo $quiz['difficulte']; ?></span>                                          
+                                <span><?php echo $quiz['titre']; ?></span><br>
+                                <span><?php $difficulte = $quiz['difficulte'];
+                                            $difficulteText = "";
+                                            if ($difficulte == 1) {
+                                                $difficulteText = "Facile";
+                                            } elseif ($difficulte == 2) {
+                                                $difficulteText = "Moyen";
+                                            } elseif ($difficulte == 3) {
+                                                $difficulteText = "Difficile";
+                                            }
+                                            echo $difficulteText;
+                                        ?>
+                                </span>                                         
                             </div>
                             <div class="card-body">                
                                 <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
