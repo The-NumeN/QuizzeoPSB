@@ -66,13 +66,12 @@ while ($row = mysqli_fetch_assoc($result)) {
             </div>
         </nav>
         </div><br><br>
-        <div class="container">
+       
              <h2>Liste des quizz</h2><br>
+             
                 <?php foreach ($quizzes as $quiz) : ?>
-                    <div class="border border-secondary rounded bloped">
-                        <div class="card blopee">
-                            <div class="card-header">
-                                <span><?php echo $quiz['titre']; ?></span><br>
+                    <div class="zoom">
+                                <span class="intil"><?php echo $quiz['titre']; ?></span><br>
                                 <span><?php $difficulte = $quiz['difficulte'];
                                             $difficulteText = "";
                                             if ($difficulte == 1) {
@@ -85,15 +84,15 @@ while ($row = mysqli_fetch_assoc($result)) {
                                             echo $difficulteText;
                                         ?>
                                 </span>                                         
-                            </div>
                             <div class="card-body">                
                                 <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
                             </div>
                         </div>
                     </div>
+                    </div>
                     <br>
                 <?php endforeach; ?>
-        </div><br><br><br><br>
+        <br><br><br><br>
         <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>

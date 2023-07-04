@@ -116,7 +116,8 @@ footer{
     width: 100%;
     height: 5%;
     background: #816868;
-    position: fixed; bottom: 0PX;
+    position: fixed; 
+    bottom: 0PX;
     
   
   }
@@ -128,3 +129,25 @@ footer{
   .hed{
     background-color: aquamarine;
   }
+  * {
+    box-sizing: border-box;
+  }
+
+  .zoom {
+    padding: 50px;
+    background-color: rgb(115, 186, 115);
+    transition: transform .2s;
+    width: 325px;
+    height: 325px;
+    margin: 0 auto;
+    border-radius: 5px;
+
+  }
+  
+  .zoom:hover {
+    transform: scale(1.1);
+  }
+  .intil{
+    font-size: 20px;
+    font-weight: 700;
+}
