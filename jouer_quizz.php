@@ -157,11 +157,12 @@ $result = mysqli_query($connect_bdd, $test);
         <script src="scripts.js"></script>
 
     </div>
-    </div>
-</body><br>
-<footer class="fixed_footer">
+    </div><br><br>
+    <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
   </div>
 </footer>
+</body>
+
 </html>

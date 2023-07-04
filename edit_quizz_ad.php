@@ -142,11 +142,12 @@ if (isset($_GET["id_quizz"])) {
         <?php endforeach; ?>
 
         <button type="submit" name="submit">Modifier</button>
-    </form>
-</body><br>
-<footer class="fixed_footer">
+    </form><br><br><br>
+    <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
   </div>
 </footer>
+</body>
+
 </html>

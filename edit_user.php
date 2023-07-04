@@ -86,10 +86,11 @@ if (isset($_GET["id_test"])) {
                 </div>
             </div>
         </div>
-    </body><br>
-    <footer class="fixed_footer">
+        <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
   </div>
 </footer>
+    </body>
+    
 </html>

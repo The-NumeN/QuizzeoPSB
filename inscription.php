@@ -38,6 +38,7 @@ if (isset($_POST['submit'])) {
     <head>
         <meta charset="UTF-8">
         <title>Inscription</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"> 
         <link rel="stylesheet" href="connectE.css">
     </head>
@@ -61,10 +62,10 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
         </div>
-    </body><br>
-    <footer class="fixed_footer">
+        <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
   </div>
 </footer>
+    </body>
 </html>
