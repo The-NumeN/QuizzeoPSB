@@ -67,75 +67,89 @@ $result = mysqli_query($connect_bdd, $test);
     </div>
     <div class="container">
         <form method="post" action="">
-            <?php
-            if ($result->num_rows > 0) {
-                $questionIndex = 0; // Indice pour suivre la question actuelle
-                // Parcourir les questions
-                while ($row = $result->fetch_assoc()) {
-                    $questionId = $row['id_question'];
-                    $questionText = $row['intitule'];
+        <?php
+    if ($result->num_rows > 0) {
+        $questionIndex = 0; // Indice pour suivre la question actuelle
+        // Parcourir les questions
+        while ($row = $result->fetch_assoc()) {
+            $questionId = $row['id_question'];
+            $questionText = $row['intitule'];
 
-                    // Sélection des réponses pour la question actuelle
-                    $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
-                    $resulte = mysqli_query($connect_bdd, $sql);
-                    ?>
-                    <div class="card bg-light cache">
-                        <div class="card-header">
-                            <?php echo $questionText; ?>
-                        </div>
-                        <div class="card-body">
-                            <?php
-                            if ($resulte->num_rows > 0) {
-                                // Parcourir les réponses de la question actuelle
-                                while ($row = $resulte->fetch_assoc()) {
-                                    $responseText = $row["bonne_reponse"];
-                                    $responseText1 = $row["reponse"];
-                                    $responseText2 = $row["reponce"];
-                                    $responseText3 = $row["reponze"];
-                                    ?>
-                                    <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="bonne_reponse">
-                                    <label><?php echo $responseText; ?></label>
-                                    <br>
-                                    <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="reponse">
-                                    <label><?php echo $responseText1; ?></label>
-                                    <br>
-                                    <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="reponce">
-                                    <label><?php echo $responseText2; ?></label>
-                                    <br>
-                                    <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="reponze">
-                                    <label><?php echo $responseText3; ?></label>
-                                    <br>
-                                    <?php
-                                }
-                            } else {
-                                echo "Aucune réponse trouvée.";
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <?php
-                    $questionIndex++; // Augmenter l'indice de la question actuelle
+            // Sélection des réponses pour la question actuelle et les mélanger
+            $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
+            $resulte = mysqli_query($connect_bdd, $sql);
+            $responses = array();
+            if ($resulte->num_rows > 0) {
+                while ($row = $resulte->fetch_assoc()) {
+                    $responses[] = $row;
                 }
-                ?>
-                <input type="button" id='pre' onclick='plusSlide(-1)' value="Précédent">
-                <input type="button" id='sui' onclick='plusSlide(1)' value="Suivant"><br>
-                <input type="submit" value="Valider">
-            <?php
-            } else {
-                echo "Aucune question trouvée.";
+                shuffle($responses); // Mélanger les réponses
             }
-
+            ?>
+            <div class="card bg-light cache">
+                <div class="card-header">
+                    <?php echo $questionText; ?>
+                </div>
+                <div class="card-body">
+                    <?php
+                    if (!empty($responses)) {
+                        foreach ($responses as $response) {
+                            $responseText = $response["bonne_reponse"];
+                            $responseText1 = $response["reponse"];
+                            $responseText2 = $response["reponce"];
+                            $responseText3 = $response["reponze"];
+                            $responseValues = array($responseText, $responseText1, $responseText2, $responseText3);
+                            shuffle($responseValues); // Mélanger les valeurs des réponses
+                            ?>
+                            <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseValues[0]; ?>">
+                            <label><?php echo $responseValues[0]; ?></label>
+                            <br>
+                            <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseValues[1]; ?>">
+                            <label><?php echo $responseValues[1]; ?></label>
+                            <br>
+                            <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseValues[2]; ?>">
+                            <label><?php echo $responseValues[2]; ?></label>
+                            <br>
+                            <input type="radio" name="reponse<?php echo $questionIndex; ?>" value="<?php echo $responseValues[3]; ?>">
+                            <label><?php echo $responseValues[3]; ?></label>
+                            <br>
+                            <?php
+                        }
+                    } else {
+                        echo "Aucune réponse trouvée.";
+                    }
+                    ?>
+                </div>
+            </div>
+            <?php
+            $questionIndex++; // Augmenter l'indice de la question actuelle
+        }
+        ?>
+        <input type="button" id='pre' onclick='plusSlide(-1)' value="Précédent">
+        <input type="button" id='sui' onclick='plusSlide(1)' value="Suivant"><br>
+        <input type="submit" value="Valider">
+    <?php
+    } else {
+        echo "Aucune question trouvée.";
+    }
             // Vérifier si le formulaire a été soumis
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $score = 0; // Score de l'utilisateur
+                $score = 0;
                 // Parcourir les réponses soumises par l'utilisateur
                 foreach ($_POST as $key => $value) {
-                    // Vérifier si la clé commence par "reponse" et si la valeur est "bonne_reponse"
-                    if (strpos($key, 'reponse') === 0 && $value === 'bonne_reponse') {
-                    // Incrémenter le score de l'utilisateur de 10
+                    // Récupérer l'indice de la question à partir de la clé
+                    $questionIndex = substr($key, 7); // Supprimer la partie "reponse" pour obtenir l'indice
+                
+                    // Récupérer la réponse correcte pour cette question
+                    $correctResponse = $responses[$questionIndex]["bonne_reponse"];
+                
+                    // Vérifier si la valeur correspond à la réponse correcte
+                    if ($value === $correctResponse) {
+                        // Incrémenter le score de l'utilisateur de 10
                         $score += 10;
                     }
                 }
+                
 
                 // Vérifier si l'utilisateur a déjà répondu à ce test et ce quizz dans la table user_quizz
                 $checkQuery = "SELECT * FROM user_quizz WHERE id_test='$id_test' AND id_quizz='$id_quizz'";
@@ -150,6 +164,9 @@ $result = mysqli_query($connect_bdd, $test);
                     $insertQuery = "INSERT INTO user_quizz (id_test, id_quizz, score) VALUES ('$id_test', '$id_quizz', '$score')";
                     mysqli_query($connect_bdd, $insertQuery);
                 }
+                // Redirection vers la page des résultats avec le score et les bonnes réponses
+                header("Location: resultats.php?score=$score&id_test=$id_test&id_quizz=$id_quizz");
+                exit();
             }
             ?>
         </form>
