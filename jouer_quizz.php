@@ -46,7 +46,7 @@ $result = mysqli_query($connect_bdd, $test);
           <!-- ajout des liens de redirection -->
                         <div class="inscri">
                             <li class="nav-item">
-                                <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span>, Bienvenue !</p>
+                                <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
                             </li>
                         </div>
                         <div class="form-inline">
