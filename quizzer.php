@@ -19,16 +19,26 @@ function BDDconnect() {
         die("Échec de la connexion à la base de données: " .mysqli_error($connect_bdd));
     }
     return $connect_bdd;
-  }
-  $connect = BDDconnect();
+}
+$connect = BDDconnect();
   
-  $query = "SELECT * FROM Quizzes";
-  $result = mysqli_query($connect, $query);
-  $quizzes = [];
+$query = "SELECT * FROM Quizzes";
+$result = mysqli_query($connect, $query);
+$quizzes = [];
   
-  while ($row = mysqli_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
     $quizzes[] = $row;
-  }
+}
+
+$test = $_SESSION["id_test"];
+$q = "SELECT * FROM Quizzes WHERE id_test = '$test'";
+$resulte = mysqli_query($connect, $q);
+$quizze = [];
+
+while ($row = mysqli_fetch_assoc($resulte)) {
+  $quizze[] = $row;
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,24 +103,51 @@ function BDDconnect() {
                     </div>
                     <br>
                 <?php endforeach; ?>
-            
             <div class="border border-secondary rounded bloped">
                 <div class="card bg-light">
                     <div class="card-header">
-                        <h3>Ajouter un quizz</h3>
+                        <h3>Mes quizz</h3>
                     </div>
                     <div class="card-body">
+                        <table> 
+                            <tr>
+                                <th>Titre</th>
+                                <th>Difficulte</th>
+                                <th>Actions</th>
+                            </tr>
+                            <?php foreach ($quizzes as $quiz) : ?>
+                            <tr>
+                                <td><?php echo $quiz['titre']; ?></td>
+                                <td><?php
+                                        $difficulte = $quiz['difficulte'];
+                                        $difficulteText = "";
+                                        if ($difficulte == 1) {
+                                            $difficulteText = "Facile";
+                                        } elseif ($difficulte == 2) {
+                                            $difficulteText = "Moyen";
+                                        } elseif ($difficulte == 3) {
+                                            $difficulteText = "Difficile";
+                                        }
+                                    echo $difficulteText;
+                                    ?>
+                                </td>
+                                <td>
+                                    <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
+                                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
+                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a><br>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </table>
                         <a href="ajout_quiz.php"><button> Ajouter un quizz</button></a>
                     </div>
-                </div>            
+                </div>
             </div>
         </div><br><br><br>
         <footer class="fixed_footer">
-  <div class="content">
-    <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
-  </div>
-</footer>
-
+            <div class="content">
+                <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
+            </div>
+        </footer>
     </body>
-    
 </html>

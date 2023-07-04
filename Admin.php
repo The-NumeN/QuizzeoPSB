@@ -122,7 +122,19 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <?php foreach ($quizzes as $quiz) : ?>
                             <tr>
                                 <td><?php echo $quiz['titre']; ?></td>
-                                <td><?php echo $quiz['difficulte']; ?></td>
+                                <td><?php
+                                        $difficulte = $quiz['difficulte'];
+                                        $difficulteText = "";
+                                        if ($difficulte == 1) {
+                                            $difficulteText = "Facile";
+                                        } elseif ($difficulte == 2) {
+                                            $difficulteText = "Moyen";
+                                        } elseif ($difficulte == 3) {
+                                            $difficulteText = "Difficile";
+                                        }
+                                    echo $difficulteText;
+                                    ?>
+                                </td>
                                 <td>
                                     <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
                                     <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
@@ -136,21 +148,15 @@ while ($row = mysqli_fetch_assoc($result)) {
             </div>
             <br><br>
             <div class="border border-secondary  rounded">
-                <div class="card bg-light">
-                    <div class="card-header">
-                        <h3>Ajouter un quizz</h3>
-                    </div>   
-                    <div class="card-body">
-                        <a href="ajout_quiz.php">Ajouter un quizz</a>
-                    </div>              
-                </div>
+                <div class="card-body">
+                    <a href="ajout_quiz.php">Ajouter un quizz</a>
+                </div>              
             </div>
         </div><br><br><br>
         <footer class="fixed_footer">
-  <div class="content">
-    <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
-  </div>
-</footer>
+            <div class="content">
+                <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
+            </div>
+        </footer>
     </body>
-   
 </html>
