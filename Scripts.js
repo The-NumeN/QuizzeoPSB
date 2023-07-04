@@ -1,5 +1,4 @@
 var ident = 1;
-
 function addquest() {
   var ajou = document.querySelectorAll('.id_question');
   ident = ajou.length + 1;
