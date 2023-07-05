@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 // Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
 if (!isset($_SESSION["id_test"]) || !isset($_SESSION["pseudo"])) {
     header("location: Connexion.php");
@@ -31,9 +32,14 @@ $result = mysqli_query($connect_bdd, $test);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jouer</title>
+<<<<<<< HEAD
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="connectE.css">
+=======
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="connectE.css">
+    <link rel="stylesheet" href="connect2.css">
+>>>>>>> 533ecb908bc03558a016ddb7b9548d625080c067
 </head>
 <body>
 <nav class="navbar navbar-expand navbar-dark bg-dark">
