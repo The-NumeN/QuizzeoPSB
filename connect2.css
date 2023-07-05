@@ -237,6 +237,10 @@ footer {
 }
 
 .bidoop {
-    padding: 25px;
+    color: white;
+    background-color: rgba(41, 41, 41, 0.827);
+}
 
+.bidoop form {
+    padding: 25px;
 }

@@ -79,7 +79,7 @@ if (isset($_GET["id_quizz"])) {
 <body>
 <style>
             body{
-             background-image:url();
+             background-image:url(img/bgmodif);
             }
         </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -106,7 +106,7 @@ if (isset($_GET["id_quizz"])) {
         </nav>
         <br><br>
         <div class="container">
-            <div class="border border-secondary rounded w-50 mx-auto bidoop">
+            <div class="border border-secondary rounded w-50 mx-auto  bidoop">
                 <h1>Modifier Quizz</h1><br>
                 <form action="" method="post">
                     <label for="titre" class="labelo">Titre:</label>

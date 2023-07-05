@@ -97,12 +97,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 <br><br>
                             </div>
                         </div>
-                        <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
                     <br>
-                </div>
             </div>
-        </div>  
+        </div> 
             <!-- <br><br><br><br> -->
             <footer class="fixed_footer">
   <div class="content">
