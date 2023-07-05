@@ -146,11 +146,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
             </div>
             <br><br>
-            <div class="border border-secondary  rounded">
-                <div class="card-body">
-                    <a href="ajout_quiz.php">Ajouter un quizz</a>
-                </div>              
-            </div>
+                <a href="ajout_quiz.php"><button> Ajouter un quizz</button></a><br>
         </div><br><br><br>
         <footer class="fixed_footer">
             <div class="content">
