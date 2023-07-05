@@ -97,23 +97,22 @@ if (isset($_GET["id_quizz"])) {
                 </div>
             </div>
         </nav>
-    <h1>Modifier Quizz</h1>
-    <form action="" method="post">
-        <label for="titre">Titre:</label>
-        <input type="text" name="titre" value="<?php echo $quizzData['titre']; ?>" required><br><br>
-
-        <label for="difficulte">Difficulté:</label>
-        <select name="difficulte" required>
-            <option value="1" <?php if ($quizzData['difficulte'] == 1) echo 'selected'; ?>>Facile</option>
-            <option value="2" <?php if ($quizzData['difficulte'] == 2) echo 'selected'; ?>>Moyen</option>
-            <option value="3" <?php if ($quizzData['difficulte'] == 3) echo 'selected'; ?>>Difficile</option>
-        </select><br><br>
-
-        <?php foreach ($questions as $question): ?>
-            <label>Intitule: </label>
-            <input type="text" name="questions[<?php echo $question['id_question']; ?>][intitule]" value="<?php echo $question['intitule']; ?>" required><br>
-
-            <?php
+        <br><br>
+        <div class="container">
+            <h1>Modifier Quizz</h1>
+            <form action="" method="post">
+                <label for="titre">Titre:</label>
+                <input type="text" name="titre" value="<?php echo $quizzData['titre']; ?>" required><br><br>
+                <label for="difficulte">Difficulté:</label>
+                <select name="difficulte" required>
+                    <option value="1" <?php if ($quizzData['difficulte'] == 1) echo 'selected'; ?>>Facile</option>
+                    <option value="2" <?php if ($quizzData['difficulte'] == 2) echo 'selected'; ?>>Moyen</option>
+                    <option value="3" <?php if ($quizzData['difficulte'] == 3) echo 'selected'; ?>>Difficile</option>
+                </select><br><br>
+                <?php foreach ($questions as $question): ?>
+                    <label>Intitule: </label>
+                    <input type="text" name="questions[<?php echo $question['id_question']; ?>][intitule]" value="<?php echo $question['intitule']; ?>" required><br>
+                <?php
             $queryChoices = "SELECT * FROM choices WHERE id_question = '{$question['id_question']}'";
             $resultChoices = mysqli_query($connect_bdd, $queryChoices);
             $choices = array();
