@@ -26,7 +26,11 @@ if (isset($_GET["id_quizz"])) {
     $deleteQuery = "DELETE FROM user_quizz WHERE id_quizz = '$id'";
     mysqli_query($conn, $deleteQuery);
 
-    header("refresh: 1");
+    if ($_SESSION["role"] === "quizzer") {
+        header("Location: quizzer.php");
+    } elseif ($_SESSION["role"] === "admin") {
+        header("Location: admin.php");
+    }
     exit();
 }
 ?><br>
