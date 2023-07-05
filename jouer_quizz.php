@@ -64,7 +64,9 @@ $result = mysqli_query($connect_bdd, $test);
         </nav>
 <div class="cuicuiz">
     <div class="liquest">
+        <br><br>
         <h2>Liste des questions</h2>
+        <br>
     </div>
     <div class="container">
         <form method="post" action="">
@@ -114,6 +116,7 @@ $result = mysqli_query($connect_bdd, $test);
                             ?>
                         </div>
                     </div>
+                    <br>
                     <?php
                     $questionIndex++; // Augmenter l'indice de la question actuelle
                 }
