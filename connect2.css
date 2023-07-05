@@ -141,14 +141,12 @@ footer {
     padding: 50px;
     background-color: rgb(115, 131, 186);
     transition: transform .2s;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
     border-radius: 5px;
-    
-
 }
 
 .row {margin: 0 -5px;}
@@ -158,19 +156,7 @@ footer {
       display: block;
       margin-bottom: 20px;
     }
-  }
-/* .column {
-    float: left;
-    width: 25%;
-    padding: 0 10px;
-} */
- /* .carde {
-    position: relative;
-    left: auto;
-    right: auto;
-    /* margin-left: auto;
-    margin-right: auto; 
-}  */
+}
 .zoom:hover {
     transform: scale(1.1);
 }
