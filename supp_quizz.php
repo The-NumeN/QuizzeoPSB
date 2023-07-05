@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-// Vérifier si l'utilisateur est connecté en tant qu'admin, sinon rediriger vers la page de connexion
-if (!isset($_SESSION["pseudo"]) || $_SESSION["role"] !== "admin") {
+// Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
+if (!isset($_SESSION["id_test"]) || !isset($_SESSION["pseudo"]) || ($_SESSION["role"] !== "quizzer" && $_SESSION["role"] !== "admin")) {
     header("location: Connexion.php");
     exit();
 }
