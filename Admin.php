@@ -93,9 +93,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <td><?php echo $user['pseudo']; ?></td>
                                     <td><?php echo $user['role']; ?></td>
                                     <td>
-                                    <a href="edit_user.php?id_test=<?php echo $user['id_test']; ?>">Modifier</a>
+                                    <a href="edit_user.php?id_test=<?php echo $user['id_test']; ?>"><img src='img/edit.png' width='30px'></a></a>
                                     <?php if ($_SESSION["role"] === "admin" && $user['id_test'] !== $_SESSION["id_test"]) : ?>
-                                        <a href="supp_user.php?id_test=<?php echo $user['id_test']; ?>">Supprimer</a>
+                                        <a href="supp_user.php?id_test=<?php echo $user['id_test']; ?>"><img src='img/delete_user.png' width='30px'></a></a>
                                     <?php endif; ?>
                                     </td>
                                     </tr>
@@ -135,9 +135,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     ?>
                                 </td>
                                 <td>
-                                    <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Modifier</a>
-                                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Supprimer</a>
-                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>">Jouer</a><br>
+                                    <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img src='img/edit.png' width='30px'></a>
+                                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img src='img/delete.png' width='30px'></a>
+                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
