@@ -149,14 +149,18 @@ footer {
     border-radius: 5px;
 }
 
-.row {margin: 0 -5px;}
+.row {
+    margin: 0 -5px;
+}
+
 @media screen and (max-width: 1000px) {
     .row {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
     }
 }
+
 .zoom:hover {
     transform: scale(1.1);
 }
@@ -172,4 +176,38 @@ footer {
 
 .connT a {
     color: white;
+}
+.ima {
+    transition: 100ms;
+}
+.ima:hover {
+    transition: 100ms;
+    transform: scale(1.1);
+}
+
+#pre {
+    text-align: center;
+    margin: 5px;
+    transition: 300ms;
+    background-color: rgb(60, 154, 60);
+    color: white;
+    border-radius: 80px;
+}
+
+#sui {
+    text-align: center;
+    margin: 5px;
+    transition: 300ms;
+    background-color: rgb(60, 154, 60);
+    color: white;
+    border-radius: 80px;
+}
+
+#val {
+    text-align: center;
+    margin: 5px;
+    transition: 300ms;
+    background-color: rgb(60, 154, 60);
+    color: white;
+    border-radius: 80px;
 }

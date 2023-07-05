@@ -51,7 +51,8 @@ if(isset($_POST["button"])){
 </head>
 <body>
     <div class="container">
-        <div class="border border-secondary rounded">
+        <br><br>
+        <div class="border border-secondary w-50 mx-auto rounded">
             <div class="card bg-light">  
                 <form action="" method="post">
                     <div class="card-header">
