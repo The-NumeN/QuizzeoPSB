@@ -41,7 +41,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <body>
     <style>
             body{
-             background-image:url();
+             background-image:url(img/bgjouer);
             }
         </style>
         <!-- HEADER -->
@@ -90,10 +90,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                                                 }
                                                 echo $difficulteText;
                                             ?>
-                                </span><br><br><br>                                         
-                                <div class="card-body">                
+                                </span><br><br><br>                                                      
                                     <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
-                                </div><br><br>
+                                <br><br>
                             </div>
                         </div>
                     <br>

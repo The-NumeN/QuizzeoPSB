@@ -8,19 +8,20 @@ body {
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 50px;
-    color: rgb(43, 128, 185);
+    color: white;
+
 }
 
 h2 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 45px;
-    color: rgb(43, 128, 185);
+    color: white;
 }
 
 h3 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 40px;
-    color: rgb(43, 128, 185);
+    color: white;
 }
 
 input {
@@ -105,7 +106,21 @@ table {
 }
 
 .card-header {
+    background-color: rgb(59, 59, 59);
+}
+
+.card-body {
     background-color: lightgrey;
+}
+
+/* bg card admin */
+.admin {
+    background-color: rgb(41, 41, 41);
+}
+
+.addminn .tableau {
+    color: white;
+
 }
 
 .bloped {
@@ -139,15 +154,14 @@ footer {
 
 .zoom {
     padding: 50px;
-    background-color: rgb(115, 131, 186);
+    background-color: rgba(115, 131, 186, 0.717);
     transition: transform .2s;
     width: 250px;
     height: 250px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    border-radius: 5px;
-    /* display: block; */
+    border-radius: 10px;
 }
 
 .row {
@@ -224,4 +238,5 @@ footer {
 
 .bidoop {
     padding: 25px;
+
 }

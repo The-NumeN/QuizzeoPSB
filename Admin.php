@@ -53,7 +53,8 @@ while ($row = mysqli_fetch_assoc($result)) {
     <body>
     <style>
             body{
-             background-image:url();
+             background-image:url(img/bgadmin);
+             background-size:100%;
             }
         </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -79,13 +80,14 @@ while ($row = mysqli_fetch_assoc($result)) {
             </div>
         </nav>
         <br>
-        <div class="container">
-            <div class="border border-secondary rounded">
+        <div class="container"><br>
+            <br><br>
+            <div class="border border-secondary rounded w-50 mx-auto addminn">
                 <div class="card bg-light">
                     <div class="card-header">
                         <h3>Liste des utilisateurs</h3>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body admin">
                         <div class ="tableau">
                             <table>
                                 <tr>
@@ -111,12 +113,13 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
             </div>
             <br><br>
-            <div class="border border-secondary  rounded">
+            <div class="border border-secondary rounded w-50 mx-auto addminn">
                 <div class="card bg-light">
                     <div class="card-header">
                         <h3>Liste des quizz</h3>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body admin">
+                        <div class="tableau">
                         <table> 
                             <tr>
                                 <th>Titre</th>
@@ -147,6 +150,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             </tr>
                             <?php endforeach; ?>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>
