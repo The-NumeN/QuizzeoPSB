@@ -101,47 +101,48 @@ if (isset($_GET["id_quizz"])) {
         </nav>
         <br><br>
         <div class="container">
-            <h1>Modifier Quizz</h1>
-            <form action="" method="post">
-                <label for="titre">Titre:</label>
-                <input type="text" name="titre" value="<?php echo $quizzData['titre']; ?>" required><br><br>
-                <label for="difficulte">Difficulté:</label>
-                <select name="difficulte" required>
-                    <option value="1" <?php if ($quizzData['difficulte'] == 1) echo 'selected'; ?>>Facile</option>
-                    <option value="2" <?php if ($quizzData['difficulte'] == 2) echo 'selected'; ?>>Moyen</option>
-                    <option value="3" <?php if ($quizzData['difficulte'] == 3) echo 'selected'; ?>>Difficile</option>
-                </select><br><br>
-                <?php foreach ($questions as $question): ?>
-                    <label>Intitule: </label>
-                    <input type="text" name="questions[<?php echo $question['id_question']; ?>][intitule]" value="<?php echo $question['intitule']; ?>" required><br>
-                <?php
-            $queryChoices = "SELECT * FROM choices WHERE id_question = '{$question['id_question']}'";
-            $resultChoices = mysqli_query($connect_bdd, $queryChoices);
-            $choices = array();
-            while ($row = mysqli_fetch_assoc($resultChoices)) {
-                $choices[] = $row;
-            }
+            <div class="border border-secondary rounded w-50 mx-auto bidoop">
+                <h1>Modifier Quizz</h1><br>
+                <form action="" method="post">
+                    <label for="titre" class="labelo">Titre:</label>
+                        <input type="text" name="titre" value="<?php echo $quizzData['titre']; ?>" required><br><br>
+                    <label for="difficulte" class="labelo">Difficulté:</label>
+                        <select name="difficulte" required>
+                            <option value="1" <?php if ($quizzData['difficulte'] == 1) echo 'selected'; ?>>Facile</option>
+                            <option value="2" <?php if ($quizzData['difficulte'] == 2) echo 'selected'; ?>>Moyen</option>
+                            <option value="3" <?php if ($quizzData['difficulte'] == 3) echo 'selected'; ?>>Difficile</option>
+                        </select><br><br>
+                    <?php foreach ($questions as $question): ?>
+                        <label class="labelo">Intitule: </label>
+                        <input type="text" name="questions[<?php echo $question['id_question']; ?>][intitule]" value="<?php echo $question['intitule']; ?>" required><br>
+                    <?php
+                        $queryChoices = "SELECT * FROM choices WHERE id_question = '{$question['id_question']}'";
+                        $resultChoices = mysqli_query($connect_bdd, $queryChoices);
+                        $choices = array();
+                        while ($row = mysqli_fetch_assoc($resultChoices)) {
+                            $choices[] = $row;
+                        }
+                    ?>
+                    <?php foreach ($choices as $choice): ?>
+                        <label class="labelo">Bonne Réponse: </label>
+                        <input type="text" name="questions[<?php echo $question['id_question']; ?>][choices][<?php echo $choice['id_choice']; ?>][bonne_reponse]" value="<?php echo $choice['bonne_reponse']; ?>" required><br><br>
 
-            ?>
-            <?php foreach ($choices as $choice): ?>
-                <label>Bonne Réponse: </label>
-                <input type="text" name="questions[<?php echo $question['id_question']; ?>][choices][<?php echo $choice['id_choice']; ?>][bonne_reponse]" value="<?php echo $choice['bonne_reponse']; ?>" required><br><br>
-             
-                <label>Mauvaise Réponse: </label>
-                <input type="text" name="questions[<?php echo $question['id_question']; ?>][choices][<?php echo $choice['id_choice']; ?>][reponse]" value="<?php echo $choice['reponse']; ?>" required><br><br>
-                
-                <label>Mauvaise Réponse: </label>
-                <input type="text" name="questions[<?php echo $question['id_question']; ?>][choices][<?php echo $choice['id_choice']; ?>][reponce]" value="<?php echo $choice['reponce']; ?>" required><br><br>
-             
-                <label>Mauvaise Réponse: </label>
-                <input type="text" name="questions[<?php echo $question['id_question']; ?>][choices][<?php echo $choice['id_choice']; ?>][reponze]" value="<?php echo $choice['reponze']; ?>" required><br>
-                <?php endforeach; ?>
+                        <label class="labelo">Mauvaise Réponse: </label>
+                        <input type="text" name="questions[<?php echo $question['id_question']; ?>][choices][<?php echo $choice['id_choice']; ?>][reponse]" value="<?php echo $choice['reponse']; ?>" required><br><br>
+                        
+                        <label class="labelo">Mauvaise Réponse: </label>
+                        <input type="text" name="questions[<?php echo $question['id_question']; ?>][choices][<?php echo $choice['id_choice']; ?>][reponce]" value="<?php echo $choice['reponce']; ?>" required><br><br>
+                        
+                        <label class="labelo">Mauvaise Réponse: </label>
+                        <input type="text" name="questions[<?php echo $question['id_question']; ?>][choices][<?php echo $choice['id_choice']; ?>][reponze]" value="<?php echo $choice['reponze']; ?>" required><br>
+                    <?php endforeach; ?>
+                <br>
+                    <?php endforeach; ?>
 
-            <br>
-        <?php endforeach; ?>
-
-        <button type="submit" name="submit">Modifier</button>
-    </form><br><br><br>
+                    <button type="submit" name="submit">Modifier</button>
+                </form><br><br><br>
+            </div>
+        </div>
     <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>

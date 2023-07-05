@@ -39,29 +39,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     </head>
 
     <body>
-        <style>
-            body{
-                background-image: url(../QuizzeoPSB/img/quizfond.avif);
-            }
-            h1 {
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-size: 50px;
-                color: white;
-            }
-            h2 {
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-size: 50px;
-                color: white;
-                -webkit-text-stroke: 1px black;
-            }
-
-            h3 {
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-size: 40px;
-                color: white;
-            }
-            
-        </style>
         <!-- HEADER -->
         <div class="hed">
         <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -93,9 +70,9 @@ while ($row = mysqli_fetch_assoc($result)) {
             <h2>Liste des quizz</h2><br>
             <div class="row">
                 <?php foreach ($quizzes as $quiz) : ?>
-                    <div class="zoom">
-                        <div class="col-xl-4 col-lg-4">
-                            <span class="intil"><?php echo $quiz['titre']; ?></span><br<br>
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="zoom">
+                            <span class="intil"><?php echo $quiz['titre']; ?></span><br><br>
                             <span><?php $difficulte = $quiz['difficulte'];
                                             $difficulteText = "";
                                             if ($difficulte == 1) {

@@ -147,6 +147,7 @@ footer {
     margin-right: auto;
     margin-top: 30px;
     border-radius: 5px;
+    /* display: block; */
 }
 
 .row {
@@ -177,9 +178,11 @@ footer {
 .connT a {
     color: white;
 }
+
 .ima {
     transition: 100ms;
 }
+
 .ima:hover {
     transition: 100ms;
     transform: scale(1.1);
@@ -210,4 +213,15 @@ footer {
     background-color: rgb(60, 154, 60);
     color: white;
     border-radius: 80px;
+}
+
+.labelo {
+    display: block;
+    float: left;
+    width: 10px;
+
+}
+
+.bidoop {
+    padding: 25px;
 }
