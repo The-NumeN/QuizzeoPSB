@@ -17,12 +17,12 @@
         <div class="navbar" id="navbarNav">
           <ul class="navbar-nav  ">
           <!-- ajout des liens de redirection -->
-          <div class="inscri">
+          <div class="inscriP">
             <li class="nav-item">
               <a id="inscri"class="nav-link" href="inscription.php">Inscription</a>
             </li>
           </div>
-          <div class="conn">
+          <div class="connT">
             <li class="nav-item">
               <a id="conn" class="nav-link" href="connexion.php">Connexion</a>
             </li>
