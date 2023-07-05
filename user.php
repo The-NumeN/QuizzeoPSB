@@ -33,11 +33,42 @@ while ($row = mysqli_fetch_assoc($result)) {
 <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User</title>
+<<<<<<< HEAD
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <link rel="stylesheet" href="connectE.css">
+=======
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="connect2.css">
+>>>>>>> 533ecb908bc03558a016ddb7b9548d625080c067
     </head>
 
     <body>
+        <style>
+            body{
+                background-image: url(../QuizzeoPSB/img/quizfond.avif);
+            }
+
+            h1 {
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 50px;
+                color: white;
+            }
+
+            h2 {
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 50px;
+                color: white;
+                -webkit-text-stroke: 1px black;
+            }
+
+            h3 {
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 40px;
+                color: white;
+            }
+            
+        </style>
         <!-- HEADER -->
         <div class="hed">
         <nav class="navbar navbar-expand navbar-dark bg-dark">
