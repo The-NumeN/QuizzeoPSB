@@ -56,9 +56,11 @@ if (isset($_GET["id_quizz"])) {
                 mysqli_query($connect_bdd, $updateChoiceQuery);
             }
         }
-
-        // Rediriger vers la page d'administration
-        header("location: admin.php");
+        if ($_SESSION["role"] === "quizzer") {
+            header("Location: quizzer.php");
+        } elseif ($_SESSION["role"] === "admin") {
+            header("Location: admin.php");
+        }
         exit();
     }
 }
