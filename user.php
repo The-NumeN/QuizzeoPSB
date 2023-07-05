@@ -108,7 +108,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                             }
                                             echo $difficulteText;
                                         ?>
-                                </span>                                         
+                                </span><br><br><br>                                         
                             <div class="card-body">                
                                 <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
                             </div>
