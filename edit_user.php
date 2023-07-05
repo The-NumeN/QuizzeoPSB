@@ -46,7 +46,8 @@ if (isset($_GET["id_test"])) {
     <body>
     <style>
             body{
-             background-image:url();
+             background-image:url(img/bgmodif);
+             background-size:100%;
             }
         </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -75,19 +76,14 @@ if (isset($_GET["id_test"])) {
         </nav>
         <br><br>
         <div class="container">
-            <div class="border border-secondary rounded">
-                <div class="card">
-                    <div class="card-header">
-                        <h1>Modifier Pseudo</h1>
-                    </div>
-                    <div class="card-body">
-                        <form action="" method="post">
-                            <label for="nouveau_pseudo">Nouveau Pseudo:</label>
-                            <input type="text" name="nouveau_pseudo" value="<?php echo $pseudo; ?>" required>
-                            <button type="submit">Modifier</button>
-                        </form>
-                    </div>
-                </div>
+            <div class="border border-secondary w-75 mx-auto rounded bidoop">
+                <br><br>
+                <h1>Modifier Pseudo</h1> <br>                
+                <form action="" method="post">
+                    <label for="nouveau_pseudo">Nouveau Pseudo:</label>
+                    <input type="text" name="nouveau_pseudo" value="<?php echo $pseudo; ?>" required>
+                    <button type="submit">Modifier</button>
+                </form><br><br>                
             </div>
         </div>
         <footer class="fixed_footer">

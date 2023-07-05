@@ -52,7 +52,7 @@ button {
 
 button:hover {
     background-color: whitesmoke;
-    color: black;
+    color: whitesmoke;
     transition: 300ms;
 }
 
@@ -118,9 +118,9 @@ table {
     background-color: rgb(41, 41, 41);
 }
 
-.addminn .tableau {
+.bidoop .tableau {
     color: white;
-
+    margin: auto;
 }
 
 .bloped {
