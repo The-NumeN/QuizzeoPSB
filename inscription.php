@@ -43,6 +43,11 @@ if (isset($_POST['submit'])) {
 
     </head>
     <body>
+    <style>
+            body{
+             background-image:url();
+            }
+        </style>
         <div class ="container">
             <br><br>
             <div class="border border-secondary w-50 mx-auto rounded">

@@ -12,6 +12,11 @@ include 'header.php';
         <link rel="stylesheet" href="connect2.css">
     
     <body>
+        <style>
+            body{
+             background-image:url();
+            }
+        </style>
         <br><br>
         <div class="container">
             <div class="border border-secondary rounded">

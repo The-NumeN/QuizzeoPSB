@@ -44,6 +44,11 @@ if (isset($_GET["id_test"])) {
             <link rel="stylesheet" href="connect2.css">
 
     <body>
+    <style>
+            body{
+             background-image:url();
+            }
+        </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
                 <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->

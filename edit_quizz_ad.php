@@ -77,6 +77,11 @@ if (isset($_GET["id_quizz"])) {
     <link rel="stylesheet" href="connect2.css">
 </head>
 <body>
+<style>
+            body{
+             background-image:url();
+            }
+        </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
                 <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>

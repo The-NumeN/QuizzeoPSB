@@ -39,6 +39,11 @@ while ($row = mysqli_fetch_assoc($result)) {
     </head>
 
     <body>
+    <style>
+            body{
+             background-image:url();
+            }
+        </style>
         <!-- HEADER -->
         <div class="hed">
         <nav class="navbar navbar-expand navbar-dark bg-dark">
