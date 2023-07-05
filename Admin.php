@@ -58,7 +58,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <ul class="navbar-nav">
                         <div class="inscri">
                             <li class="nav-item">
-                                <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
+                                <br><p class="bonjour">Compte de <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
                             </li>
                         </div>
                         <div class="form-inline">
@@ -146,11 +146,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
             </div>
             <br><br>
-            <div class="border border-secondary  rounded">
-                <div class="card-body">
-                    <a href="ajout_quiz.php">Ajouter un quizz</a>
-                </div>              
-            </div>
+                <a href="ajout_quiz.php"><button> Ajouter un quizz</button></a><br>
         </div><br><br><br>
         <footer class="fixed_footer">
             <div class="content">

@@ -82,7 +82,7 @@ if (isset($_GET["id_quizz"])) {
                     <ul class="navbar-nav">
                         <div class="inscri">
                             <li class="nav-item">
-                                <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
+                                <br><p class="bonjour">Compte de <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
                             </li>
                         </div>
                         <div class="form-inline">

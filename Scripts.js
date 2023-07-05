@@ -37,4 +37,5 @@ var elts = document.querySelectorAll('input');
 		for (var i = 0; i < elts.length; i++) {
 			if ( elts[i].checked === true ) break;
 		}
-	console.log('value => '+elts[i].value);})
+	console.log('value => '+elts[i].value);
+})

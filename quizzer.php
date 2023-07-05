@@ -60,7 +60,7 @@ while ($row = mysqli_fetch_assoc($resulte)) {
           <!-- ajout des liens de redirection -->
                         <div class="inscri">
                             <li class="nav-item">
-                                <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
+                                <br><p class="bonjour">Compte de <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
                             </li>
                         </div>
                         <div class="form-inline">
@@ -76,68 +76,71 @@ while ($row = mysqli_fetch_assoc($resulte)) {
             </div>
         </nav>
         <br><br>
-        <h2>Liste des quizz</h2><br>
-                <?php foreach ($quizzes as $quiz) : ?>
+        <div class="container">
+            <h2>Liste des quizz</h2><br>
+            <div class="row">
+                <?php 
+                foreach ($quizzes as $quiz) : 
+                ?>
+                <div class="col-xl-4 col-lg-4">
                     <div class="zoom">
-                                <span class="intil"><?php echo $quiz['titre']; ?></span><br><br>
-                                <span><?php $difficulte = $quiz['difficulte'];
-                                            $difficulteText = "";
-                                            if ($difficulte == 1) {
-                                                $difficulteText = "Facile";
-                                            } elseif ($difficulte == 2) {
-                                                $difficulteText = "Moyen";
-                                            } elseif ($difficulte == 3) {
-                                                $difficulteText = "Difficile";
-                                            }
-                                            echo $difficulteText;
-                                        ?>
-                                </span><br><br><br>                                          
-                            <div class="card-body">                
-                                <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
-                            </div>
-                        </div>
+                        <span class="intil">
+                            <?php echo $quiz['titre']; ?>
+                        </span><br><br>
+                        <span>  
+                            <?php $difficulte = $quiz['difficulte'];
+                                $difficulteText = "";
+                                if ($difficulte == 1) {
+                                    $difficulteText = "Facile";
+                                }elseif ($difficulte == 2) {
+                                    $difficulteText = "Moyen";
+                                } elseif ($difficulte == 3) {
+                                    $difficulteText = "Difficile";
+                                }
+                                echo $difficulteText;
+                            ?>
+                        </span><br><br><br>                                          
+                        <div class="card-body">                
+                            <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
+                        </div><br><br>
                     </div>
+                </div>        
                     <br>
                 <?php endforeach; ?>
-            <div class="border border-secondary rounded bloped">
-                <div class="card bg-light">
-                    <div class="card-header">
-                        <h3>Mes quizz</h3>
-                    </div>
-                    <div class="card-body">
-                        <table> 
-                            <tr>
-                                <th>Titre</th>
-                                <th>Difficulte</th>
-                                <th>Actions</th>
-                            </tr>
-                            <?php foreach ($quizze as $quiz) : ?>
-                            <tr>
-                                <td><?php echo $quiz['titre']; ?></td>
-                                <td><?php
-                                        $difficulte = $quiz['difficulte'];
-                                        $difficulteText = "";
-                                        if ($difficulte == 1) {
-                                            $difficulteText = "Facile";
-                                        } elseif ($difficulte == 2) {
-                                            $difficulteText = "Moyen";
-                                        } elseif ($difficulte == 3) {
-                                            $difficulteText = "Difficile";
-                                        }
-                                    echo $difficulteText;
-                                    ?>
-                                </td>
-                                <td>
-                                <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img src='img/edit.png' width='30px'></a>
-                                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img src='img/delete.png' width='30px'></a>
-                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                        </table>
-                        <a href="ajout_quiz.php"><button> Ajouter un quizz</button></a>
-                    </div>
-                </div>
+            </div><br><br>
+            <div class="border border-secondary rounded">
+            <h3>Mes quizz</h3>
+            <a href="ajout_quiz.php"><button> Ajouter un quizz</button></a><br>
+            <div class="row">              
+                <?php
+                 foreach ($quizze as $quiz) :
+                ?>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="zoom">
+                        <span class="intil">
+                            <?php echo $quiz['titre']; ?>
+                        </span><br><br>
+                        <?php
+                            $difficulte = $quiz['difficulte'];
+                            $difficulteText = "";
+                            if ($difficulte == 1) {
+                            $difficulteText = "Facile";
+                            } elseif ($difficulte == 2) {
+                            $difficulteText = "Moyen";
+                            } elseif ($difficulte == 3) {
+                            $difficulteText = "Difficile";
+                            }
+                            echo $difficulteText;
+                        ?><br><br>
+                        <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img src='img/edit.png' width='30px'></a>
+                        <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img src='img/delete.png' width='30px'></a>
+                        <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
+                              
+                    </div><br><br>
+                    
+                </div><br><br>
+                <?php endforeach; ?>
+            </div>
             </div>
         </div><br><br><br>
         <footer class="fixed_footer">
