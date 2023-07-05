@@ -49,6 +49,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <title>Administrateur</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <link rel="stylesheet" href="connect2.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     </head>
     <body>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -58,7 +59,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <ul class="navbar-nav">
                         <div class="inscri">
                             <li class="nav-item">
-                                <br><p class="bonjour">Compte de <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
+                                <br><p class="bonjour">Compte de <span><?php echo ucfirst($_SESSION["pseudo"]);?></span></p>
                             </li>
                         </div>
                         <div class="form-inline">
