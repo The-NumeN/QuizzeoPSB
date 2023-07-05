@@ -86,8 +86,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         echo "Erreur lors de l'insertion des choix pour la question $i.";
                     }
                 }
+            } if ($_SESSION["role"] === "quizzer") {
+                header("Location: quizzer.php");
+            } elseif ($_SESSION["role"] === "admin") {
+                header("Location: admin.php");
             }
-            echo "Quiz inséré avec succès.";
+            exit();
         } else {
             echo "Erreur lors de l'insertion du quiz.";
         }
