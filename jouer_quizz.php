@@ -154,7 +154,7 @@ $result = mysqli_query($connect_bdd, $test);
                 ob_clean();
                 ob_end_flush();
                 // Redirection vers la page des résultats avec le score et les bonnes réponses
-                header("Location: resultats.php?id_test=$id_test&id_quizz=$id_quizz");
+                header("Location: resultat.php?id_test=$id_test&id_quizz=$id_quizz");
                 exit();
             }
             ?>
