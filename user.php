@@ -42,6 +42,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <style>
             body{
              background-image:url(img/bgjouer);
+             background-size:100%;
             }
         </style>
         <!-- HEADER -->
@@ -72,8 +73,9 @@ while ($row = mysqli_fetch_assoc($result)) {
         </nav>
         </div><br><br>
         <div class="container">
-            <div class="border border-secondary rounded">
-                <h2>Liste des quizz</h2><br>
+            <br>
+            <div class="border border-dark rounded w-75 mx-auto">
+                <br>
                 <div class="row">
                     <?php foreach ($quizzes as $quiz) : ?>
                         <div class="col-xl-4 col-lg-4">
