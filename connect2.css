@@ -112,28 +112,32 @@ table {
     width: 50%;
     margin: auto;
 }
-footer{
+
+footer {
     width: 100%;
     height: 5%;
-    background: #816868;
-    position: fixed; 
+    background: black;
+    position: fixed;
     bottom: 0PX;
-    
-  
-  }
-  .fixed_footer p{
+
+
+}
+
+.fixed_footer p {
     margin-top: 3px;
     color: #fffdfd;
 
-  }
-  .hed{
-    background-color: aquamarine;
-  }
-  * {
-    box-sizing: border-box;
-  }
+}
 
-  .zoom {
+.hed {
+    background-color: aquamarine;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.zoom {
     padding: 50px;
     background-color: rgb(115, 186, 115);
     transition: transform .2s;
@@ -142,12 +146,13 @@ footer{
     margin: 0 auto;
     border-radius: 5px;
 
-  }
-  
-  .zoom:hover {
+}
+
+.zoom:hover {
     transform: scale(1.1);
-  }
-  .intil{
+}
+
+.intil {
     font-size: 20px;
     font-weight: 700;
 }
