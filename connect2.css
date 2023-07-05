@@ -164,3 +164,29 @@ footer {
 .connT a {
     color: white;
 }
+
+#pre {
+    text-align: center;
+    margin: 5px;
+    transition: 300ms;
+    background-color: rgb(60, 154, 60);
+    color: white;
+    border-radius: 80px;
+}
+
+#sui {
+    text-align: center;
+    margin: 5px;
+    transition: 300ms;
+    background-color: rgb(60, 154, 60);
+    color: white;
+    border-radius: 80px;
+}
+#val{
+    text-align: center;
+    margin: 5px;
+    transition: 300ms;
+    background-color: rgb(60, 154, 60);
+    color: white;
+    border-radius: 80px;
+}
