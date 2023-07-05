@@ -2,7 +2,6 @@
     include 'header.php';
 ?>
 <?php
-session_start();
 // On récupère les valeurs saisies
 if(isset($_POST["button"])){
     $username = $_POST["pseudo"];
@@ -50,11 +49,6 @@ if(isset($_POST["button"])){
     <link rel="stylesheet" href="connect2.css">
 </head>
 <body>
-<style>
-            body{
-             background-image:url();
-            }
-        </style>
     <div class="container">
         <br><br>
         <div class="border border-secondary w-50 mx-auto rounded">
