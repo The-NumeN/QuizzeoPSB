@@ -150,7 +150,7 @@ $result = mysqli_query($connect_bdd, $test);
                     $insertQuery = "INSERT INTO user_quizz (id_test, id_quizz, score) VALUES ('$id_test', '$id_quizz', '$score')";
                     mysqli_query($connect_bdd, $insertQuery);
                 }
-   }
+   }           
             ?>
         </form>
         <script src="scripts.js"></script>

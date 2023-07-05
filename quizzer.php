@@ -79,7 +79,7 @@ while ($row = mysqli_fetch_assoc($resulte)) {
         <h2>Liste des quizz</h2><br>
                 <?php foreach ($quizzes as $quiz) : ?>
                     <div class="zoom">
-                                <span class="intil"><?php echo $quiz['titre']; ?></span><br>
+                                <span class="intil"><?php echo $quiz['titre']; ?></span><br><br>
                                 <span><?php $difficulte = $quiz['difficulte'];
                                             $difficulteText = "";
                                             if ($difficulte == 1) {
