@@ -177,6 +177,13 @@ footer {
 .connT a {
     color: white;
 }
+.ima {
+    transition: 100ms;
+}
+.ima:hover {
+    transition: 100ms;
+    transform: scale(1.1);
+}
 
 #pre {
     text-align: center;
