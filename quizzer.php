@@ -45,14 +45,9 @@ while ($row = mysqli_fetch_assoc($resulte)) {
     <head> <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Quizzer</title>
-<<<<<<< HEAD
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <link rel="stylesheet" href="connectE.css">
-=======
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="connect2.css">
->>>>>>> 533ecb908bc03558a016ddb7b9548d625080c067
+
     </head>
     <body>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -84,7 +79,7 @@ while ($row = mysqli_fetch_assoc($resulte)) {
         <h2>Liste des quizz</h2><br>
                 <?php foreach ($quizzes as $quiz) : ?>
                     <div class="zoom">
-                                <span class="intil"><?php echo $quiz['titre']; ?></span><br>
+                                <span class="intil"><?php echo $quiz['titre']; ?></span><br><br>
                                 <span><?php $difficulte = $quiz['difficulte'];
                                             $difficulteText = "";
                                             if ($difficulte == 1) {

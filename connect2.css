@@ -4,13 +4,11 @@ body {
     text-align: center;
     background-color: rgba(245, 245, 245, 0.846);
 }
-
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 50px;
     color: rgb(43, 128, 185);
 }
-
 h2 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 45px;
@@ -147,11 +145,9 @@ footer {
     border-radius: 5px;
 
 }
-
 .zoom:hover {
     transform: scale(1.1);
 }
-
 .intil {
     font-size: 20px;
     font-weight: 700;
