@@ -86,8 +86,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         echo "Erreur lors de l'insertion des choix pour la question $i.";
                     }
                 }
+            } if ($_SESSION["role"] === "quizzer") {
+                header("Location: quizzer.php");
+            } elseif ($_SESSION["role"] === "admin") {
+                header("Location: admin.php");
             }
-            echo "Quiz inséré avec succès.";
+            exit();
         } else {
             echo "Erreur lors de l'insertion du quiz.";
         }
@@ -114,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <!-- ajout des liens de redirection -->
                         <div class="inscri">
                             <li class="nav-item">
-                                <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
+                                <br><p class="bonjour">Compte de <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
                             </li>
                         </div>
                         <div class="form-inline">

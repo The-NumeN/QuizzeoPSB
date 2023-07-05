@@ -47,7 +47,7 @@ $result = mysqli_query($connect_bdd, $test);
           <!-- ajout des liens de redirection -->
                         <div class="inscri">
                             <li class="nav-item">
-                                <br><p class="bonjour">Bonjour <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
+                                <br><p class="bonjour">Compte de <span><?php echo ucfirst($_SESSION["pseudo"]); ?></span></p>
                             </li>
                         </div>
                         <div class="form-inline">
@@ -68,7 +68,7 @@ $result = mysqli_query($connect_bdd, $test);
     </div>
     <div class="container">
         <form method="post" action="">
-            <?php
+        <?php
             if ($result->num_rows > 0) {
                 $questionIndex = 0; // Indice pour suivre la question actuelle
                 // Parcourir les questions
@@ -151,7 +151,12 @@ $result = mysqli_query($connect_bdd, $test);
                     $insertQuery = "INSERT INTO user_quizz (id_test, id_quizz, score) VALUES ('$id_test', '$id_quizz', '$score')";
                     mysqli_query($connect_bdd, $insertQuery);
                 }
-   }           
+                ob_clean();
+                ob_end_flush();
+                // Redirection vers la page des résultats avec le score et les bonnes réponses
+                header("Location: resultat.php?id_test=$id_test&id_quizz=$id_quizz");
+                exit();
+            }
             ?>
         </form>
         <script src="scripts.js"></script>
