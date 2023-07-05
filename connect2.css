@@ -149,14 +149,18 @@ footer {
     border-radius: 5px;
 }
 
-.row {margin: 0 -5px;}
+.row {
+    margin: 0 -5px;
+}
+
 @media screen and (max-width: 1000px) {
     .row {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
     }
 }
+
 .zoom:hover {
     transform: scale(1.1);
 }
@@ -191,7 +195,8 @@ footer {
     color: white;
     border-radius: 80px;
 }
-#val{
+
+#val {
     text-align: center;
     margin: 5px;
     transition: 300ms;
