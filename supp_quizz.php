@@ -26,7 +26,7 @@ if (isset($_GET["id_quizz"])) {
     $deleteQuery = "DELETE FROM user_quizz WHERE id_quizz = '$id'";
     mysqli_query($conn, $deleteQuery);
 
-    header("location: admin.php");
+    header("refresh: 1");
     exit();
 }
 ?><br>
