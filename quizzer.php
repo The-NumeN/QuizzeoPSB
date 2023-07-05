@@ -76,13 +76,10 @@ while ($row = mysqli_fetch_assoc($resulte)) {
             </div>
         </nav>
         <br><br>
-        <div class="container">
         <h2>Liste des quizz</h2><br>
                 <?php foreach ($quizzes as $quiz) : ?>
-                    <div class="border border-secondary rounded bloped">
-                        <div class="card blopee">
-                            <div class="card-header">
-                                <span><?php echo $quiz['titre']; ?></span><br>
+                    <div class="zoom">
+                                <span class="intil"><?php echo $quiz['titre']; ?></span><br>
                                 <span><?php $difficulte = $quiz['difficulte'];
                                             $difficulteText = "";
                                             if ($difficulte == 1) {
@@ -94,8 +91,7 @@ while ($row = mysqli_fetch_assoc($resulte)) {
                                             }
                                             echo $difficulteText;
                                         ?>
-                                </span>                                          
-                            </div>
+                                </span><br><br><br>                                          
                             <div class="card-body">                
                                 <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
                             </div>
