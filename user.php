@@ -74,7 +74,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             </nav>
         </div><br><br>
         <div class="container"><br>
-            <div class="border border-dark rounded w-75 mx-auto"><br>
+            <div class="border border-dark w-75 mx-auto rounded bidoop"><br>
                 <div class="row">
                     <?php foreach ($quizzes as $quiz) : ?>
                         <div class="col-xl-4 col-lg-4">
