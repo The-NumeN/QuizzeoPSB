@@ -35,6 +35,12 @@ $result = mysqli_query($connect_bdd, $test);
     <link rel="stylesheet" href="connectE.css">
 </head>
 <body>
+<style>
+            body{
+             background-image:url(img/bgjouer);
+             background-size:100%;
+            }
+        </style>
 <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
             <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
@@ -59,36 +65,31 @@ $result = mysqli_query($connect_bdd, $test);
                     </ul>
                 </div>
             </div>
-        </nav>
-    <div class="cuicuiz">
-        <div class="liquest">
-            <h2>Résultats</h2>
-        </div>
+        </nav><br><br>
         <div class="container">
-            <h3>Votre score : <?php echo $score; ?></h3>
-            <h4>Bonnes réponses :</h4>
-            <?php
-            if ($result->num_rows > 0) {
-                $questionIndex = 0; // Indice pour suivre la question actuelle
-                // Parcourir les questions
-                while ($row = $result->fetch_assoc()) {
-                    $questionId = $row['id_question'];
-                    $questionText = $row['intitule'];
+            <div class="border border-secondary w-75 mx-auto rounded bidoop"><br>
+                <h2>Résultats</h2><br>
+                <h3>Votre score : <?php echo $score; ?></h3><br>
+                <h3>Bonnes réponses :</h3><br><br>
+                <?php
+                    if ($result->num_rows > 0) {
+                        $questionIndex = 0; // Indice pour suivre la question actuelle
+                        // Parcourir les questions
+                        while ($row = $result->fetch_assoc()) {
+                            $questionId = $row['id_question'];
+                            $questionText = $row['intitule'];
 
-                    // Sélection de la bonne réponse pour la question actuelle
-                    $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
-                    $resulte = mysqli_query($connect_bdd, $sql);
-                    ?>
-                    <div class="card bg-light cache">
-                        <?php
-                            if ($resulte->num_rows > 0) {
-                                // Afficher la bonne réponse
-                                while ($row = $resulte->fetch_assoc()) {
-                                    $responseText = $row["bonne_reponse"];
-                                    echo "<p>Question " . ($questionIndex + 1) . ": $questionText</p>";
-                                    echo "<p>Bonne réponse : $responseText</p>";
+                            // Sélection de la bonne réponse pour la question actuelle
+                            $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
+                            $resulte = mysqli_query($connect_bdd, $sql);
+                                if ($resulte->num_rows > 0) {
+                                    // Afficher la bonne réponse
+                                    while ($row = $resulte->fetch_assoc()) {
+                                        $responseText = $row["bonne_reponse"];
+                                        echo "<h3>Question " . ($questionIndex + 1) . ": $questionText</h3>";
+                                        echo "<h3>Bonne réponse : $responseText</h3><br><br>";
+                                    }
                                 }
-                            }
                             $questionIndex++; // Augmenter l'indice de la question actuelle
                         }
                     } else {
@@ -105,9 +106,14 @@ $result = mysqli_query($connect_bdd, $test);
                             }
                         ?>">
                     <button>Jouer à d'autres Quizz</button>
-                </a>
+                </a><br>
             </div>
         </div>
-    </div>
-</body>
+        <br><br><br>
+        <footer class="fixed_footer">
+            <div class="content">
+                <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
+            </div>
+        </footer>
+    </body>
 </html>

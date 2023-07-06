@@ -39,7 +39,8 @@ $result = mysqli_query($connect_bdd, $test);
 <body>
 <style>
             body{
-             background-image:url();
+             background-image:url(img/bgjouer);
+             background-size:100%;
             }
         </style>
 <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -67,13 +68,12 @@ $result = mysqli_query($connect_bdd, $test);
                 </div>
             </div>
         </nav>
-<div class="cuicuiz">
-    <div class="liquest">
         <br><br>
+
+    <div class="container">
+        <div class="border border-secondary w-75 mx-auto rounded bidoop">
         <h2>Liste des questions</h2>
         <br>
-    </div>
-    <div class="container">
         <form method="post" action="">
         <?php
             if ($result->num_rows > 0) {
@@ -87,11 +87,7 @@ $result = mysqli_query($connect_bdd, $test);
                     $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
                     $resulte = mysqli_query($connect_bdd, $sql);
                     ?>
-                    <div class="card bg-light cache">
-                        <div class="card-header">
-                            <?php echo $questionText; ?>
-                        </div>
-                        <div class="card-body bip">
+                    <?php echo '<h3>'.$questionText.'</h3><br>'; ?>
                             <?php
                             if ($resulte->num_rows > 0) {
                                 // Parcourir les réponses de la question actuelle
@@ -119,8 +115,6 @@ $result = mysqli_query($connect_bdd, $test);
                                 echo "Aucune réponse trouvée.";
                             }
                             ?>
-                        </div>
-                    </div>
                     <br>
                     <?php
                     $questionIndex++; // Augmenter l'indice de la question actuelle
@@ -168,7 +162,7 @@ $result = mysqli_query($connect_bdd, $test);
             ?>
         </form>
         <script src="scripts.js"></script>
-
+        </div>
     </div>
     </div>
 </body><br>

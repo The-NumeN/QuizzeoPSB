@@ -111,7 +111,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <body>
     <style>
             body{
-             background-image:url();
+             background-image:url(img/bgadmin);
+             background-size:100%;
             }
         </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -140,28 +141,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </nav>
     <br><br>
         <div class="container">
-            <div class="border border-secondary rounded">
-                <div class="card bg-light">
-                    <form method="post" action="" name="monform">
-                        <div class="card-header">
-                            <h3>Crées ton Quizz</h3><br>
-                        </div>
-                        <div class="card-body">
-                            <input type="text" name="titre" id="titre" placeholder="Titre du quizz" required><br><br>
-                            <label for="difficulte">Difficulté:</label>
-                            <select name="difficulte" id="difficulte" required>
-                                <option value="1">Facile</option>
-                                <option value="2">Moyen</option>
-                                <option value="3">Difficile</option>
-                            </select><br><br> 
-                        <input type="button" value="Ajouter une question" onclick="addquest()">
-                            <div id=crea></div><br><br>
-                            <input type="button" value="Supprimer une question" onclick="suppquest()">
-                            <div id=crea1></div><br>
-                        </div>
+            <div class="border border-secondary w-75 mx-auto rounded bidoop"><br>
+                <form method="post" action="" name="monform">
+                    <h3>Crées ton Quizz</h3><br>
+                    <input type="text" name="titre" id="titre" placeholder="Titre du quizz" required><br><br>
+                    <label for="difficulte">Difficulté:</label>
+                    <select name="difficulte" id="difficulte" required>
+                        <option value="1">Facile</option>
+                        <option value="2">Moyen</option>
+                        <option value="3">Difficile</option>
+                    </select><br><br> 
+                    <input type="button" value="Ajouter une question" onclick="addquest()">
+                        <div id=crea></div><br><br>
+                        <input type="button" value="Supprimer une question" onclick="suppquest()">
+                        <div id=crea1></div><br>
                         <button type="submit" name="submit" id="submit">Valider</button>
-                    </form>      
-                </div>
+                </form>      
             </div>
         </div><br><br><br>
         <footer class="fixed_footer">
