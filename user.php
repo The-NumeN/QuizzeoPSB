@@ -34,7 +34,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <link rel="stylesheet" href="connect2.css">
+        <link rel="stylesheet" href="connectE.css">
 
     </head>
 
@@ -53,6 +53,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
                     <div class="navbar" id="navbarNav">
                         <ul class="navbar-nav  ">
+                        <a  id="lien" href="score.php">Score</a>
             <!-- ajout des liens de redirection -->
                             <div class="inscri">
                                 <li class="nav-item">
