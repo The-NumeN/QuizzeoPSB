@@ -148,7 +148,7 @@ if (isset($_GET["id_quizz"])) {
                     <button type="submit" name="submit">Modifier</button>
                 </form><br><br><br>
             </div>
-        </div>
+        </div><br><br><br>
     <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
