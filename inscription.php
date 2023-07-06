@@ -38,35 +38,30 @@ if (isset($_POST['submit'])) {
         <meta charset="UTF-8">
         <title>Inscription</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> 
-        <link rel="stylesheet" href="connect2.css">
+        <link rel="stylesheet" href="connectE.css">
 
     </head>
     <body>
     <style>
             body{
-             background-image:url();
+             background-image:url(img/bgadmin);
+             background-size:100%;
             }
         </style>
         <div class ="container">
             <br><br>
-            <div class="border border-secondary w-50 mx-auto rounded">
-                <div class="card bg-light">
-                    <form action="" method="post">
-                        <div class="card-header">
-                            <h1>Inscription</h1>
-                        </div> <br>
-                        <div class="card-body">
-                            <input type="text" name="ps" placeholder="Entrer un Pseudo" required><br><br>
-                            <input type="email" name="txt" placeholder="Votre email" required><br><br>
-                            <input type="password" name="pwd" placeholder="Votre mot de passe" required><br><br>
-                            <input type="radio" name="user_type" value="quizzer" required> Quizzer (Crée des quizz)<br>
-                            <input type="radio" name="user_type" value="utilisateur" required> Utilisateur<br><br>
-                            <button type="submit" name="submit">Inscription</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="border border-secondary w-50 mx-auto rounded bidoop">
+                <form action="" method="post">
+                    <h1>Inscription</h1><br>
+                    <input type="text" name="ps" placeholder="Entrer un Pseudo" required><br><br>
+                    <input type="email" name="txt" placeholder="Votre email" required><br><br>
+                    <input type="password" name="pwd" placeholder="Votre mot de passe" required><br><br>
+                    <input type="radio" name="user_type" value="quizzer" required> Quizzer (Crée des quizz)<br>
+                    <input type="radio" name="user_type" value="utilisateur" required> Utilisateur<br><br>
+                    <button type="submit" name="submit">Inscription</button>
+                </form>
             </div>
-        </div>
+        </div><br><br><br>
         <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>

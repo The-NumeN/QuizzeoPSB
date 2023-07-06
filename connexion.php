@@ -46,27 +46,29 @@ if(isset($_POST["button"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="connect2.css">
+    <link rel="stylesheet" href="connectE.css">
 </head>
 <body>
+    <style>
+        body{
+            background-image:url(img/bgadmin);
+             background-size:100%;
+            }
+    </style>
     <div class="container">
         <br><br>
-        <div class="border border-secondary w-50 mx-auto rounded">
-            <div class="card bg-light">  
-                <form action="" method="post">
-                    <div class="card-header">
-                        <h1>Connexion</h1>
-                    </div>
-                    <div class="card-body">
-                        <input type="text" name="pseudo" placeholder="Entrer votre Pseudo" required  ><br><br>
-                        <input type="password" name="password" placeholder="Entrer votre Mot De Passe"required ><br><br>
-                        <button type="submit" name="button">Se connecter</button>
-                        <a href="inscription.php">Créer un compte</a>
-                    </div>
-                </form>
-            </div>
+        <div class="border border-secondary w-50 mx-auto rounded bidoop">
+            <br>
+            <form action="" method="post">
+                <h1>Connexion</h1>
+                <br>
+                <input type="text" name="pseudo" placeholder="Entrer votre Pseudo" required  ><br><br>
+                <input type="password" name="password" placeholder="Entrer votre Mot De Passe"required ><br><br>
+                <button type="submit" name="button">Se connecter</button>
+                <a href="inscription.php">Créer un compte</a>
+            </form>
         </div>
-    </div>
+    </div><br><br><br>
     <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>

@@ -71,7 +71,13 @@ button:hover {
 .para {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
-    color: black;
+    color: white;
+}
+
+.para p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    color: white;
 }
 
 table {
@@ -154,7 +160,7 @@ footer {
 
 .zoom {
     padding: 50px;
-    background-color: rgba(115, 131, 186, 0.837);
+    background-color: rgba(115, 131, 186, 0.921);
     transition: transform .2s;
     width: 250px;
     height: 250px;
