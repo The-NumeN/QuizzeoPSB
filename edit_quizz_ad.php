@@ -146,7 +146,7 @@ if (isset($_GET["id_quizz"])) {
                     <?php endforeach; ?>
 
                     <button type="submit" name="submit">Modifier</button>
-                </form><br><br><br>
+                </form><br>
             </div>
         </div><br><br><br>
     <footer class="fixed_footer">
