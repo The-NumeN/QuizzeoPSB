@@ -86,5 +86,16 @@ $resultat = mysqli_query($connect_bdd, $sql);
         echo "<p>Aucun score trouvé.</p>";
     }
     ?>
+    <a href="<?php 
+                            if ($_SESSION["role"] === "quizzer") {
+                                echo "quizzer.php";
+                            } elseif ($_SESSION["role"] === "admin") {
+                                echo "admin.php";
+                            } else {
+                                echo "user.php";
+                            }
+                        ?>">
+                    <button>Jouer à d'autres Quizz</button>
+                </a>
 </body>
 </html>
