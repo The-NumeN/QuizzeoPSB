@@ -80,6 +80,7 @@ if (isset($_GET["id_quizz"])) {
 <style>
             body{
              background-image:url(img/bgmodif);
+             background-size:100%;
             }
         </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -147,7 +148,7 @@ if (isset($_GET["id_quizz"])) {
                     <button type="submit" name="submit">Modifier</button>
                 </form><br><br><br>
             </div>
-        </div>
+        </div><br><br><br>
     <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
