@@ -52,6 +52,12 @@ while ($row = mysqli_fetch_assoc($result)) {
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     </head>
     <body>
+    <style>
+            body{
+             background-image:url(img/bgadmin);
+             background-size:100%;
+            }
+        </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
                 <a href="index.php"><img class="navbar-brand" src="img/logo-quiz-symboles-bulle-dialogue-concept-spectacle-questionnaire-chante-bouton-quiz-concours-questions-examen-embleme-moderne-interview_180786-72.avif" width="75" height="75" class="d-inline-block align-center" alt="Erreur"></a>
@@ -75,76 +81,70 @@ while ($row = mysqli_fetch_assoc($result)) {
             </div>
         </nav>
         <br>
-        <div class="container">
-            <div class="border border-secondary rounded">
-                <div class="card bg-light">
-                    <div class="card-header">
-                        <h3>Liste des utilisateurs</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class ="tableau">
-                            <table>
-                                <tr>
-                                    <th>Nom d'utilisateur</th>
-                                    <th>Rôle</th>
-                                    <th>Actions</th>
-                                </tr>
-                                <?php foreach ($users as $user) : ?>
-                                <tr>
-                                    <td><?php echo $user['pseudo']; ?></td>
-                                    <td><?php echo $user['role']; ?></td>
-                                    <td>
+        <div class="container"><br>
+            <br><br>
+            <div class="border border-secondary rounded w-75 mx-auto bidoop">
+                <br><br>
+                <h3>Liste des utilisateurs</h3><br>
+                <div class ="tableau">
+                    <table>
+                        <tr>
+                            <th>Nom d'utilisateur</th>
+                            <th>Rôle</th>
+                            <th>Actions</th>
+                        </tr>
+                        <?php foreach ($users as $user) : ?>
+                            <tr>
+                                <td><?php echo $user['pseudo']; ?></td>
+                                <td><?php echo $user['role']; ?></td>
+                                <td>
                                     <a href="edit_user.php?id_test=<?php echo $user['id_test']; ?>"><img src='img/edit.png' width='30px'></a></a>
                                     <?php if ($_SESSION["role"] === "admin" && $user['id_test'] !== $_SESSION["id_test"]) : ?>
-                                        <a href="supp_user.php?id_test=<?php echo $user['id_test']; ?>"><img src='img/delete_user.png' width='30px'></a></a>
+                                    <a href="supp_user.php?id_test=<?php echo $user['id_test']; ?>"><img src='img/delete_user.png' width='30px'></a></a>
                                     <?php endif; ?>
-                                    </td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                            </table>
-                        </div>                 
-                    </div>
-                </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>                 
+                </div><br><br>
             </div>
             <br><br>
-            <div class="border border-secondary  rounded">
-                <div class="card bg-light">
-                    <div class="card-header">
-                        <h3>Liste des quizz</h3>
-                    </div>
-                    <div class="card-body">
-                        <table> 
-                            <tr>
-                                <th>Titre</th>
-                                <th>Difficulte</th>
-                                <th>Actions</th>
-                            </tr>
-                            <?php foreach ($quizzes as $quiz) : ?>
-                            <tr>
-                                <td><?php echo $quiz['titre']; ?></td>
-                                <td><?php
-                                        $difficulte = $quiz['difficulte'];
-                                        $difficulteText = "";
-                                        if ($difficulte == 1) {
-                                            $difficulteText = "Facile";
-                                        } elseif ($difficulte == 2) {
-                                            $difficulteText = "Moyen";
-                                        } elseif ($difficulte == 3) {
-                                            $difficulteText = "Difficile";
-                                        }
+            <div class="border border-secondary rounded w-75 mx-auto bidoop">
+                <br><br>
+                <h3>Liste des quizz</h3>
+                <br>
+                <div class="tableau">
+                    <table> 
+                        <tr>
+                            <th>Titre</th>
+                            <th>Difficulte</th>
+                            <th>Actions</th>
+                        </tr>
+                        <?php foreach ($quizzes as $quiz) : ?>
+                        <tr>
+                            <td><?php echo $quiz['titre']; ?></td>
+                            <td><?php
+                                    $difficulte = $quiz['difficulte'];
+                                    $difficulteText = "";
+                                    if ($difficulte == 1) {
+                                        $difficulteText = "Facile";
+                                    } elseif ($difficulte == 2) {
+                                        $difficulteText = "Moyen";
+                                    } elseif ($difficulte == 3) {
+                                        $difficulteText = "Difficile";
+                                    }
                                     echo $difficulteText;
-                                    ?>
-                                </td>
-                                <td>
-                                    <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img class="ima" src='img/edit.png' width='30px'></a>
-                                    <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img class="ima" src='img/delete.png' width='30px'></a>
-                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
-                                </td>
-                            </tr>
+                                ?>
+                            </td>
+                            <td>
+                                <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img class="ima" src='img/edit.png' width='30px'></a>
+                                <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img class="ima" src='img/delete.png' width='30px'></a>
+                                <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
+                            </td>
+                        </tr>
                             <?php endforeach; ?>
-                        </table>
-                    </div>
-                </div>
+                    </table><br>
+                </div><br><br>
             </div>
             <br><br>
                 <a href="ajout_quiz.php"><button> Ajouter un quizz</button></a><br>

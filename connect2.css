@@ -8,19 +8,20 @@ body {
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 50px;
-    color: rgb(43, 128, 185);
+    color: white;
+
 }
 
 h2 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 45px;
-    color: rgb(43, 128, 185);
+    color: white;
 }
 
 h3 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 40px;
-    color: rgb(43, 128, 185);
+    color: white;
 }
 
 input {
@@ -51,7 +52,7 @@ button {
 
 button:hover {
     background-color: whitesmoke;
-    color: black;
+    color: whitesmoke;
     transition: 300ms;
 }
 
@@ -105,7 +106,21 @@ table {
 }
 
 .card-header {
+    background-color: rgb(59, 59, 59);
+}
+
+.card-body {
     background-color: lightgrey;
+}
+
+/* bg card admin */
+.admin {
+    background-color: rgb(41, 41, 41);
+}
+
+.bidoop .tableau {
+    color: white;
+    margin: auto;
 }
 
 .bloped {
@@ -139,14 +154,14 @@ footer {
 
 .zoom {
     padding: 50px;
-    background-color: rgb(115, 131, 186);
+    background-color: rgba(115, 131, 186, 0.837);
     transition: transform .2s;
     width: 250px;
     height: 250px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .row {
@@ -177,9 +192,11 @@ footer {
 .connT a {
     color: white;
 }
+
 .ima {
     transition: 100ms;
 }
+
 .ima:hover {
     transition: 100ms;
     transform: scale(1.1);
@@ -210,4 +227,20 @@ footer {
     background-color: rgb(60, 154, 60);
     color: white;
     border-radius: 80px;
+}
+
+.labelo {
+    display: block;
+    float: left;
+    width: 10px;
+    background-color: da;
+}
+
+.bidoop {
+    color: white;
+    background-color: rgba(41, 41, 41, 0.827);
+}
+
+.bidoop form {
+    padding: 25px;
 }

@@ -2,7 +2,6 @@
     include 'header.php';
 ?>
 <?php
-session_start();
 // On récupère les valeurs saisies
 if(isset($_POST["button"])){
     $username = $_POST["pseudo"];

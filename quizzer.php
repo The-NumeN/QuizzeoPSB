@@ -50,6 +50,12 @@ while ($row = mysqli_fetch_assoc($resulte)) {
 
     </head>
     <body>
+    <style>
+            body{
+             background-image:url(img/bgjouer);
+             background-size: 100;
+            }
+        </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
             <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
@@ -77,40 +83,36 @@ while ($row = mysqli_fetch_assoc($resulte)) {
         </nav>
         <br><br>
         <div class="container">
-            <div class="border border-secondary rounded">
+            <div class="border border-secondary w-75 mx-auto rounded">
                 <h2>Liste des quizz</h2><br>
                 <div class="row">
-                    <?php 
-                        foreach ($quizzes as $quiz) : 
-                    ?>
-                    <div class="col-xl-4 col-lg-4">
-                        <div class="zoom">
-                            <span class="intil">
-                                <?php echo $quiz['titre']; ?>
-                            </span><br><br>
-                            <span>  
-                                <?php $difficulte = $quiz['difficulte'];
-                                    $difficulteText = "";
-                                    if ($difficulte == 1) {
-                                        $difficulteText = "Facile";
-                                    }elseif ($difficulte == 2) {
-                                        $difficulteText = "Moyen";
-                                    } elseif ($difficulte == 3) {
-                                        $difficulteText = "Difficile";
-                                    }
-                                    echo $difficulteText;
-                                ?>
-                            </span><br><br><br>                                          
-                            <div class="card-body">                
-                                <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
-                            </div><br><br>
-                        </div><br><br>
-                    </div>        
-                    <br>
+                    <?php foreach ($quizzes as $quiz) : ?>
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="zoom">
+                                <span class="intil">
+                                    <?php echo $quiz['titre']; ?>
+                                </span><br><br>
+                                <span>  
+                                    <?php $difficulte = $quiz['difficulte'];
+                                        $difficulteText = "";
+                                        if ($difficulte == 1) {
+                                            $difficulteText = "Facile";
+                                        }elseif ($difficulte == 2) {
+                                            $difficulteText = "Moyen";
+                                        } elseif ($difficulte == 3) {
+                                            $difficulteText = "Difficile";
+                                        }
+                                        echo $difficulteText;
+                                    ?>
+                                </span><br><br><br>                                                          
+                                    <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
+                                <br><br>
+                            </div>
+                        </div>        
                     <?php endforeach; ?>
-                </div>
+                </div><br>
             </div><br><br>
-            <div class="border border-secondary rounded">
+            <div class="border border-secondary w-75 mx-auto rounded">
             <h3>Mes quizz</h3>
             <a href="ajout_quiz.php"><button> Ajouter un quizz</button></a><br>
             <div class="row">              

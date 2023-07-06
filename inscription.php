@@ -2,7 +2,6 @@
     include "header.php";
     ?>
 <?php
-session_start();
 $connect_bdd = mysqli_connect("127.0.0.1", "root", "", "quizzeo");
 
 if (isset($_POST['submit'])) {
@@ -43,6 +42,11 @@ if (isset($_POST['submit'])) {
 
     </head>
     <body>
+    <style>
+            body{
+             background-image:url();
+            }
+        </style>
         <div class ="container">
             <br><br>
             <div class="border border-secondary w-50 mx-auto rounded">

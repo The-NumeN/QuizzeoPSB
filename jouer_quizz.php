@@ -37,6 +37,11 @@ $result = mysqli_query($connect_bdd, $test);
 
 </head>
 <body>
+<style>
+            body{
+             background-image:url();
+            }
+        </style>
 <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
             <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
@@ -157,7 +162,7 @@ $result = mysqli_query($connect_bdd, $test);
                 ob_clean();
                 ob_end_flush();
                 // Redirection vers la page des résultats avec le score et les bonnes réponses
-                header("Location: resultat.php?id_test=$id_test&id_quizz=$id_quizz");
+                header("Location: resultat.php?id_test=$id_test&id_quizz=$id_quizz&score=$score");
                 exit();
             }
             ?>
