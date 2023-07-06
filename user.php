@@ -102,7 +102,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <br>
             </div>
         </div> 
-            <!-- <br><br><br><br> -->
+            <br><br><br><br> 
             <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
