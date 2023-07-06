@@ -137,8 +137,8 @@ while ($row = mysqli_fetch_assoc($resulte)) {
                             }
                             echo $difficulteText;
                         ?><br><br>
-                        <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img src='img/edit.png' width='30px'></a>
-                        <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img src='img/delete.png' width='30px'></a>
+                        <a href="edit_quizz_ad.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img src='img/ediit.png' width='30px'></a>
+                        <a href="supp_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><img src='img/deletee.png' width='30px'></a>
                         <a href="jouer_quizz.php?id_quizz=<?php echo $quiz['id_quizz']; ?>"><button>Jouer</button></a><br>
                               
                     </div><br><br>
