@@ -14,6 +14,9 @@ h1 {
 #lien{
     text-align: center;
     position: relative;
+    color: aqua;
+    padding-right: 400px;
+    padding-top: 30px;
 }
 h2 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
