@@ -80,6 +80,7 @@ if (isset($_GET["id_quizz"])) {
 <style>
             body{
              background-image:url(img/bgmodif);
+             background-size:100%;
             }
         </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
