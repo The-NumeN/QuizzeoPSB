@@ -11,13 +11,15 @@ h1 {
     color: white;
 
 }
-#lien{
+
+#lien {
     text-align: center;
     position: relative;
     color: aqua;
     padding-right: 400px;
     padding-top: 30px;
 }
+
 h2 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 45px;
@@ -92,6 +94,7 @@ table {
     text-align: center;
     border: 1px solid black;
     width: 50%;
+    color: whitesmoke;
 }
 
 .jouer input {

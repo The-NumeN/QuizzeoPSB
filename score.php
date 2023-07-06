@@ -36,6 +36,12 @@ $resultat = mysqli_query($connect_bdd, $sql);
     <link rel="stylesheet" href="connectE.css">
 </head>
 <body>
+<style>
+            body{
+             background-image:url(img/bgjouer);
+             background-size:100%;
+            }
+        </style>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
             <!-- ajout du logo (retour au menu principal lorsque l'on clique dessus) -->
@@ -60,42 +66,52 @@ $resultat = mysqli_query($connect_bdd, $sql);
                 </div>
             </div>
         </nav>
-    <h1>Mes Scores</h1>
+        <br><br>
+        <div class="container">
+            <div class="border border-secondary w-75 mx-auto bidoop rounded ">
+                <br>
+                <h1>Mes Scores</h1><br><br>
 
-    <?php
-    // Vérifier s'il y a des scores à afficher
-    if (mysqli_num_rows($resultat) > 0) {
-        ?>
-        <table>
-            <tr>
-                <th>Nom du Quiz </th>
-                <th>Score</th>
-            </tr>
-            <?php
-            // Afficher les scores dans le tableau
-            while ($row = mysqli_fetch_assoc($resultat)) {
-                echo "<tr>";
-                echo "<td>" . $row['nom_quiz'] . "</td>";
-                echo "<td>" . $row['score'] . "</td>";
-                echo "</tr>";
-            }
-            ?>
-        </table>
-        <?php
-    } else {
-        echo "<p>Aucun score trouvé.</p>";
-    }
-    ?>
-    <a href="<?php 
-                            if ($_SESSION["role"] === "quizzer") {
-                                echo "quizzer.php";
-                            } elseif ($_SESSION["role"] === "admin") {
-                                echo "admin.php";
-                            } else {
-                                echo "user.php";
+                <?php
+                    // Vérifier s'il y a des scores à afficher
+                    if (mysqli_num_rows($resultat) > 0) {
+                ?>
+                <div class="tableau">
+                    <table>
+                        <tr>
+                            <th>Nom du Quiz </th>
+                            <th>Score</th>
+                        </tr>
+                        <?php
+                            // Afficher les scores dans le tableau
+                            while ($row = mysqli_fetch_assoc($resultat)) {
+                                echo "<tr>";
+                                echo "<td>" . $row['nom_quiz'] . "</td>";
+                                echo "<td>" . $row['score'] . "</td>";
+                                echo "</tr>";
                             }
-                        ?>">
-                    <button>Jouer à d'autres Quizz</button>
+                        ?>
+                    </table>
+                </div><br>
+                <?php
+                    } else {
+                        echo "<p>Aucun score trouvé.</p>";
+                    }
+                ?>
+                <a href=
+                    "<?php 
+                        if ($_SESSION["role"] === "quizzer") {
+                            echo "quizzer.php";
+                        } elseif ($_SESSION["role"] === "admin") {
+                            echo "admin.php";
+                        } else {
+                            echo "user.php";
+                        }
+                    ?>">
+                    <button>Jouer à d'autres Quizz</button><br><br>
                 </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
