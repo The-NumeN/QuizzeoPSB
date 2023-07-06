@@ -38,10 +38,10 @@ $result = mysqli_query($connect_bdd, $test);
 </head>
 <body>
 <style>
-            body{
-             background-image:url(img/bgjouer);
-             background-size:100%;
-            }
+    body{
+        background-image:url(img/bgjouer);
+        background-size:100%;
+        }
         </style>
 <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="container-fluid">
@@ -67,29 +67,24 @@ $result = mysqli_query($connect_bdd, $test);
                     </ul>
                 </div>
             </div>
-        </nav>
-<div class="cuicuiz">
-    <div class="liquest">
-        <br><br>
-
-        <br>
-    </div>
+        </nav><br><br>
     <div class="container">
         <div class="border border secondary w-75 mx-auto rounded bidoop">
-        <h2>Liste des questions</h2><br>
-        <form method="post" action="">
-        <?php
-            if ($result->num_rows > 0) {
-                $questionIndex = 0; // Indice pour suivre la question actuelle
-                // Parcourir les questions
-                while ($row = $result->fetch_assoc()) {
-                    $questionId = $row['id_question'];
-                    $questionText = $row['intitule'];
+            <br>
+            <h2>Liste des questions</h2><br>
+            <form method="post" action="">
+                <?php
+                    if ($result->num_rows > 0) {
+                        $questionIndex = 0; // Indice pour suivre la question actuelle
+                        // Parcourir les questions
+                        while ($row = $result->fetch_assoc()) {
+                            $questionId = $row['id_question'];
+                            $questionText = $row['intitule'];
 
-                    // Sélection des réponses pour la question actuelle
-                    $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
-                    $resulte = mysqli_query($connect_bdd, $sql);
-                    ?>
+                            // Sélection des réponses pour la question actuelle
+                            $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
+                            $resulte = mysqli_query($connect_bdd, $sql);
+                ?>
                     <div class="cache">
                             <?php echo '<h3>'.$questionText.'</h3>'; ?>
                             <?php
@@ -165,15 +160,15 @@ $result = mysqli_query($connect_bdd, $test);
                 exit();
             }
             ?>
-        </form>
-        <script src="scripts.js"></script>
-    </div>
-    </div>
-    </div>
-</body><br>
-<footer class="fixed_footer">
+            </form>
+            <script src="scripts.js"></script>
+        </div>
+    </div><br><br><br>
+    <footer class="fixed_footer">
   <div class="content">
     <p>&copy; - Stive Gamy  -  Babacar Gueye -  Paul Vicens </p>
   </div>
 </footer>
+</body>
+
 </html>

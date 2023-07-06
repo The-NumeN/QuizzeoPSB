@@ -84,7 +84,7 @@ while ($row = mysqli_fetch_assoc($resulte)) {
         </nav>
         <br><br>
         <div class="container">
-            <div class="border border-secondary w-75 mx-auto rounded">
+            <div class="border border-secondary w-75 mx-auto rounded bidoop"><br>
                 <h2>Liste des quizz</h2><br>
                 <div class="row">
                     <?php foreach ($quizzes as $quiz) : ?>
@@ -113,7 +113,7 @@ while ($row = mysqli_fetch_assoc($resulte)) {
                     <?php endforeach; ?>
                 </div><br>
             </div><br><br>
-            <div class="border border-secondary w-75 mx-auto rounded">
+            <div class="border border-secondary w-75 mx-auto rounded bidoop"><br>
             <h3>Mes quizz</h3>
             <a href="ajout_quiz.php"><button> Ajouter un quizz</button></a><br>
             <div class="row">              
