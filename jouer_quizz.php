@@ -68,12 +68,15 @@ $result = mysqli_query($connect_bdd, $test);
                 </div>
             </div>
         </nav>
+<div class="cuicuiz">
+    <div class="liquest">
         <br><br>
 
-    <div class="container">
-        <div class="border border-secondary w-75 mx-auto rounded bidoop">
-        <h2>Liste des questions</h2>
         <br>
+    </div>
+    <div class="container">
+        <div class="border border secondary w-75 mx-auto rounded bidoop">
+        <h2>Liste des questions</h2><br>
         <form method="post" action="">
         <?php
             if ($result->num_rows > 0) {
@@ -87,7 +90,8 @@ $result = mysqli_query($connect_bdd, $test);
                     $sql = "SELECT * FROM choices WHERE id_question='$questionId'";
                     $resulte = mysqli_query($connect_bdd, $sql);
                     ?>
-                    <?php echo '<h3>'.$questionText.'</h3><br>'; ?>
+                    <div class="cache">
+                            <?php echo '<h3>'.$questionText.'</h3>'; ?>
                             <?php
                             if ($resulte->num_rows > 0) {
                                 // Parcourir les réponses de la question actuelle
@@ -115,6 +119,7 @@ $result = mysqli_query($connect_bdd, $test);
                                 echo "Aucune réponse trouvée.";
                             }
                             ?>
+                    </div>
                     <br>
                     <?php
                     $questionIndex++; // Augmenter l'indice de la question actuelle
@@ -162,7 +167,7 @@ $result = mysqli_query($connect_bdd, $test);
             ?>
         </form>
         <script src="scripts.js"></script>
-        </div>
+    </div>
     </div>
     </div>
 </body><br>

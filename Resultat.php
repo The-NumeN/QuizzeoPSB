@@ -68,9 +68,9 @@ $result = mysqli_query($connect_bdd, $test);
         </nav><br><br>
         <div class="container">
             <div class="border border-secondary w-75 mx-auto rounded bidoop"><br>
-                <h2>Résultats</h2><br>
-                <h3>Votre score : <?php echo $score; ?></h3><br>
-                <h3>Bonnes réponses :</h3><br><br>
+                <h3>Résultats</h3><br>
+                <h4>Votre score : <?php echo $score; ?></h4><br>
+                <h4>Bonnes réponses :</h4><br><br>
                 <?php
                     if ($result->num_rows > 0) {
                         $questionIndex = 0; // Indice pour suivre la question actuelle
@@ -86,8 +86,8 @@ $result = mysqli_query($connect_bdd, $test);
                                     // Afficher la bonne réponse
                                     while ($row = $resulte->fetch_assoc()) {
                                         $responseText = $row["bonne_reponse"];
-                                        echo "<h3>Question " . ($questionIndex + 1) . ": $questionText</h3>";
-                                        echo "<h3>Bonne réponse : $responseText</h3><br><br>";
+                                        echo "<h4>Question " . ($questionIndex + 1) . ": $questionText</h4>";
+                                        echo "<h4>Bonne réponse : $responseText</h4><br>";
                                     }
                                 }
                             $questionIndex++; // Augmenter l'indice de la question actuelle
@@ -105,7 +105,7 @@ $result = mysqli_query($connect_bdd, $test);
                                 echo "user.php";
                             }
                         ?>">
-                    <button>Jouer à d'autres Quizz</button>
+                    <button>Jouer à d'autres Quizz</button><br><br>
                 </a><br>
             </div>
         </div>
