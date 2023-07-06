@@ -53,7 +53,7 @@ while ($row = mysqli_fetch_assoc($resulte)) {
     <style>
             body{
              background-image:url(img/bgjouer);
-             background-size: 100;
+             background-size: 100%;
             }
         </style>
         <nav class="navbar navbar-expand navbar-dark bg-dark">
