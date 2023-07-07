@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </select><br><br> 
                     <input type="button" value="Ajouter une question" onclick="addquest()">
                         <div id=crea></div><br><br>
-                        <input type="button" value="Supprimer une question" onclick="suppquest()">
+                        <input type="button" value="Supprimer une question" onclick="suppquest()"><br>
                         <button type="submit" name="submit" id="submit">Valider</button>
                 </form>      
             </div>

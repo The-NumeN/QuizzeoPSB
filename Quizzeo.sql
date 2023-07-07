@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 26 juin 2023 à 12:42
+-- Généré le : ven. 07 juil. 2023 à 10:41
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -38,15 +38,24 @@ CREATE TABLE IF NOT EXISTS `choices` (
   `reponze` varchar(100) NOT NULL,
   PRIMARY KEY (`id_choice`),
   KEY `id_question` (`id_question`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `choices`
 --
 
 INSERT INTO `choices` (`id_choice`, `id_question`, `bonne_reponse`, `reponse`, `reponce`, `reponze`) VALUES
-(1, 9, 'B', 'C', 'D', 'E'),
-(2, 10, 'marche', 're', 'ess', 'aye');
+(118, 148, 'Tek&No ?  ', 'Daft&Punk ?', 'Tek&Ken ? ', 'Tek&Nik ?'),
+(119, 149, '  Occulus reparo ', 'Wingardium LeviOsa', 'Rictus Sempra', 'Petrificus Totalus'),
+(120, 150, '  Mario Kart Double Dash  ', 'Mario Kart 8', 'Mario Kart DS', 'Mario Kart 7'),
+(121, 151, 'Foot', 'Petit pas', 'Fusse', 'FUT'),
+(128, 158, 'Balises fixes définis par le langage', 'Balises définis par l’utilisateur', 'Balises prédéfinis', 'Balises uniquement pour les liens'),
+(129, 159, 'Id', 'Came', 'Classe', 'Text'),
+(135, 165, 'Uruguay', 'Etats-Unis', 'Mexique', 'France'),
+(136, 166, 'Argentin', 'Mexicain', 'Chilien', 'Brésilien'),
+(137, 167, 'Pogba', 'Bakary Sagna', 'Dimitri Payet', 'Kingsley Coman'),
+(138, 168, 'Afrique du Sud', 'Côte d\'Ivoire', 'Algérie', 'Nigéria'),
+(139, 169, 'Girondins de Bordeaux', 'PSG', 'FC Nantes', 'AS Saint-Etienne');
 
 -- --------------------------------------------------------
 
@@ -62,17 +71,24 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `date_creation` date DEFAULT NULL,
   PRIMARY KEY (`id_question`),
   KEY `id_quizz` (`id_quizz`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `questions`
 --
 
 INSERT INTO `questions` (`id_question`, `id_quizz`, `intitule`, `date_creation`) VALUES
-(7, 17, 'STP', '2023-06-23'),
-(8, 18, 'A', '2023-06-23'),
-(9, 19, 'A', '2023-06-23'),
-(10, 20, 'sa', '2023-06-26');
+(148, 93, 'Dans Foot2rue, et plus précisément dans l’équipe que l’on suit dans la série comment s’appelle les jumeaux de l’équipe ?', '2023-07-04'),
+(149, 93, 'Dans les films Harry Potter, quel sort « running gag » lance Hermione à Harry lors de leurs années à Poudlard ?', '2023-07-04'),
+(150, 93, 'Dans quel Mario Kart peut-on être à deux sur un même kart ? ', '2023-07-04'),
+(151, 93, 'Quel est le nom du clan ennemi des tortue ninjas ?', '2023-07-04'),
+(158, 97, 'HTML utilise des _____', '2023-07-05'),
+(159, 97, ' Si nous souhaitons définir le style d’un seule élément, quel sélecteur CSS utiliserons-nous?', '2023-07-05'),
+(165, 103, 'Dans quel pays se déroule la toute première Coupe du Monde de football en 1930 ?', '2023-07-07'),
+(166, 103, 'Quelle est la nationalité de Lionel Messi ?', '2023-07-07'),
+(167, 103, 'A l\'euro 2016, quel joueur français s\'est présenté avec un coq blanc dessiné sur le côté droit de la tête ?', '2023-07-07'),
+(168, 103, 'Lequel de ces pays n\'a pas remporté la Coupe d\'Afrique des nations entre 2010 et 2020 ?', '2023-07-07'),
+(169, 103, 'À quelle équipe de foot est associé le Stade Matmut Atlantique ?', '2023-07-07');
 
 -- --------------------------------------------------------
 
@@ -89,17 +105,16 @@ CREATE TABLE IF NOT EXISTS `quizzes` (
   `date_creation` date NOT NULL,
   PRIMARY KEY (`id_quizz`),
   KEY `id_quizzer` (`id_test`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `quizzes`
 --
 
 INSERT INTO `quizzes` (`id_quizz`, `id_test`, `titre`, `difficulte`, `date_creation`) VALUES
-(17, 20, 'tessttt', 2, '2023-06-23'),
-(18, 20, 'zxx', 1, '2023-06-23'),
-(19, 20, 'Développeur web', 1, '2023-06-23'),
-(20, 16, 'Stive ', 3, '2023-06-26');
+(93, 14, 'Random', 1, '2023-07-04'),
+(97, 14, 'Développement web', 1, '2023-07-05'),
+(103, 25, 'Foot', 2, '2023-07-07');
 
 -- --------------------------------------------------------
 
@@ -115,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `role` enum('utilisateur','quizzer','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id_test`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `users`
@@ -123,12 +138,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id_test`, `pseudo`, `email`, `password`, `role`) VALUES
 (14, 'paul', 'polo@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'admin'),
-(16, 'stive', 'sad@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'quizzer'),
-(20, 'BMG', 'CC@GMAIL.COM', 'd5f12e53a182c062b6bf30c1445153faff12269a', 'quizzer'),
-(21, 'ABC', 'ABC@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', 'quizzer'),
-(22, 'aqz', 'csc@gmail.com', '4c1b52409cf6be3896cf163fa17b32e4da293f2e', 'quizzer'),
-(23, 'xsxx', 'xzx@gmail.com', 'c7d6801df723bd569e53aa0edb1a5917ae4078c8', 'quizzer'),
-(24, 'JEEE', 'JEEE@GMAIL.COM', '5f6955d227a320c7f1f6c7da2a6d96a851a8118f', 'utilisateur');
+(24, 'JEEE', 'JEEE@GMAIL.COM', '5f6955d227a320c7f1f6c7da2a6d96a851a8118f', 'utilisateur'),
+(25, 'zakijr', 'dzdz@gmail.com', '7f7d6e7fad8a7e840b92ac6b4922a1fc1e0545f3', 'quizzer');
 
 -- --------------------------------------------------------
 
@@ -144,6 +155,16 @@ CREATE TABLE IF NOT EXISTS `user_quizz` (
   KEY `id_quizz` (`id_quizz`),
   KEY `id_test` (`id_test`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `user_quizz`
+--
+
+INSERT INTO `user_quizz` (`id_test`, `id_quizz`, `score`) VALUES
+(24, 93, '50'),
+(14, 93, '30'),
+(25, 93, '10'),
+(25, 103, '30');
 
 --
 -- Contraintes pour les tables déchargées
