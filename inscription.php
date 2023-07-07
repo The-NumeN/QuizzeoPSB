@@ -23,7 +23,11 @@ if (isset($_POST['submit'])) {
         $_SESSION["pseudo"] = $pseudo;
         $_SESSION["id_test"] = $id_test;
 
-        header("location: connexion.php");
+        if ($role == "quizzer") {
+            header("location: quizzer.php");
+        } else {
+            header("location: user.php");
+        }
     }
 }
 ?>
