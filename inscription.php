@@ -20,6 +20,10 @@ if (isset($_POST['submit'])) {
         $insert_query = "INSERT INTO users (pseudo, email, password, role) VALUES ('$pseudo', '$email', '$mdp', '$role')";
         mysqli_query($connect_bdd, $insert_query);
 
+        // Récupérer l'ID généré automatiquement après l'insertion
+        $id_test = mysqli_insert_id($connect_bdd);
+
+        // Initialiser les variables de session
         $_SESSION["pseudo"] = $pseudo;
         $_SESSION["id_test"] = $id_test;
         $_SESSION["role"] = $role;
